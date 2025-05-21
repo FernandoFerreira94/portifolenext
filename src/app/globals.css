@@ -1,9 +1,15 @@
 @import "tailwindcss";
 
+.titulo {
+  font-family: "unbounded";
+}
+
+.modal,
+nav {
+  font-family: "poppins";
+}
 .content {
-  position: relative;
-  width: calc(100% - 160px);
-  float: right;
+  width: calc(100% - 200px);
 }
 
 .content::before {
@@ -12,8 +18,13 @@
   inset: 0; /* top: 0; right: 0; bottom: 0; left: 0 */
   background-image: url("../assets/background.jpg");
   background-repeat: no-repeat;
-  background-size: 145%;
+  background-size: cover;
   background-position: center;
   z-index: -1;
   filter: brightness(30%);
+}
+@media (max-width: 639px) {
+  .content {
+    width: 100%;
+  }
 }
