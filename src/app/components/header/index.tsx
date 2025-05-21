@@ -8,33 +8,44 @@ import { useMediaQuery } from "react-responsive";
 import Image from "next/image";
 
 import Perfil from "../../../assets/perfil.png";
+import { SiReact } from "react-icons/si";
+interface FuncProps {
+  onTecnologiaClick: () => void;
+  onSobreMimClick: () => void;
+  onContatoClick: () => void;
+}
 
-export default function Header() {
+export default function Header({
+  onTecnologiaClick,
+  onSobreMimClick,
+  onContatoClick,
+}: FuncProps) {
   const [isCollapsed, setIsCollapsed] = useState(false);
   const isSmallScreen = useMediaQuery({ maxWidth: 639 });
 
   return (
-    <aside
-      className={`fixed top-0 left-0 z-50 h-screen bg-black/30 text-gray-400 flex flex-col justify-baseline  transition-all duration-500  
+    <header
+      className={`fixed top-0 left-0 z-50 h-screen bg-gray-950 text-gray-400 flex flex-col    transition-all duration-500  
         max-sm:w-full  max-sm:h-20  max-sm:bg-black max-sm:flex-row ${
           isCollapsed ? "w-[60px]" : "w-[200px]"
         }`}
     >
       {/* Conteúdo do topo */}
-      <div className="flex flex-col   items-center gap-6 max-sm:gap-0  max-sm:flex-row max-sm:w-full">
+      <div className="flex flex-col items-center gap-6 max-sm:gap-0  max-sm:flex-row max-sm:w-full">
         <Image
           src={Perfil}
           alt="Perfil"
           className={` rounded-full  object-cover transition-all duration-300 mt-5 max-sm:m-0 max-sm:w-18  max-sm:h-18 max-sm:ml-2 ${
-            isCollapsed ? "w-18 h-18" : "w-33 h-33"
+            isCollapsed ? "w-18 h-18" : "w-40 h-40"
           }`}
         />
 
         <nav
-          className={`flex  flex-col  mt-5 
+          className={`flex w-full  flex-col  mt-5 ml-3
           max-sm:m-0 max-sm:flex-row max-sm:gap-2 max-sm:ml-15`}
         >
           <div
+            onClick={onSobreMimClick}
             className={`flex w-full  items-center  px-3 py-4 gap-3  cursor-pointer transition duration-300 hover:text-white  hover:bg-gray-900 text-lg 
              
               ${isCollapsed && "justify-center"}`}
@@ -45,6 +56,7 @@ export default function Header() {
             )}
           </div>
           <div
+            onClick={onTecnologiaClick}
             className={`flex w-full  items-center  px-3 py-4 gap-3  cursor-pointer transition duration-300 hover:text-white  hover:bg-gray-900 text-lg ${isCollapsed && "justify-center"}`}
           >
             <LiaInternetExplorer size={32} />
@@ -53,6 +65,7 @@ export default function Header() {
             )}
           </div>
           <div
+            onClick={onContatoClick}
             className={`flex w-full  items-center  px-3 py-4 gap-3  cursor-pointer transition duration-300 hover:text-white  hover:bg-gray-900 text-lg ${isCollapsed && "justify-center"}`}
           >
             <IoIosContact size={32} />
@@ -71,7 +84,6 @@ export default function Header() {
         </nav>
       </div>
 
-      {/* Botão de toggle */}
       <div
         className=" top-50 left-10 text-gray-400 cursor-pointer flex justify-center items-center w-full  hover:bg-gray-900 transitio duration-300 hover:text-white py-3 mt-60"
         onClick={() => setIsCollapsed(!isCollapsed)}
@@ -83,6 +95,9 @@ export default function Header() {
             <FaAngleDoubleLeft size={24} />
           ))}
       </div>
-    </aside>
+      <div className="mt-auto flex justify-center mb-20 w-full logo  items-center">
+        <SiReact className={`text-blue-400 transition duration-700 text-5xl`} />
+      </div>
+    </header>
   );
 }

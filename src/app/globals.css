@@ -1,7 +1,19 @@
 @import "tailwindcss";
 
-.titulo {
+.titulo,
+.card {
   font-family: "unbounded";
+}
+
+.logo {
+  font-family: "inter";
+}
+/* Esconder scrollbar, mas permitir scroll */
+html,
+body {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+  overflow-y: scroll; /* ativa scroll vertical */
 }
 
 .modal,
@@ -12,7 +24,7 @@ nav {
   width: calc(100% - 200px);
 }
 
-.content::before {
+body::before {
   content: "";
   position: fixed;
   inset: 0; /* top: 0; right: 0; bottom: 0; left: 0 */

@@ -9,46 +9,186 @@ import {
   SiCss3,
   SiFirebase,
   SiBootstrap,
+  SiMysql,
+  SiFigma,
 } from "react-icons/si";
 import { FaSass } from "react-icons/fa";
 
 export default function Tecnologias() {
   return (
-    <div className="w-full bg-black text-white py-10 flex justify-center">
-      <div className="w-11/12 grid grid-cols-1 sm:grid-cols-3 gap-8">
-        {/* Front-End */}
-        <div className="border rounded-xl p-6 flex flex-col items-center justify-between min-h-[300px]">
-          <h2 className="text-2xl font-semibold text-center mb-6">Front-End</h2>
-          <div className="grid grid-cols-3 gap-4 justify-items-center w-full">
-            <SiHtml5 size={40} />
-            <SiJavascript size={40} />
-            <SiReact size={40} />
-            <SiTypescript size={40} />
-            <SiNextdotjs size={40} />
-            <SiTailwindcss size={40} />
-          </div>
-        </div>
+    <div className=" bg-black">
+      <section
+        id="tecnologia"
+        className="w-full content float-right text-white py-10 flex justify-center"
+      >
+        <div className="w-9/10 grid grid-cols-1 sm:grid-cols-3 gap-10">
+          {/* Front-End */}
+          <article className=" rounded-xl p-6 flex flex-col items-center  min-h-[300px]">
+            <h2 className="text-4xl font-semibold text-center  mt-3 mb-6">
+              Front-End
+            </h2>
+            <div className="flex flex-wrap  gap-15 py-2 justify-center w-full my-15">
+              <div
+                className="  min-w-[80px] flex flex-col items-center gap-3  justify-center
+              border-2 border-[#9370db] shadow-[#9370db] shadow-[3px_3px_5px_#9370db]
+              h-38 w-2/8 rounded-[20px_0_20px_0]
+              card text-[12px] transition duration-500 hover:scale-105 cursor-pointer tracking-widest
+              "
+              >
+                {" "}
+                <SiHtml5 size={50} color="#9370db" title="HTML5" />
+                <p>HTML5 </p>
+              </div>
+              <div
+                className="  min-w-[80px] flex flex-col items-center gap-3  justify-center
+              border-2 border-[#9370db] shadow-[#9370db] shadow-[3px_3px_5px_#9370db]
+              h-38 w-2/8 rounded-[20px_0_20px_0]
+              card text-[12px] transition duration-500 hover:scale-105 cursor-pointer tracking-widest
+              "
+              >
+                <SiJavascript size={50} color="#9370db" title="JavaScript" />
+                <p>JavaScript</p>
+              </div>
+              <div
+                className="  min-w-[80px] flex flex-col items-center gap-3  justify-center
+              border-2 border-[#9370db] shadow-[#9370db] shadow-[3px_3px_5px_#9370db]
+              h-38 w-2/8 rounded-[20px_0_20px_0]
+              card text-[12px] transition duration-500 hover:scale-105 cursor-pointer tracking-widest
+              "
+              >
+                {" "}
+                <SiReact size={50} color="#9370db" title="React.js" />
+                <p>React.js</p>
+              </div>
+              <div
+                className="  min-w-[80px] flex flex-col items-center gap-3  justify-center
+              border-2 border-[#9370db] shadow-[#9370db] shadow-[3px_3px_5px_#9370db]
+              h-38 w-2/8 rounded-[20px_0_20px_0]
+              card text-[12px] transition duration-500 hover:scale-105 cursor-pointer tracking-widest
+              "
+              >
+                {" "}
+                <SiTypescript size={50} color="#9370db" title="TypeScript" />
+                <p>TypeScript</p>
+              </div>
+              <div
+                className="  min-w-[80px] flex flex-col items-center gap-3  justify-center
+              border-2 border-[#9370db] shadow-[#9370db] shadow-[3px_3px_5px_#9370db]
+              h-38 w-2/8 rounded-[20px_0_20px_0]
+              card text-[12px] transition duration-500 hover:scale-105 cursor-pointer tracking-widest
+              "
+              >
+                {" "}
+                <SiNextdotjs size={50} color="#9370db" title="Next.js" />
+                <p>Next.js</p>
+              </div>
+            </div>
+          </article>
 
-        {/* UI/UX */}
-        <div className="border rounded-xl p-6 flex flex-col items-center justify-between min-h-[300px]">
-          <h2 className="text-2xl font-semibold text-center mb-6">UI / UX</h2>
-          <div className="grid grid-cols-3 gap-4 justify-items-center w-full">
-            <SiCss3 size={40} />
-            <SiBootstrap size={40} />
-            <FaSass size={40} />
-            <SiTailwindcss size={40} />
-          </div>
-        </div>
+          <article className=" rounded-xl p-6 flex flex-col items-center  min-h-[300px]">
+            <h2 className="text-4xl font-semibold text-center  mt-3 mb-6">
+              UI / UX
+            </h2>
+            <div className="flex flex-wrap  gap-15 py-2 justify-center w-full my-15">
+              <div
+                className="  min-w-[80px] flex flex-col items-center gap-3  justify-center
+              border-2 border-[#9370db] shadow-[#9370db] shadow-[3px_3px_5px_#9370db]
+              h-38 w-2/8 rounded-[20px_0_20px_0]
+              card text-[12px] transition duration-500 hover:scale-105 cursor-pointer tracking-widest
+              "
+              >
+                {" "}
+                <SiCss3 size={50} color="#9370db" title="CSS3" />
+                <p>CSS3 </p>
+              </div>
+              <div
+                className="  min-w-[80px] flex flex-col items-center gap-3  justify-center
+              border-2 border-[#9370db] shadow-[#9370db] shadow-[3px_3px_5px_#9370db]
+              h-38 w-2/8 rounded-[20px_0_20px_0]
+              card text-[12px] transition duration-500 hover:scale-105 cursor-pointer tracking-widest
+              "
+              >
+                <SiBootstrap size={50} color="#9370db" title="Bootstrap" />
+                <p>Bootstrap</p>
+              </div>
+              <div
+                className="  min-w-[80px] flex flex-col items-center gap-3  justify-center
+              border-2 border-[#9370db] shadow-[#9370db] shadow-[3px_3px_5px_#9370db]
+              h-38 w-2/8 rounded-[20px_0_20px_0]
+              card text-[12px] transition duration-500 hover:scale-105 cursor-pointer tracking-widest
+              "
+              >
+                {" "}
+                <SiTailwindcss size={50} color="#9370db" title="Tailwind" />
+                <p>Tailwind</p>
+              </div>
+              <div
+                className="  min-w-[80px] flex flex-col items-center gap-3  justify-center
+              border-2 border-[#9370db] shadow-[#9370db] shadow-[3px_3px_5px_#9370db]
+              h-38 w-2/8 rounded-[20px_0_20px_0]
+              card text-[12px] transition duration-500 hover:scale-105 cursor-pointer tracking-widest
+              "
+              >
+                {" "}
+                <FaSass size={50} color="#9370db" title="Sass" />
+                <p>Sass</p>
+              </div>
+              <div
+                className="  min-w-[80px] flex flex-col items-center gap-3  justify-center
+              border-2 border-[#9370db] shadow-[#9370db] shadow-[3px_3px_5px_#9370db]
+              h-38 w-2/8 rounded-[20px_0_20px_0]
+              card text-[12px] transition duration-500 hover:scale-105 cursor-pointer tracking-widest
+              "
+              >
+                <SiFigma size={50} color="#9370db" title="Figma" />
+                <p>Figma</p>
+              </div>
+            </div>
+          </article>
 
-        {/* Back-End */}
-        <div className="border rounded-xl p-6 flex flex-col items-center justify-between min-h-[300px]">
-          <h2 className="text-2xl font-semibold text-center mb-6">Back-End</h2>
-          <div className="grid grid-cols-3 gap-4 justify-items-center w-full">
-            <SiNodedotjs size={40} />
-            <SiFirebase size={40} />
-          </div>
+          <article className=" rounded-xl p-6 flex flex-col items-center  min-h-[300px]">
+            <h2 className="text-4xl font-semibold text-center  mt-3 mb-6">
+              Back-End
+            </h2>
+            <div className="flex flex-wrap  gap-15 py-2 justify-center w-full my-15">
+              <div
+                className="  min-w-[80px] flex flex-col items-center gap-3  justify-center
+              border-2 border-[#9370db] shadow-[#9370db] shadow-[3px_3px_5px_#9370db]
+              h-38 w-2/8 rounded-[20px_0_20px_0]
+              card text-[12px] transition duration-500 hover:scale-105 cursor-pointer tracking-widest
+              "
+              >
+                {" "}
+                <SiNodedotjs size={50} color="#9370db" title="Node.js" />
+                <p>Node.js</p>
+              </div>
+              <div
+                className="  min-w-[80px] flex flex-col items-center gap-3  justify-center
+              border-2 border-[#9370db] shadow-[#9370db] shadow-[3px_3px_5px_#9370db]
+              h-38 w-2/8 rounded-[20px_0_20px_0]
+              card text-[12px] transition duration-500 hover:scale-105 cursor-pointer tracking-widest
+              "
+              >
+                <SiFirebase size={50} color="#9370db" title="FireBase" />
+                <p>FireBase</p>
+              </div>
+              <div
+                className="  min-w-[80px] flex flex-col items-center gap-3  justify-center
+              border-2 border-[#9370db] shadow-[#9370db] shadow-[3px_3px_5px_#9370db]
+              h-38 w-2/8 rounded-[20px_0_20px_0]
+              card text-[12px] transition duration-500 hover:scale-105 cursor-pointer tracking-widest
+              "
+              >
+                {" "}
+                <SiMysql size={50} color="#9370db" title="MySql" />
+                <p>MySql</p>
+              </div>
+            </div>
+          </article>
+
+          {/* UI/UX */}
         </div>
-      </div>
+      </section>
     </div>
   );
 }
