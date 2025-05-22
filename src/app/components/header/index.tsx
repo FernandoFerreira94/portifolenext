@@ -6,9 +6,10 @@ import { IoMdCloudDownload, IoIosContact } from "react-icons/io";
 import { FaAngleDoubleRight, FaAngleDoubleLeft } from "react-icons/fa";
 import { useMediaQuery } from "react-responsive";
 import Image from "next/image";
-
-import Perfil from "../../../assets/perfil.png";
 import { SiReact } from "react-icons/si";
+import Link from "next/link";
+import Perfil from "../../../assets/perfil.png";
+
 interface FuncProps {
   onTecnologiaClick: () => void;
   onSobreMimClick: () => void;
@@ -76,10 +77,16 @@ export default function Header({
           <div
             className={`flex w-full  items-center  px-3 py-4 gap-3  cursor-pointer transition duration-300 hover:text-white  hover:bg-gray-900 text-lg ${isCollapsed && "justify-center"}`}
           >
-            <IoMdCloudDownload size={32} />
-            {!isSmallScreen && !isCollapsed && (
-              <span className="whitespace-nowrap">Currículo</span>
-            )}
+            <Link
+              href="/curriculo/Curriculo.pdf"
+              className="flex items-center gap-3"
+              download="Fernando_Ferreira_Curriculo.pdf"
+            >
+              <IoMdCloudDownload size={32} />
+              {!isSmallScreen && !isCollapsed && (
+                <span className="whitespace-nowrap">Currículo</span>
+              )}
+            </Link>
           </div>
         </nav>
       </div>

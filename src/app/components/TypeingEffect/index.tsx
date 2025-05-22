@@ -1,6 +1,11 @@
 "use client";
 import React, { useState, useEffect } from "react";
-export default function TypingEffect({ text }) {
+
+interface TypingEffectProps {
+  text: string;
+}
+
+export default function TypingEffect({ text }: TypingEffectProps) {
   const [displayText, setDisplayText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
   const [index, setIndex] = useState(0);
@@ -8,7 +13,7 @@ export default function TypingEffect({ text }) {
   const deletingSpeed = 100; // Velocidade de apagar em ms
 
   useEffect(() => {
-    let timeout;
+    let timeout: NodeJS.Timeout;
 
     if (!isDeleting && index < text.length) {
       // Adiciona letra por letra

@@ -31,13 +31,14 @@ export default function Sobre() {
           não sou fluente, mas já consigo pedir pizza sem problemas rs ).
         </p>
 
-        <p>
+        <p className="flex gap-2 items-center">
           <strong>
             <span className="text-2xl">📚</span> Formação:
           </strong>{" "}
-          Desenvolvedor <strong>Full Stack</strong> com especialização em ,
+          Desenvolvedor <strong> Full Stack </strong> com especialização em ,
           React.js
-          <SiReact size={25} className="mx-2 inline text-blue-500" />, Next.js
+          <SiReact size={25} className="mx-2 inline text-blue-500" />
+          ,Next.js
           <SiNextdotjs size={25} className="mx-2 inline text-white" />,
           TypeScript
           <SiTypescript

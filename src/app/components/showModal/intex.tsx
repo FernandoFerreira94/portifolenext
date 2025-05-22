@@ -5,7 +5,7 @@ import Modal from "../modal";
 import { ProjetoProps } from "../projeto";
 
 interface ShowModal {
-  iten: ProjetoProps;
+  iten: ProjetoProps | null;
   handleClose: () => void;
 }
 
@@ -22,41 +22,37 @@ export default function ShowModal({ iten, handleClose }: ShowModal) {
           />
           <p>
             <strong className="text-2xl text-yellow-500">Nome :</strong>{" "}
-            {iten.nome}
+            {iten?.nome}
           </p>
           <p>
             <strong className="text-2xl text-yellow-500">Front-End :</strong>{" "}
-            {iten.front}
+            {iten?.front}
           </p>
-          {iten.back.length !== 0 && (
+          {iten?.back.length !== 0 && (
             <p>
               <strong className="text-2xl text-yellow-500">Back-End :</strong>{" "}
-              {iten.back}
+              {iten?.back}
             </p>
           )}
           <p>
             <strong className="text-2xl text-yellow-500">Descrição :</strong>{" "}
-            {iten.descricao}
+            {iten?.descricao}
           </p>
           <strong className="text-2xl text-yellow-500">Funcionalidade :</strong>
-          {Array.isArray(iten.funcionalidade) &&
-            iten.funcionalidade.map((doc, index) => (
+          {Array.isArray(iten?.funcionalidade) &&
+            iten?.funcionalidade.map((doc, index) => (
               <ul key={index}>
                 <li>* {doc}</li>
               </ul>
             ))}
-          <p>
-            <strong className="text-2xl text-yellow-500">Site :</strong>{" "}
-            <Link
-              href={iten.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-400"
-            >
-              {" "}
-              {iten.nome}
-            </Link>
-          </p>
+          {iten?.url && (
+            <p>
+              <strong className="text-2xl text-yellow-500">Site :</strong>{" "}
+              <Link href={iten.url} className="text-blue-400" target="_blank">
+                {iten.nome}
+              </Link>
+            </p>
+          )}
         </div>
       </Modal>
     </section>

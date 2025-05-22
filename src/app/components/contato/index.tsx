@@ -41,6 +41,7 @@ export default function Contato() {
       );
       setEnviando(false);
     } catch (error) {
+      console.error(error);
       setStatus("Erro ao enviar. Tente novamente.");
       setEnviando(false);
     }

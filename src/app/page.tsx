@@ -2,6 +2,14 @@
 import { useRef, useState } from "react";
 
 import TypingEffect from "./components/TypeingEffect";
+import {
+  SiInstagram,
+  SiWhatsapp,
+  SiFacebook,
+  SiGithub,
+  SiGmail,
+  SiLinkedin,
+} from "react-icons/si";
 
 import Header from "./components/header";
 import Title from "./components/title";
@@ -11,6 +19,8 @@ import Tecnologias from "./components/tecnologias";
 import Projetos from "./components/projeto";
 import ShowModal from "./components/showModal/intex";
 import Contato from "./components/contato";
+import Link from "next/link";
+import { toast } from "react-toastify";
 
 interface ProjetoProps {
   id: string;
@@ -102,6 +112,41 @@ export default function Home() {
           <section ref={contatoRef}>
             <Contato />
           </section>
+          <footer className="w-full h-50 bg-gray-900">
+            <div className="content float-right  gap-15 h-full text-white  flex items-center justify-center">
+              <Link href="https://wa.me/12997041551" target="blank">
+                <SiWhatsapp className="border-3 border-transparent w-22 h-22 p-3 rounded-2xl text-green-600 transition duration-500 hover:border-green-600 cursor-pointer" />
+              </Link>
+
+              <Link
+                href="https://www.linkedin.com/in/fernando-ferreira-78927b203"
+                target="blank"
+              >
+                <SiLinkedin className="border-3 border-transparent w-22 h-22 p-3 rounded-2xl text-blue-500 transition duration-500 hover:border-blue-500 cursor-pointer" />
+              </Link>
+
+              <Link href="https://github.com/FernandoFerreira94" target="blank">
+                <SiGithub className="border-3 border-transparent w-22 h-22 p-3 rounded-2xl text-white transition duration-500 hover:border-white cursor-pointer" />
+              </Link>
+
+              <div onClick={() => toast.info("fernandoeqp59@gmail.com")}>
+                <SiGmail className="border-3 border-transparent w-22 h-22 p-3 rounded-2xl text-red-600 transition duration-500 hover:border-red-600 cursor-pointer" />
+              </div>
+
+              <Link
+                href="https://www.instagram.com/fernando.ferreira._/"
+                target="blank"
+              >
+                <SiInstagram className="border-3 border-transparent w-22 h-22 p-3 rounded-2xl text-white transition duration-500 hover:border-white cursor-pointer" />
+              </Link>
+              <Link
+                href="https://www.instagram.com/fernando.ferreira._/"
+                target="blank"
+              >
+                <SiFacebook className="border-3 border-transparent w-22 h-22 p-3 rounded-2xl text-blue-800 transition duration-500 hover:border-blue-800  cursor-pointer" />
+              </Link>
+            </div>
+          </footer>
         </main>
       )}
       {showModal && (

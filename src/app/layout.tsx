@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Unbounded, Inter, Poppins } from "next/font/google";
+import { ToastContainer } from "react-toastify";
 
 const unbounded = Unbounded({
   subsets: ["latin"],
   weight: ["400", "700"],
-  variable: "--font-unbounded",
 });
 
 const inter = Inter({ subsets: ["latin"] });
@@ -22,9 +22,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body
-        className={`${unbounded.variable}  ${inter.variable} ${poppins.variable} antialiased`}
-      >
+      <body className={`${unbounded}  ${inter} ${poppins} antialiased`}>
+        <ToastContainer autoClose={4000} />
         {children}
       </body>
     </html>
