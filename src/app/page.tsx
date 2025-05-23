@@ -88,7 +88,7 @@ export default function Home() {
                   </h2>
                   <span className="text-xl text-yellow-400">
                     Desenvolvedor{" "}
-                    <span className="block">
+                    <span className=" max-sm:block">
                       Full Stack <TypingEffect text="React.js" />
                     </span>{" "}
                   </span>
