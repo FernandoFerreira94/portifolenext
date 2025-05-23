@@ -74,13 +74,17 @@ export default function Projetos({
 
   return (
     <section
-      className={`w-8/10 flex flex-wrap gap-30 mt-20  justify-center text-gray-300 ${showModal ? "hidden" : ""}`}
+      className={`w-8/10 flex flex-wrap gap-30 mt-20  justify-center text-gray-300 
+        max-sm:gap-15 max-sm:w-9/10 max-sm:mt-0
+        ${showModal ? "hidden" : ""}`}
     >
       {projetos.map((iten) => (
         <div
           key={iten.id}
           className="flex flex-col items-center bg-gray-950
-                hover:scale-110 transition duration-700 opacity-60 hover:opacity-100"
+                hover:scale-110 transition duration-700 opacity-60 hover:opacity-100 
+                max-sm:opacity-80 max-sm:hover:scale-100
+                "
         >
           <Link href={iten.url} target="_blank" rel="noopener noreferrer">
             <Image

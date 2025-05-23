@@ -9,7 +9,11 @@ import { FaMobileAlt } from "react-icons/fa";
 export default function Sobre() {
   return (
     <Modal>
-      <div className="flex flex-col text-xl tracking-wider leading-10 text-justify gap-3">
+      <div
+        className="flex flex-col text-xl tracking-wider leading-10 text-justify gap-2 
+      max-sm:text-start max-sm:text-[22px]
+      "
+      >
         <p>
           <strong>
             <span className="text-2xl"> 📅</span> Idade:
@@ -31,7 +35,7 @@ export default function Sobre() {
           não sou fluente, mas já consigo pedir pizza sem problemas rs ).
         </p>
 
-        <p className="flex gap-2 items-center">
+        <p>
           <strong>
             <span className="text-2xl">📚</span> Formação:
           </strong>{" "}

@@ -87,7 +87,10 @@ export default function Home() {
                     Olá sou o Fernando Ferreira.
                   </h2>
                   <span className="text-xl text-yellow-400">
-                    Desenvolvedor Full Stack <TypingEffect text="React.js" />
+                    Desenvolvedor{" "}
+                    <span className="block">
+                      Full Stack <TypingEffect text="React.js" />
+                    </span>{" "}
                   </span>
                 </div>
               </Modal>
@@ -100,7 +103,10 @@ export default function Home() {
             <Tecnologias />
           </section>
           <section ref={projetosRef}>
-            <div className="flex flex-col items-center  relative content float-right max-sm:float-none max-sm:w-full max-sm:mt-15">
+            <div
+              className="flex flex-col items-center  relative content float-right
+              max-sm:w-full max-sm:mt-0"
+            >
               <Title titulo="Projetos" />
               <Projetos
                 showModal={showModal}
@@ -112,8 +118,13 @@ export default function Home() {
           <section ref={contatoRef}>
             <Contato />
           </section>
-          <footer className="w-full h-50 bg-gray-900">
-            <div className="content float-right  gap-15 h-full text-white  flex items-center justify-center">
+
+          <footer className="w-full  bg-gray-900 h-full">
+            <div
+              className="content float-right gap-15 h-full text-white flex items-center justify-center
+              max-sm:w-full max-sm:flex-wrap max-sm:gap-10 max-sm:py-3
+            "
+            >
               <Link href="https://wa.me/12997041551" target="blank">
                 <SiWhatsapp className="border-3 border-transparent w-22 h-22 p-3 rounded-2xl text-green-600 transition duration-500 hover:border-green-600 cursor-pointer" />
               </Link>

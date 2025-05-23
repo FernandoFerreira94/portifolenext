@@ -26,24 +26,27 @@ export default function Header({
 
   return (
     <header
-      className={`fixed top-0 left-0 z-50 h-screen bg-gray-950 text-gray-400 flex flex-col    transition-all duration-500  
-        max-sm:w-full  max-sm:h-20  max-sm:bg-black max-sm:flex-row ${
+      className={`fixed top-0 left-0 z-50 h-screen bg-gray-950 text-gray-400 flex flex-col transition-all duration-500  
+        max-sm:w-full max-sm:h-25  max-sm:bg-black max-sm:flex-row max-sm:items-center max-sm:justify-center ${
           isCollapsed ? "w-[60px]" : "w-[200px]"
         }`}
     >
       {/* Conteúdo do topo */}
-      <div className="flex flex-col items-center gap-6 max-sm:gap-0  max-sm:flex-row max-sm:w-full">
+      <div
+        className="flex flex-col items-center gap-6 max-sm:gap-0  
+      max-sm:flex-row max-sm:w-full max-sm:justify-around"
+      >
         <Image
           src={Perfil}
           alt="Perfil"
-          className={` rounded-full  object-cover transition-all duration-300 mt-5 max-sm:m-0 max-sm:w-18  max-sm:h-18 max-sm:ml-2 ${
-            isCollapsed ? "w-18 h-18" : "w-40 h-40"
-          }`}
+          className={` rounded-full  object-cover transition-all duration-300 mt-5
+             max-sm:m-0 max-sm:w-18  max-sm:h-18 max-sm:ml-2 
+             ${isCollapsed ? "w-18 h-18" : "w-40 h-40"}`}
         />
 
         <nav
-          className={`flex w-full  flex-col  mt-5 ml-3
-          max-sm:m-0 max-sm:flex-row max-sm:gap-2 max-sm:ml-15`}
+          className={`flex  flex-col  mt-5 ml-3
+          max-sm:m-0 max-sm:flex-row max-sm:justify-center max-sm:gap-2`}
         >
           <div
             onClick={onSobreMimClick}
@@ -51,7 +54,7 @@ export default function Header({
              
               ${isCollapsed && "justify-center"}`}
           >
-            <ImProfile size={32} />
+            <ImProfile size={`${!isSmallScreen ? 32 : 35}`} />
             {!isSmallScreen && !isCollapsed && (
               <span className="whitespace-nowrap">Sobre mim</span>
             )}
@@ -60,7 +63,7 @@ export default function Header({
             onClick={onTecnologiaClick}
             className={`flex w-full  items-center  px-3 py-4 gap-3  cursor-pointer transition duration-300 hover:text-white  hover:bg-gray-900 text-lg ${isCollapsed && "justify-center"}`}
           >
-            <LiaInternetExplorer size={32} />
+            <LiaInternetExplorer size={`${!isSmallScreen ? 32 : 35}`} />
             {!isSmallScreen && !isCollapsed && (
               <span className="whitespace-nowrap">Projetos</span>
             )}
@@ -69,7 +72,7 @@ export default function Header({
             onClick={onContatoClick}
             className={`flex w-full  items-center  px-3 py-4 gap-3  cursor-pointer transition duration-300 hover:text-white  hover:bg-gray-900 text-lg ${isCollapsed && "justify-center"}`}
           >
-            <IoIosContact size={32} />
+            <IoIosContact size={`${!isSmallScreen ? 32 : 35}`} />
             {!isSmallScreen && !isCollapsed && (
               <span className="whitespace-nowrap">Contato</span>
             )}
@@ -82,7 +85,7 @@ export default function Header({
               className="flex items-center gap-3"
               download="Fernando_Ferreira_Curriculo.pdf"
             >
-              <IoMdCloudDownload size={32} />
+              <IoMdCloudDownload size={`${!isSmallScreen ? 32 : 35}`} />
               {!isSmallScreen && !isCollapsed && (
                 <span className="whitespace-nowrap">Currículo</span>
               )}
@@ -91,20 +94,26 @@ export default function Header({
         </nav>
       </div>
 
-      <div
-        className=" top-50 left-10 text-gray-400 cursor-pointer flex justify-center items-center w-full  hover:bg-gray-900 transitio duration-300 hover:text-white py-3 mt-60"
-        onClick={() => setIsCollapsed(!isCollapsed)}
-      >
-        {!isSmallScreen &&
-          (isCollapsed ? (
+      {!isSmallScreen && (
+        <div
+          className=" top-50 left-10 text-gray-400 cursor-pointer flex justify-center items-center w-full  hover:bg-gray-900 transitio duration-300 hover:text-white py-3 mt-60"
+          onClick={() => setIsCollapsed(!isCollapsed)}
+        >
+          {isCollapsed ? (
             <FaAngleDoubleRight size={24} />
           ) : (
             <FaAngleDoubleLeft size={24} />
-          ))}
-      </div>
-      <div className="mt-auto flex justify-center mb-20 w-full logo  items-center">
-        <SiReact className={`text-blue-400 transition duration-700 text-5xl`} />
-      </div>
+          )}
+        </div>
+      )}
+
+      {!isSmallScreen && (
+        <div className="mt-auto flex justify-center mb-20 w-full logo  items-center">
+          <SiReact
+            className={`text-blue-400 transition duration-700 text-5xl`}
+          />
+        </div>
+      )}
     </header>
   );
 }

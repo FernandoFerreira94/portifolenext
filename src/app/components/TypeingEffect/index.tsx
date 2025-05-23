@@ -41,5 +41,13 @@ export default function TypingEffect({ text }: TypingEffectProps) {
     return () => clearTimeout(timeout);
   }, [text, index, isDeleting]);
 
-  return <span className="text-blue-400 font-bold">{displayText}</span>;
+  return (
+    <span
+      className="text-blue-400 font-bold
+ 
+  "
+    >
+      {displayText}
+    </span>
+  );
 }
