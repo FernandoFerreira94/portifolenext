@@ -81,7 +81,7 @@ export default function Header({
             className={`flex w-full  items-center  px-3 py-4 gap-3  cursor-pointer transition duration-300 hover:text-white  hover:bg-gray-900 text-lg ${isCollapsed && "justify-center"}`}
           >
             <Link
-              href="/curriculo/Curriculo.pdf"
+              href="/curriculo/Fernando-FullStack.pdf"
               className="flex items-center gap-3"
               download="Fernando_Ferreira_Curriculo.pdf"
             >
