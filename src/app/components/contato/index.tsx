@@ -49,12 +49,12 @@ export default function Contato() {
 
   return (
     <div
-      className="w-full bg-gray-950 mt-50 
+      className="w-full bg-gray-950 mt-20 
     max-sm:mt-25
     "
     >
       <section
-        className=" ml-auto content  py-20 text-white px-5
+        className=" ml-auto content pb-40 pt-20 text-white px-5
       "
       >
         <h2 className="text-3xl font-bold text-center text-yellow-500 mb-5">

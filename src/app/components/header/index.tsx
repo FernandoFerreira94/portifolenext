@@ -6,9 +6,10 @@ import { IoMdCloudDownload, IoIosContact } from "react-icons/io";
 import { FaAngleDoubleRight, FaAngleDoubleLeft } from "react-icons/fa";
 import { useMediaQuery } from "react-responsive";
 import Image from "next/image";
-import { SiReact } from "react-icons/si";
 import Link from "next/link";
+
 import Perfil from "../../../assets/perfil.png";
+import Logo from "../../../assets/logo.png";
 
 interface FuncProps {
   onTecnologiaClick: () => void;
@@ -33,13 +34,14 @@ export default function Header({
     >
       {/* Conteúdo do topo */}
       <div
-        className="flex flex-col items-center gap-6 max-sm:gap-0  
+        className="flex flex-col items-center 
+        max-sm:gap-0  
       max-sm:flex-row max-sm:w-full max-sm:justify-around"
       >
         <Image
           src={Perfil}
           alt="Perfil"
-          className={` rounded-full  object-cover transition-all duration-300 mt-5
+          className={` rounded-full  object-cover transition-all duration-300
              max-sm:m-0 max-sm:w-18  max-sm:h-18 max-sm:ml-2 
              ${isCollapsed ? "w-18 h-18" : "w-40 h-40"}`}
         />
@@ -107,13 +109,17 @@ export default function Header({
         </div>
       )}
 
-      {!isSmallScreen && (
-        <div className="mt-auto flex justify-center mb-20 w-full logo  items-center">
-          <SiReact
-            className={`text-blue-400 transition duration-700 text-5xl`}
-          />
-        </div>
-      )}
+      <div
+        className="mt-auto flex justify-center mb-10 w-full items-center 
+      max-sm:m-0 max-sm:w-12 max-sm:mr-3
+      "
+      >
+        <Image
+          src={Logo}
+          alt="logotipo"
+          className={`${!isCollapsed ? "w-18" : "w-10"} max-sm:w-12`}
+        />
+      </div>
     </header>
   );
 }

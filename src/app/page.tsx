@@ -10,6 +10,9 @@ import {
   SiGmail,
   SiLinkedin,
 } from "react-icons/si";
+import { toast } from "react-toastify";
+import Link from "next/link";
+import Image from "next/image";
 
 import Header from "./components/header";
 import Title from "./components/title";
@@ -19,8 +22,7 @@ import Tecnologias from "./components/tecnologias";
 import Projetos from "./components/projeto";
 import ShowModal from "./components/showModal/intex";
 import Contato from "./components/contato";
-import Link from "next/link";
-import { toast } from "react-toastify";
+import Logo from "../assets/Made with insMind-slogan.png";
 
 interface ProjetoProps {
   id: string;
@@ -80,7 +82,17 @@ export default function Home() {
                 onSobreMimClick={scrollToSobreMim}
                 onContatoClick={scrollToContato}
               />
-              <Title titulo="Seja bem-vindo" />
+
+              <div
+                className="w-9/10
+              "
+              >
+                <Image
+                  src={Logo}
+                  alt="Logo"
+                  className="object-cover  mb-30 mt-20 ml-10 scale-80 max-sm:ml-0 max-sm:mb-20 max-sm:mt-30 max-sm:scale-100"
+                />
+              </div>
               <Modal>
                 <div className="flex flex-col gap-4">
                   <h2 className="text-2xl  text-gray-200 font-bold">
@@ -116,6 +128,14 @@ export default function Home() {
             </div>
           </section>
           <section ref={contatoRef}>
+            <h1
+              className=" text-center ml-40 mt-30 italic text-xl tracking-wide text-gray-300 
+              max-sm:w-9/10 max-sm:m-auto max-sm:mt-20
+            "
+            >
+              Se você tem um projeto em mente, eu tenho o código. Vamos colocar
+              essa ideia pra rodar!
+            </h1>
             <Contato />
           </section>
 

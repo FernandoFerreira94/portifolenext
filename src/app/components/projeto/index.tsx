@@ -50,9 +50,10 @@ export default function Projetos({
   setProjetoModal: (iten: ProjetoProps | null) => void;
 }) {
   const [projetos, setProjetos] = useState<ProjetoProps[]>([]);
-
+  const [isLoading, setIsLoading] = useState(false);
   useEffect(() => {
     async function getProjetos() {
+      setIsLoading(true);
       const proRef = collection(db, "projeto");
 
       const snapshot = await getDocs(proRef);
@@ -62,6 +63,7 @@ export default function Projetos({
       })) as ProjetoProps[];
 
       setProjetos(lista);
+      setIsLoading(false);
     }
 
     getProjetos();
@@ -73,49 +75,60 @@ export default function Projetos({
   }
 
   return (
-    <section
-      className={`w-8/10 flex flex-wrap gap-30 mt-20  justify-center text-gray-300 
-        max-sm:gap-15 max-sm:w-9/10 max-sm:mt-0
-        ${showModal ? "hidden" : ""}`}
-    >
-      {projetos.map((iten) => (
-        <div
-          key={iten.id}
-          className="flex flex-col items-center bg-gray-950
-                hover:scale-110 transition duration-700 opacity-60 hover:opacity-100 
-                max-sm:opacity-80 max-sm:hover:scale-100
-                "
+    <>
+      {!isLoading ? (
+        <section
+          className={`w-8/10 flex flex-wrap gap-30 mt-20  justify-center text-gray-300 
+          max-sm:gap-15 max-sm:w-full max-sm:mt-0
+          ${showModal ? "hidden" : ""}`}
         >
-          <Link href={iten.url} target="_blank" rel="noopener noreferrer">
-            <Image
-              src={imgProjeto}
-              alt="imagem projeto"
-              className="w-full border-3 border-black"
-            />
-          </Link>
-          <div className="mt-1 flex flex-col gap-2 items-center w-full">
-            <p className="font-bold text-xl tracking-wider">{iten.nome}</p>
-            <div className="text-[#9370db] text-xl flex gap-1 ">
-              <SiHtml5 />
-              <SiCss3 />
-              <SiJavascript />
-              {iten.react && <SiReact />}
-              {iten.next && <SiNextdotjs />}
-              {iten.typescript && <SiTypescript />}
-              {iten.tailwind && <SiTailwindcss />}
-              {iten.firebase && <SiFirebase />}
-              {iten.node && <SiNodedotjs />}
-              {iten.mysql && <SiMysql />}
-            </div>
-            <button
-              onClick={() => handleModal(iten)}
-              className="cursor-pointer text-xl w-full py-2 transition duration-500 hover:bg-gray-900 hover:text-white "
+          {projetos.map((iten) => (
+            <div
+              key={iten.id}
+              className="flex  flex-col items-center bg-gray-950
+            hover:scale-110 transition duration-700 opacity-60 hover:opacity-100 
+            max-sm:opacity-80 max-sm:hover:scale-100 max-sm:w-8/10
+            "
             >
-              Mais informações
-            </button>
-          </div>
-        </div>
-      ))}
-    </section>
+              <Link
+                href={iten.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full"
+              >
+                <Image
+                  src={imgProjeto}
+                  alt="imagem projeto"
+                  className="w-full border-3 border-black"
+                />
+              </Link>
+              <div className="mt-1 flex flex-col gap-2 items-center w-full">
+                <p className="font-bold text-xl tracking-wider">{iten.nome}</p>
+                <div className="text-[#9370db] text-xl flex gap-1 ">
+                  <SiHtml5 />
+                  <SiCss3 />
+                  <SiJavascript />
+                  {iten.react && <SiReact />}
+                  {iten.next && <SiNextdotjs />}
+                  {iten.typescript && <SiTypescript />}
+                  {iten.tailwind && <SiTailwindcss />}
+                  {iten.firebase && <SiFirebase />}
+                  {iten.node && <SiNodedotjs />}
+                  {iten.mysql && <SiMysql />}
+                </div>
+                <button
+                  onClick={() => handleModal(iten)}
+                  className="cursor-pointer text-xl w-full py-2 transition duration-500 hover:bg-gray-900 hover:text-white "
+                >
+                  Mais informações
+                </button>
+              </div>
+            </div>
+          ))}
+        </section>
+      ) : (
+        <div className="custom-loader"></div>
+      )}
+    </>
   );
 }
