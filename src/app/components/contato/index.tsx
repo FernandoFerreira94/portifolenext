@@ -49,7 +49,7 @@ export default function Contato() {
       "
       >
         <h2 className="text-3xl font-bold text-center text-yellow-500 mb-5">
-          Entre em Contato
+          Entre em Contato.
         </h2>
 
         <form
