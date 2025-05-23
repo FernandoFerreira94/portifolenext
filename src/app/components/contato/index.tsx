@@ -18,8 +18,8 @@ export default function Contato() {
       message: mensagem,
       email: email,
     };
-
     try {
+      setEnviando(true);
       await emailjs.send(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
         process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
@@ -30,19 +30,10 @@ export default function Contato() {
       setNome("");
       setEmail("");
       setMensagem("");
-
-      // Dentro do try
-      setEnviando(true);
-      await emailjs.send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
-        templateParams,
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
-      );
-      setEnviando(false);
     } catch (error) {
       console.error(error);
       setStatus("Erro ao enviar. Tente novamente.");
+    } finally {
       setEnviando(false);
     }
   };
