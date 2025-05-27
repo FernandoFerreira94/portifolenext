@@ -13,7 +13,6 @@ import {
 import { toast } from "react-toastify";
 import Link from "next/link";
 import Image from "next/image";
-import { Timestamp } from "firebase/firestore";
 
 import Header from "./components/header";
 import Title from "./components/title";
@@ -25,27 +24,7 @@ import ShowModal from "./components/showModal/intex";
 import Contato from "./components/contato";
 import Logo from "../assets/Made with insMind-slogan.png";
 
-interface ProjetoProps {
-  id: string;
-  nome: string;
-  back: string;
-  front: string;
-  descricao: string;
-  funcionalidade: Array<string>;
-  img: string;
-  url: string;
-  html: boolean;
-  javascript: boolean;
-  react: boolean;
-  typescript: boolean;
-  next: boolean;
-  css: boolean;
-  tailwind: boolean;
-  node: boolean;
-  firebase: boolean;
-  mysql: boolean;
-  created?: Timestamp | Date;
-}
+import { ProjetoProps } from "./components/projeto";
 
 export default function Home() {
   const projetosRef = useRef<HTMLFormElement>(null);

@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useState, Dispatch, SetStateAction } from "react";
 import {
   SiTypescript,
   SiNextdotjs,
@@ -27,8 +27,8 @@ import imgProjeto from "../../../assets/360_F_308697506_9dsBYHXm9FwuW0qcEqimAEXU
 import { db } from "@/service/fireBaseConective";
 
 export interface ProjetoProps {
-  id?: string;
-  nome?: string;
+  id: string; // Garantindo que seja uma string
+  nome: string;
   back?: string;
   front?: string;
   descricao?: string;
@@ -55,7 +55,7 @@ export default function Projetos({
 }: {
   showModal: boolean;
   setShowModal: (value: boolean) => void;
-  setProjetoModal: (iten: ProjetoProps | null) => void;
+  setProjetoModal: Dispatch<SetStateAction<ProjetoProps | null>>; // Corrigido
 }) {
   const [projetos, setProjetos] = useState<ProjetoProps[]>([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -70,7 +70,7 @@ export default function Projetos({
       const lista = snapshot.docs.map((doc) => {
         const data = doc.data();
         return {
-          id: doc.id,
+          id: doc.id ?? "", // Garantindo que id seja sempre string
           ...data,
           created: data.created?.toDate() ?? new Date(), // Convertendo Timestamp para Date e garantindo um valor padrão
         };
@@ -84,8 +84,8 @@ export default function Projetos({
   }, []);
 
   function handleModal(iten: ProjetoProps) {
-    setProjetoModal(iten); // Envia o projeto clicado
-    setShowModal(true); // Ativa o modal
+    setProjetoModal(() => ({ ...iten, id: iten.id ?? "" })); // Garantindo que id não cause erro
+    setShowModal(true);
   }
 
   return (
