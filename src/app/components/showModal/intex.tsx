@@ -3,7 +3,6 @@ import Link from "next/link";
 
 import Modal from "../modal";
 import { ProjetoProps } from "../projeto";
-import Header from "../header";
 
 interface ShowModal {
   iten: ProjetoProps | null;
