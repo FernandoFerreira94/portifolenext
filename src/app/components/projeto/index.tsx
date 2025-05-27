@@ -27,25 +27,25 @@ import imgProjeto from "../../../assets/360_F_308697506_9dsBYHXm9FwuW0qcEqimAEXU
 import { db } from "@/service/fireBaseConective";
 
 export interface ProjetoProps {
-  id: string;
-  nome: string;
-  back: string;
-  front: string;
-  descricao: string;
-  funcionalidade: Array<string>;
-  img: string;
+  id?: string;
+  nome?: string;
+  back?: string;
+  front?: string;
+  descricao?: string;
+  funcionalidade?: Array<string>;
+  img?: string;
   url: string;
-  html: boolean;
-  javascript: boolean;
-  react: boolean;
-  typescript: boolean;
-  next: boolean;
-  css: boolean;
-  tailwind: boolean;
-  node: boolean;
-  firebase: boolean;
-  mysql: boolean;
-  created: Timestamp | Date; // Agora aceita Timestamp ou Date
+  html?: boolean;
+  javascript?: boolean;
+  react?: boolean;
+  typescript?: boolean;
+  next?: boolean;
+  css?: boolean;
+  tailwind?: boolean;
+  node?: boolean;
+  firebase?: boolean;
+  mysql?: boolean;
+  created?: Timestamp | Date; // Agora aceita Timestamp ou Date
 }
 
 export default function Projetos({

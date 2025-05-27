@@ -13,6 +13,7 @@ import {
 import { toast } from "react-toastify";
 import Link from "next/link";
 import Image from "next/image";
+import { Timestamp } from "firebase/firestore";
 
 import Header from "./components/header";
 import Title from "./components/title";
@@ -43,6 +44,7 @@ interface ProjetoProps {
   node: boolean;
   firebase: boolean;
   mysql: boolean;
+  created?: Timestamp | Date;
 }
 
 export default function Home() {
