@@ -36,7 +36,7 @@ export default function Header({
       <div
         className="flex flex-col items-center 
         max-sm:gap-0  
-      max-sm:flex-row max-sm:w-full max-sm:justify-around"
+      max-sm:flex-row max-sm:w-full  max-sm:justify-around"
       >
         <Image
           src={Perfil}
@@ -48,7 +48,7 @@ export default function Header({
 
         <nav
           className={`flex  flex-col  mt-5 ml-3
-          max-sm:m-0 max-sm:flex-row max-sm:justify-center max-sm:gap-2`}
+          max-sm:m-0  max-sm:flex-row max-sm:ml-10  max-sm:gap-0`}
         >
           <div
             onClick={onSobreMimClick}
@@ -114,11 +114,13 @@ export default function Header({
       max-sm:m-0 max-sm:w-12 max-sm:mr-3
       "
       >
-        <Image
-          src={Logo}
-          alt="logotipo"
-          className={`${!isCollapsed ? "w-18" : "w-10"} max-sm:w-12`}
-        />
+        {!isSmallScreen && (
+          <Image
+            src={Logo}
+            alt="logotipo"
+            className={`${!isCollapsed ? "w-18" : "w-10"} max-sm:w-12`}
+          />
+        )}
       </div>
     </header>
   );

@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import Modal from "../modal";
 import { ProjetoProps } from "../projeto";
+import Header from "../header";
 
 interface ShowModal {
   iten: ProjetoProps | null;
@@ -10,15 +11,23 @@ interface ShowModal {
 }
 
 export default function ShowModal({ iten, handleClose }: ShowModal) {
-  console.log(iten);
   return (
-    <section className=" flex justify-center fixed top-0 border h-full p-50  z-50">
+    <section
+      className=" flex justify-center  border h-full p-50 z-50
+    max-sm:p-5 
+    "
+    >
       <Modal>
-        <div className="flex text-xl flex-col relative gap-2 tracking-wider p-5 ">
+        <div
+          className="flex text-xl flex-col relative gap-2 tracking-wider p-5 
+        max-sm:p-1
+        "
+        >
           <FaRegWindowClose
-            size={40}
             onClick={handleClose}
-            className="absolute top-0 right-10 cursor-pointer text-red-500 transition duration-300 hover:scale-110"
+            className="absolute text-4xl top-0 right-10 cursor-pointer text-red-500 transition duration-300 hover:scale-110
+            max-sm:right-0 max-sm:text-3xl
+            "
           />
           <p>
             <strong className="text-2xl text-yellow-500">Nome :</strong>{" "}
