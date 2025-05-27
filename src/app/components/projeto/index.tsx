@@ -12,13 +12,19 @@ import {
   SiFirebase,
   SiMysql,
 } from "react-icons/si";
+import {
+  Timestamp,
+  collection,
+  getDocs,
+  query,
+  orderBy,
+} from "firebase/firestore";
 
 import Image from "next/image";
 import Link from "next/link";
 
 import imgProjeto from "../../../assets/360_F_308697506_9dsBYHXm9FwuW0qcEqimAEXUvzTwfzwe.jpg";
 import { db } from "@/service/fireBaseConective";
-import { getDocs, collection } from "firebase/firestore";
 
 export interface ProjetoProps {
   id: string;
@@ -39,7 +45,9 @@ export interface ProjetoProps {
   node: boolean;
   firebase: boolean;
   mysql: boolean;
+  created: Timestamp | Date; // Agora aceita Timestamp ou Date
 }
+
 export default function Projetos({
   showModal,
   setShowModal,
@@ -51,16 +59,22 @@ export default function Projetos({
 }) {
   const [projetos, setProjetos] = useState<ProjetoProps[]>([]);
   const [isLoading, setIsLoading] = useState(false);
+
   useEffect(() => {
     async function getProjetos() {
       setIsLoading(true);
       const proRef = collection(db, "projeto");
 
-      const snapshot = await getDocs(proRef);
-      const lista = snapshot.docs.map((doc) => ({
-        id: doc.id,
-        ...doc.data(),
-      })) as ProjetoProps[];
+      // Consulta ordenada pelo campo "created"
+      const snapshot = await getDocs(query(proRef, orderBy("created", "desc")));
+      const lista = snapshot.docs.map((doc) => {
+        const data = doc.data();
+        return {
+          id: doc.id,
+          ...data,
+          created: data.created?.toDate() ?? new Date(), // Convertendo Timestamp para Date e garantindo um valor padrão
+        };
+      }) as ProjetoProps[];
 
       setProjetos(lista);
       setIsLoading(false);
@@ -70,8 +84,8 @@ export default function Projetos({
   }, []);
 
   function handleModal(iten: ProjetoProps) {
-    setProjetoModal(iten); // envia o projeto clicado
-    setShowModal(true); // ativa o modal
+    setProjetoModal(iten); // Envia o projeto clicado
+    setShowModal(true); // Ativa o modal
   }
 
   return (
