@@ -18,7 +18,7 @@ export default function Sobre() {
           <strong>
             <span className="text-2xl"> 📅</span> Idade:
           </strong>{" "}
-          30 anos.
+          31 anos.
         </p>
         <p>
           <strong>
