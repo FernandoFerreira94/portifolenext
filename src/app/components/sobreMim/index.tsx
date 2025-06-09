@@ -39,7 +39,7 @@ export default function Sobre() {
           <strong>
             <span className="text-2xl">📚</span> Formação:
           </strong>{" "}
-          Desenvolvedor <strong> Full Stack </strong> com especialização em ,
+          Desenvolvedor <strong> Front-End </strong> com especialização em ,
           React.js
           <SiReact size={25} className="mx-2 inline text-blue-500" />
           ,Next.js
@@ -61,7 +61,7 @@ export default function Sobre() {
           <strong>
             <span className="text-2xl"> 💻</span> Profissão:
           </strong>{" "}
-          Atualmente atuando como Desenvolvedor Full Stack, lidando com
+          Atualmente atuando como Desenvolvedor Front-End, lidando com
           aplicações web em React.js e Next.js (sempre em busca do código
           perfeito, mas aceitando que bugs fazem parte da vida ).
         </p>

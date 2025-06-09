@@ -11,20 +11,15 @@ import {
   SiCss3,
   SiFirebase,
   SiMysql,
+  SiSass,
 } from "react-icons/si";
-import {
-  Timestamp,
-  collection,
-  getDocs,
-  query,
-  orderBy,
-} from "firebase/firestore";
+import { Timestamp } from "firebase/firestore";
 
 import Image from "next/image";
 import Link from "next/link";
 
 import imgProjeto from "../../../assets/360_F_308697506_9dsBYHXm9FwuW0qcEqimAEXUvzTwfzwe.jpg";
-import { db } from "@/service/fireBaseConective";
+import { fetchAllProjetos } from "@/service/api";
 
 export interface ProjetoProps {
   id: string; // Garantindo que seja uma string
@@ -42,6 +37,7 @@ export interface ProjetoProps {
   next: boolean;
   css: boolean;
   tailwind: boolean;
+  sass: boolean;
   node: boolean;
   firebase: boolean;
   mysql: boolean;
@@ -61,26 +57,13 @@ export default function Projetos({
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    async function getProjetos() {
-      setIsLoading(true);
-      const proRef = collection(db, "projeto");
-
-      // Consulta ordenada pelo campo "created"
-      const snapshot = await getDocs(query(proRef, orderBy("created", "desc")));
-      const lista = snapshot.docs.map((doc) => {
-        const data = doc.data();
-        return {
-          id: doc.id ?? "", // Garantindo que id seja sempre string
-          ...data,
-          created: data.created?.toDate() ?? new Date(), // Convertendo Timestamp para Date e garantindo um valor padrão
-        };
-      }) as ProjetoProps[];
-
+    async function debugProjetos() {
+      const lista = await fetchAllProjetos();
       setProjetos(lista);
       setIsLoading(false);
     }
 
-    getProjetos();
+    debugProjetos();
   }, []);
 
   function handleModal(iten: ProjetoProps) {
@@ -126,6 +109,7 @@ export default function Projetos({
                   {iten.next && <SiNextdotjs />}
                   {iten.typescript && <SiTypescript />}
                   {iten.tailwind && <SiTailwindcss />}
+                  {iten.sass && <SiSass />}
                   {iten.firebase && <SiFirebase />}
                   {iten.node && <SiNodedotjs />}
                   {iten.mysql && <SiMysql />}

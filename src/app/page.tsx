@@ -82,7 +82,7 @@ export default function Home() {
                   <span className="text-xl text-yellow-400">
                     Desenvolvedor{" "}
                     <span className=" max-sm:block">
-                      Full Stack <TypingEffect text="React.js" />
+                      Front-End <TypingEffect text="React.js" />
                     </span>{" "}
                   </span>
                 </div>
