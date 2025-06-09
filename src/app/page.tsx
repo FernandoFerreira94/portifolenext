@@ -24,7 +24,7 @@ import ShowModal from "./components/showModal/intex";
 import Contato from "./components/contato";
 import Logo from "../assets/Made with insMind-slogan.png";
 
-import { ProjetoProps } from "./components/projeto";
+import { ProjetoProps } from "./utils/type";
 
 export default function Home() {
   const projetosRef = useRef<HTMLFormElement>(null);
