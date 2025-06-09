@@ -2,7 +2,7 @@ import { FaRegWindowClose } from "react-icons/fa";
 import Link from "next/link";
 
 import Modal from "../modal";
-import { ProjetoProps } from "../projeto";
+import { ProjetoProps } from "@/app/utils/type";
 
 interface ShowModal {
   iten: ProjetoProps | null;
