@@ -13,36 +13,13 @@ import {
   SiMysql,
   SiSass,
 } from "react-icons/si";
-import { Timestamp } from "firebase/firestore";
 
 import Image from "next/image";
 import Link from "next/link";
 
 import imgProjeto from "../../../assets/360_F_308697506_9dsBYHXm9FwuW0qcEqimAEXUvzTwfzwe.jpg";
 import { fetchAllProjetos } from "@/service/api";
-
-export interface ProjetoProps {
-  id: string; // Garantindo que seja uma string
-  nome: string;
-  back: string;
-  front: string;
-  descricao: string;
-  funcionalidade: Array<string>;
-  img: string;
-  url: string;
-  html: boolean;
-  javascript: boolean;
-  react: boolean;
-  typescript: boolean;
-  next: boolean;
-  css: boolean;
-  tailwind: boolean;
-  sass: boolean;
-  node: boolean;
-  firebase: boolean;
-  mysql: boolean;
-  created: Timestamp | Date; // Agora aceita Timestamp ou Date
-}
+import { ProjetoProps } from "@/app/utils/type";
 
 export default function Projetos({
   showModal,
