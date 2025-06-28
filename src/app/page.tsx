@@ -82,7 +82,7 @@ export default function Home() {
                   <span className="text-xl text-yellow-400">
                     Desenvolvedor{" "}
                     <span className=" max-sm:block">
-                      Front-End <TypingEffect text="React.js" />
+                      Full stack <TypingEffect />
                     </span>{" "}
                   </span>
                 </div>
@@ -122,7 +122,7 @@ export default function Home() {
 
           <footer className="w-full  bg-gray-900 h-full">
             <div
-              className="content float-right gap-15 h-full text-white flex items-center justify-center
+              className="content float-right gap-15 h-full text-white flex items-center justify-center py-4
               max-sm:w-full max-sm:flex-wrap max-sm:gap-10 max-sm:py-3
             "
             >

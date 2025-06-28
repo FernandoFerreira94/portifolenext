@@ -5,6 +5,7 @@ export interface ProjetoProps {
   nome: string;
   back: string;
   front: string;
+  database: string;
   descricao: string;
   funcionalidade: Array<string>;
   img: string;
@@ -19,6 +20,6 @@ export interface ProjetoProps {
   sass: boolean;
   node: boolean;
   firebase: boolean;
-  mysql: boolean;
+  postgressql: boolean;
   created: Timestamp | Date; // Agora aceita Timestamp ou Date
 }

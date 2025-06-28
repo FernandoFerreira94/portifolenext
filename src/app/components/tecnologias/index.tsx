@@ -9,8 +9,9 @@ import {
   SiCss3,
   SiFirebase,
   SiBootstrap,
-  SiMysql,
   SiFigma,
+  SiPostgresql,
+  SiExpress,
 } from "react-icons/si";
 import { FaSass } from "react-icons/fa";
 
@@ -196,8 +197,9 @@ export default function Tecnologias() {
                max-sm:h-35
               "
               >
-                <SiFirebase size={50} color="#9370db" title="FireBase" />
-                <p>FireBase</p>
+                {" "}
+                <SiExpress size={50} color="#9370db" title="Express" />
+                <p>Express</p>
               </div>
               <div
                 className="  min-w-[110px]  flex flex-col items-center gap-3  justify-center
@@ -208,8 +210,19 @@ export default function Tecnologias() {
               "
               >
                 {" "}
-                <SiMysql size={50} color="#9370db" title="MySql" />
-                <p>MySql</p>
+                <SiPostgresql size={50} color="#9370db" title="PostgreSQL" />
+                <p>PostgreSQL</p>
+              </div>
+              <div
+                className="  min-w-[110px]  flex flex-col items-center gap-3  justify-center
+              border-2 border-[#9370db] shadow-[#9370db] shadow-[3px_3px_5px_#9370db]
+              h-38 w-2/8 rounded-[20px_0_20px_0]
+              card text-[12px] transition duration-500 hover:scale-105 cursor-pointer tracking-widest
+               max-sm:h-35
+              "
+              >
+                <SiFirebase size={50} color="#9370db" title="FireBase" />
+                <p>FireBase</p>
               </div>
             </div>
           </article>
