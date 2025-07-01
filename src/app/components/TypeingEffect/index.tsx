@@ -9,8 +9,8 @@ export default function TypingEffect() {
   const [isDeleting, setIsDeleting] = useState(false);
   const [index, setIndex] = useState(0);
 
-  const typingSpeed = 150;
-  const deletingSpeed = 100;
+  const typingSpeed = 80;
+  const deletingSpeed = 80;
 
   useEffect(() => {
     let timeout: NodeJS.Timeout;
@@ -46,7 +46,7 @@ export default function TypingEffect() {
 
   return (
     <span className="font-bold">
-      <span className="text-blue-400">{reactPart}</span>
+      <span className="text-blue-400">{reactPart} </span>
       <span className="text-green-400">{nodePart}</span>
     </span>
   );
