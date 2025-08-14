@@ -21,6 +21,7 @@ export async function fetchAllProjetos() {
         id: doc.id,
         nome: data.nome || "",
         back: data.back || "",
+        database: data.database || "",
         front: data.front || "",
         descricao: data.descricao || "",
         funcionalidade: data.funcionalidade || [],
@@ -36,7 +37,7 @@ export async function fetchAllProjetos() {
         sass: data.sass || false,
         node: data.node || false,
         firebase: data.firebase || false,
-        mysql: data.mysql || false,
+        postgressql: data.postgressql || false,
         created:
           data.created instanceof Timestamp
             ? data.created.toDate()

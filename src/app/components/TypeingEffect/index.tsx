@@ -1,53 +1,53 @@
 "use client";
 import React, { useState, useEffect } from "react";
 
-interface TypingEffectProps {
-  text: string;
-}
+export default function TypingEffect() {
+  const fullText = "React.js Node.js";
+  const reactLength = "React.js".length;
 
-export default function TypingEffect({ text }: TypingEffectProps) {
   const [displayText, setDisplayText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
   const [index, setIndex] = useState(0);
-  const typingSpeed = 150; // Velocidade de digitação em ms
-  const deletingSpeed = 100; // Velocidade de apagar em ms
+
+  const typingSpeed = 80;
+  const deletingSpeed = 80;
 
   useEffect(() => {
     let timeout: NodeJS.Timeout;
 
-    if (!isDeleting && index < text.length) {
-      // Adiciona letra por letra
+    if (!isDeleting && index < fullText.length) {
+      // Digitando
       timeout = setTimeout(() => {
-        setDisplayText((prev) => prev + text[index]);
+        setDisplayText((prev) => prev + fullText[index]);
         setIndex((prev) => prev + 1);
       }, typingSpeed);
     } else if (isDeleting && index > 0) {
-      // Remove letra por letra
+      // Apagando
       timeout = setTimeout(() => {
         setDisplayText((prev) => prev.slice(0, -1));
         setIndex((prev) => prev - 1);
       }, deletingSpeed);
-    } else if (!isDeleting && index === text.length) {
-      // Aguarda antes de começar a apagar
+    } else if (!isDeleting && index === fullText.length) {
+      // Espera antes de apagar
       timeout = setTimeout(() => {
         setIsDeleting(true);
       }, 1000);
     } else if (isDeleting && index === 0) {
-      // Após apagar, recomeça o ciclo
+      // Recomeçar
       setIsDeleting(false);
-      setIndex(0);
     }
 
     return () => clearTimeout(timeout);
-  }, [text, index, isDeleting]);
+  }, [index, isDeleting, fullText]);
+
+  // Separar o texto digitado até agora em duas partes coloridas
+  const reactPart = displayText.slice(0, reactLength);
+  const nodePart = displayText.slice(reactLength);
 
   return (
-    <span
-      className="text-blue-400 font-bold
- 
-  "
-    >
-      {displayText}
+    <span className="font-bold">
+      <span className="text-blue-400">{reactPart} </span>
+      <span className="text-green-400">{nodePart}</span>
     </span>
   );
 }

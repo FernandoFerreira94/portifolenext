@@ -42,6 +42,12 @@ export default function ShowModal({ iten, handleClose }: ShowModal) {
               {iten?.back}
             </p>
           )}
+          {iten?.database && (
+            <p>
+              <strong className="text-2xl text-yellow-500">Data Base :</strong>{" "}
+              {iten?.database}
+            </p>
+          )}
           <p>
             <strong className="text-2xl text-yellow-500">Descrição :</strong>{" "}
             {iten?.descricao}

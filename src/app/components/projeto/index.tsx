@@ -10,7 +10,7 @@ import {
   SiHtml5,
   SiCss3,
   SiFirebase,
-  SiMysql,
+  SiPostgresql,
   SiSass,
 } from "react-icons/si";
 
@@ -46,6 +46,7 @@ export default function Projetos({
   function handleModal(iten: ProjetoProps) {
     setProjetoModal(() => ({ ...iten, id: iten.id ?? "" })); // Garantindo que id não cause erro
     setShowModal(true);
+    console.log(iten);
   }
 
   return (
@@ -59,10 +60,11 @@ export default function Projetos({
           {projetos.map((iten) => (
             <div
               key={iten.id}
-              className="flex  flex-col items-center bg-gray-950
-            hover:scale-110 transition duration-700 opacity-60 hover:opacity-100 
-            max-sm:opacity-80 max-sm:hover:scale-100 max-sm:w-8/10
-            "
+              className="flex w-3/11 flex-col items-center bg-gray-950
+    hover:scale-105 transition duration-700 opacity-60 hover:opacity-100 
+    max-sm:opacity-80 max-sm:hover:scale-100 max-sm:w-8/10
+    xl2:w-3/10
+  "
             >
               <Link
                 href={iten.url}
@@ -89,7 +91,7 @@ export default function Projetos({
                   {iten.sass && <SiSass />}
                   {iten.firebase && <SiFirebase />}
                   {iten.node && <SiNodedotjs />}
-                  {iten.mysql && <SiMysql />}
+                  {iten.postgressql && <SiPostgresql />}
                 </div>
                 <button
                   onClick={() => handleModal(iten)}

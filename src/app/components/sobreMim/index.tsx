@@ -39,10 +39,10 @@ export default function Sobre() {
           <strong>
             <span className="text-2xl">📚</span> Formação:
           </strong>{" "}
-          Desenvolvedor <strong> Front-End </strong> com especialização em ,
+          Desenvolvedor <strong> Full stack </strong> com especialização em ,
           React.js
           <SiReact size={25} className="mx-2 inline text-blue-500" />
-          ,Next.js
+          , Next.js
           <SiNextdotjs size={25} className="mx-2 inline text-white" />,
           TypeScript
           <SiTypescript
@@ -61,9 +61,9 @@ export default function Sobre() {
           <strong>
             <span className="text-2xl"> 💻</span> Profissão:
           </strong>{" "}
-          Atualmente atuando como Desenvolvedor Front-End, lidando com
-          aplicações web em React.js e Next.js (sempre em busca do código
-          perfeito, mas aceitando que bugs fazem parte da vida ).
+          Atualmente atuando como Desenvolvedor Full stack, lidando com
+          aplicações web em React.js, Next.js e Node.js (sempre em busca do
+          código perfeito, mas aceitando que bugs fazem parte da vida ).
         </p>
         <p>
           <strong>
@@ -71,8 +71,8 @@ export default function Sobre() {
           </strong>{" "}
           Conhecimento sólido em HTML, CSS, JavaScript, React.js, TypeScript,
           Next.js, Tailwind CSS, SASS, Bootstrap, Git, GitHub, JQuery, Node.js,
-          Firebase e MySQL. (Meu cinto de utilidades está sempre preparado para
-          qualquer desafio).
+          Firebase e Postgressql. (Meu cinto de utilidades está sempre preparado
+          para qualquer desafio).
         </p>
         <p>
           <strong>
