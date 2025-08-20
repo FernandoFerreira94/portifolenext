@@ -15,6 +15,7 @@ import {
   SiPrisma,
 } from "react-icons/si";
 import { FaSass } from "react-icons/fa";
+import { CardTecnologia, TitleTecnologia } from "./cardTecnologia";
 
 export default function Tecnologias() {
   return (
@@ -36,207 +37,40 @@ export default function Tecnologias() {
           max-sm:p-0  max-sm:pt-5
           "
           >
-            <h2 className="text-4xl font-semibold text-center  mt-3 mb-6">
-              Front-End
-            </h2>
+            <TitleTecnologia titulo="Front-End" />
             <div
               className="flex flex-wrap  gap-15 py-2 justify-center  my-15
                max-sm:gap-15 
             "
             >
-              <div
-                className=" min-w-[110px] flex flex-col items-center gap-3  justify-center
-              border-2 border-[#9370db] shadow-[#9370db] shadow-[3px_3px_5px_#9370db]
-              h-38 w-2/8 rounded-[20px_0_20px_0]
-              card text-[12px] transition duration-500 hover:scale-105 tracking-widest
-              max-sm:h-35
-              "
-              >
-                {" "}
-                <SiHtml5 size={50} color="#9370db" title="HTML5" />
-                <p>HTML5 </p>
-              </div>
-              <div
-                className="  min-w-[110px] flex flex-col items-center gap-3  justify-center
-              border-2 border-[#9370db] shadow-[#9370db] shadow-[3px_3px_5px_#9370db]
-              h-38 w-2/8 rounded-[20px_0_20px_0]
-              card text-[12px] transition duration-500 hover:scale-105 tracking-widest
-              max-sm:h-35
-              "
-              >
-                <SiJavascript size={50} color="#9370db" title="JavaScript" />
-                <p>JavaScript</p>
-              </div>
-              <div
-                className="  min-w-[110px] flex flex-col items-center gap-3  justify-center
-              border-2 border-[#9370db] shadow-[#9370db] shadow-[3px_3px_5px_#9370db]
-              h-38 w-2/8 rounded-[20px_0_20px_0]
-              card text-[12px] transition duration-500 hover:scale-105 tracking-widest
-              max-sm:h-35
-              "
-              >
-                {" "}
-                <SiReact size={50} color="#9370db" title="React.js" />
-                <p>React.js</p>
-              </div>
-              <div
-                className="  min-w-[110px] flex flex-col items-center gap-3  justify-center
-              border-2 border-[#9370db] shadow-[#9370db] shadow-[3px_3px_5px_#9370db]
-              h-38 w-2/8 rounded-[20px_0_20px_0]
-              card text-[12px] transition duration-500 hover:scale-105 tracking-widest
-              max-sm:h-35
-              
-              "
-              >
-                {" "}
-                <SiTypescript size={50} color="#9370db" title="TypeScript" />
-                <p>TypeScript</p>
-              </div>
-              <div
-                className="  min-w-[110px] flex flex-col items-center gap-3  justify-center
-              border-2 border-[#9370db] shadow-[#9370db] shadow-[3px_3px_5px_#9370db]
-              h-38 w-2/8 rounded-[20px_0_20px_0]
-              card text-[12px] transition duration-500 hover:scale-105 tracking-widest
-              max-sm:h-35
-              "
-              >
-                {" "}
-                <SiNextdotjs size={50} color="#9370db" title="Next.js" />
-                <p>Next.js</p>
-              </div>
+              <CardTecnologia text="HTML5" icon={SiHtml5} />
+
+              <CardTecnologia text="JavaScript" icon={SiJavascript} />
+              <CardTecnologia text="TypeScript" icon={SiTypescript} />
+              <CardTecnologia text="React" icon={SiReact} />
+              <CardTecnologia text="Next.js" icon={SiNextdotjs} />
             </div>
           </article>
 
           <article className=" rounded-xl p-6 flex flex-col items-center  min-h-[300px]">
-            <h2 className="text-4xl font-semibold text-center  mt-3 mb-6">
-              UI / UX
-            </h2>
+            <TitleTecnologia titulo="Design UI/UX" />
             <div className="flex flex-wrap  gap-15 py-2 justify-center w-full my-15">
-              <div
-                className="  min-w-[110px]  flex flex-col items-center gap-3  justify-center
-              border-2 border-[#9370db] shadow-[#9370db] shadow-[3px_3px_5px_#9370db]
-              h-38 w-2/8 rounded-[20px_0_20px_0]
-              card text-[12px] transition duration-500 hover:scale-105 tracking-widest
-               max-sm:h-35
-              "
-              >
-                {" "}
-                <SiCss3 size={50} color="#9370db" title="CSS3" />
-                <p>CSS3 </p>
-              </div>
-              <div
-                className="  min-w-[110px]  flex flex-col items-center gap-3  justify-center
-              border-2 border-[#9370db] shadow-[#9370db] shadow-[3px_3px_5px_#9370db]
-              h-38 w-2/8 rounded-[20px_0_20px_0]
-              card text-[12px] transition duration-500 hover:scale-105 tracking-widest
-               max-sm:h-35
-              "
-              >
-                <SiBootstrap size={50} color="#9370db" title="Bootstrap" />
-                <p>Bootstrap</p>
-              </div>
-              <div
-                className="  min-w-[110px]  flex flex-col items-center gap-3  justify-center
-              border-2 border-[#9370db] shadow-[#9370db] shadow-[3px_3px_5px_#9370db]
-              h-38 w-2/8 rounded-[20px_0_20px_0]
-              card text-[12px] transition duration-500 hover:scale-105 tracking-widest
-               max-sm:h-35
-              "
-              >
-                {" "}
-                <SiTailwindcss size={50} color="#9370db" title="Tailwind" />
-                <p>Tailwind</p>
-              </div>
-              <div
-                className="  min-w-[110px]  flex flex-col items-center gap-3  justify-center
-              border-2 border-[#9370db] shadow-[#9370db] shadow-[3px_3px_5px_#9370db]
-              h-38 w-2/8 rounded-[20px_0_20px_0]
-              card text-[12px] transition duration-500 hover:scale-105 tracking-widest
-               max-sm:h-35
-              "
-              >
-                {" "}
-                <FaSass size={50} color="#9370db" title="Sass" />
-                <p>Sass</p>
-              </div>
-              <div
-                className="  min-w-[110px]  flex flex-col items-center gap-3  justify-center
-              border-2 border-[#9370db] shadow-[#9370db] shadow-[3px_3px_5px_#9370db]
-              h-38 w-2/8 rounded-[20px_0_20px_0]
-              card text-[12px] transition duration-500 hover:scale-105 tracking-widest
-               max-sm:h-35
-              "
-              >
-                <SiFigma size={50} color="#9370db" title="Figma" />
-                <p>Figma</p>
-              </div>
+              <CardTecnologia text={"CSS3"} icon={SiCss3} />
+              <CardTecnologia text={"Bootstrap"} icon={SiBootstrap} />
+              <CardTecnologia text={"Sass"} icon={FaSass} />
+              <CardTecnologia text={"Tailwind"} icon={SiTailwindcss} />
+              <CardTecnologia text={"Figma"} icon={SiFigma} />
             </div>
           </article>
 
           <article className=" rounded-xl p-6 flex flex-col items-center  min-h-[300px]">
-            <h2 className="text-4xl font-semibold text-center  mt-3 mb-6">
-              Back-End
-            </h2>
+            <TitleTecnologia titulo="Back-End" />
             <div className="flex flex-wrap  gap-15 py-2 justify-center w-full my-15">
-              <div
-                className="  min-w-[110px]  flex flex-col items-center gap-3  justify-center
-              border-2 border-[#9370db] shadow-[#9370db] shadow-[3px_3px_5px_#9370db]
-              h-38 w-2/8 rounded-[20px_0_20px_0]
-              card text-[12px] transition duration-500 hover:scale-105 tracking-widest
-               max-sm:h-35
-              "
-              >
-                {" "}
-                <SiNodedotjs size={50} color="#9370db" title="Node.js" />
-                <p>Node.js</p>
-              </div>
-              <div
-                className="  min-w-[110px]  flex flex-col items-center gap-3  justify-center
-              border-2 border-[#9370db] shadow-[#9370db] shadow-[3px_3px_5px_#9370db]
-              h-38 w-2/8 rounded-[20px_0_20px_0]
-              card text-[12px] transition duration-500 hover:scale-105 tracking-widest
-               max-sm:h-35
-              "
-              >
-                {" "}
-                <SiExpress size={50} color="#9370db" title="Express" />
-                <p>Express</p>
-              </div>
-              <div
-                className="  min-w-[110px]  flex flex-col items-center gap-3  justify-center
-              border-2 border-[#9370db] shadow-[#9370db] shadow-[3px_3px_5px_#9370db]
-              h-38 w-2/8 rounded-[20px_0_20px_0]
-              card text-[12px] transition duration-500 hover:scale-105 tracking-widest
-               max-sm:h-35
-              "
-              >
-                {" "}
-                <SiPrisma size={50} color="#9370db" title="Prisma" />
-                <p>Prisma</p>
-              </div>
-              <div
-                className="  min-w-[110px]  flex flex-col items-center gap-3  justify-center
-              border-2 border-[#9370db] shadow-[#9370db] shadow-[3px_3px_5px_#9370db]
-              h-38 w-2/8 rounded-[20px_0_20px_0]
-              card text-[12px] transition duration-500 hover:scale-105 tracking-widest
-               max-sm:h-35
-              "
-              >
-                {" "}
-                <SiPostgresql size={50} color="#9370db" title="PostgreSQL" />
-                <p>PostgreSQL</p>
-              </div>
-              <div
-                className="  min-w-[110px]  flex flex-col items-center gap-3  justify-center
-              border-2 border-[#9370db] shadow-[#9370db] shadow-[3px_3px_5px_#9370db]
-              h-38 w-2/8 rounded-[20px_0_20px_0]
-              card text-[12px] transition duration-500 hover:scale-105 tracking-widest
-               max-sm:h-35
-              "
-              >
-                <SiFirebase size={50} color="#9370db" title="FireBase" />
-                <p>FireBase</p>
-              </div>
+              <CardTecnologia text={"Node.js"} icon={SiNodedotjs} />
+              <CardTecnologia text={"Firebase"} icon={SiFirebase} />
+              <CardTecnologia text={"PostgreSQL"} icon={SiPostgresql} />
+              <CardTecnologia text={"Prisma"} icon={SiPrisma} />
+              <CardTecnologia text={"Express"} icon={SiExpress} />
             </div>
           </article>
 
