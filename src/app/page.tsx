@@ -85,6 +85,10 @@ export default function Home() {
                       Full stack <TypingEffect />
                     </span>{" "}
                   </span>
+                  <span className="text-xl text-yellow-400">
+                    Web Design{" "}
+                    <span className="text-gray-200 ml-1"> Figma </span>
+                  </span>
                 </div>
               </Modal>
               <Title titulo="Sobre mim" />

@@ -27,14 +27,14 @@ export default function Header({
 
   return (
     <header
-      className={`fixed top-0 left-0 z-50 h-screen bg-gray-950 text-gray-400 flex flex-col transition-all duration-500  
+      className={`fixed top-0 left-0  z-50 h-screen bg-gray-950 text-gray-400 flex flex-col transition-all duration-500  
         max-sm:w-full max-sm:h-25  max-sm:bg-black max-sm:flex-row max-sm:items-center max-sm:justify-center ${
           isCollapsed ? "w-[60px]" : "w-[200px]"
         }`}
     >
       {/* Conteúdo do topo */}
       <div
-        className="flex flex-col items-center 
+        className="flex flex-col  items-center 
         max-sm:gap-0  
       max-sm:flex-row max-sm:w-full  max-sm:justify-around"
       >
@@ -47,7 +47,7 @@ export default function Header({
         />
 
         <nav
-          className={`flex  flex-col  mt-5 ml-3
+          className={`flex  flex-col  mt-5 
           max-sm:m-0  max-sm:flex-row max-sm:ml-10  max-sm:gap-0`}
         >
           <div
@@ -63,7 +63,9 @@ export default function Header({
           </div>
           <div
             onClick={onTecnologiaClick}
-            className={`flex w-full  items-center  px-3 py-4 gap-3  cursor-pointer transition duration-300 hover:text-white  hover:bg-gray-900 text-lg ${isCollapsed && "justify-center"}`}
+            className={`flex w-full  items-center   px-3 py-4 gap-3  cursor-pointer transition duration-300 hover:text-white  hover:bg-gray-900 text-lg ${
+              isCollapsed && "justify-center"
+            }`}
           >
             <LiaInternetExplorer size={`${!isSmallScreen ? 32 : 35}`} />
             {!isSmallScreen && !isCollapsed && (
@@ -72,7 +74,9 @@ export default function Header({
           </div>
           <div
             onClick={onContatoClick}
-            className={`flex w-full  items-center  px-3 py-4 gap-3  cursor-pointer transition duration-300 hover:text-white  hover:bg-gray-900 text-lg ${isCollapsed && "justify-center"}`}
+            className={`flex w-full  items-center  px-3 py-4 gap-3  cursor-pointer transition duration-300 hover:text-white  hover:bg-gray-900 text-lg ${
+              isCollapsed && "justify-center"
+            }`}
           >
             <IoIosContact size={`${!isSmallScreen ? 32 : 35}`} />
             {!isSmallScreen && !isCollapsed && (
@@ -80,7 +84,9 @@ export default function Header({
             )}
           </div>
           <div
-            className={`flex w-full  items-center  px-3 py-4 gap-3  cursor-pointer transition duration-300 hover:text-white  hover:bg-gray-900 text-lg ${isCollapsed && "justify-center"}`}
+            className={`flex w-full  items-center  px-3 py-4 gap-3  cursor-pointer transition duration-300 hover:text-white  hover:bg-gray-900 text-lg ${
+              isCollapsed && "justify-center"
+            }`}
           >
             <Link
               href="/curriculo/Fernando-FullStack.pdf"

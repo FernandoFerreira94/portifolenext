@@ -4,6 +4,7 @@ import {
   SiNextdotjs,
   SiReact,
   SiNodedotjs,
+  SiFigma,
 } from "react-icons/si";
 import { FaMobileAlt } from "react-icons/fa";
 export default function Sobre() {
@@ -30,33 +31,38 @@ export default function Sobre() {
           <strong>
             <span className="text-2xl"> 🎓</span> Educação:
           </strong>{" "}
-          Atualmente estou cursando Análise Desenvolvimento de Sistemas na UNIP
-          (Universidade Paulista), 5º semestre. Estudo inglês há 2 anos (ainda
-          não sou fluente, mas já consigo pedir pizza sem problemas rs ).
+          Atualmente estou no <strong>último semestre</strong> do curso
+          Tecnólogo em
+          <strong> Análise e Desenvolvimento de Sistemas</strong> na UNIP
+          (Universidade Paulista), com duração de 2 anos. Estudo inglês há 2
+          anos (ainda não sou fluente, mas já consigo pedir pizza sem problemas
+          rs). Além disso, estou me aprofundando em <strong>n8n</strong> para
+          automação de fluxos e integrações.
         </p>
 
         <p>
           <strong>
             <span className="text-2xl">📚</span> Formação:
           </strong>{" "}
-          Desenvolvedor <strong> Full stack </strong> com especialização em ,
+          Desenvolvedor <strong>Full Stack</strong> com especialização em
           React.js
-          <SiReact size={25} className="mx-2 inline text-blue-500" />
-          , Next.js
+          <SiReact size={25} className="mx-2 inline text-blue-500" />, Next.js
           <SiNextdotjs size={25} className="mx-2 inline text-white" />,
           TypeScript
           <SiTypescript
             size={25}
-            className="mx-2 inline text-blue-500 bg-white
-            "
+            className="mx-2 inline text-blue-500 bg-white"
           />
-          e Node.js
-          <SiNodedotjs
-            size={25}
-            className="mx-2 inline text-green-600
-            "
-          />
+          , e Node.js
+          <SiNodedotjs size={25} className="mx-2 inline text-green-600" />.{" "}
+          <strong>Web Design</strong> com foco em prototipação e design de
+          interfaces no{" "}
+          <strong>
+            Figma <SiFigma size={25} className="mx-2 inline text-violet-600" />
+          </strong>
+          .
         </p>
+
         <p>
           <strong>
             <span className="text-2xl"> 💻</span> Profissão:
