@@ -142,7 +142,7 @@ export default function Home() {
                 data-aos="zoom-in-right"
                 data-aos-offset="0"
               >
-                <SiWhatsapp className="border-3 border-transparent w-22 h-22 p-3 rounded-2xl text-green-600 transition duration-500 hover:border-green-600 cursor-pointer" />
+                <SiWhatsapp className="border-3 border-transparent w-15 h-15 p-2 rounded-2xl text-green-600 transition duration-500 hover:border-green-600 cursor-pointer" />
               </Link>
 
               <Link
@@ -151,7 +151,7 @@ export default function Home() {
                 data-aos="zoom-in-right"
                 data-aos-offset="0"
               >
-                <SiLinkedin className="border-3 border-transparent w-22 h-22 p-3 rounded-2xl text-blue-500 transition duration-500 hover:border-blue-500 cursor-pointer" />
+                <SiLinkedin className="border-3 border-transparent w-15 h-15 p-2 rounded-2xl text-blue-500 transition duration-500 hover:border-blue-500 cursor-pointer" />
               </Link>
 
               <Link
@@ -160,7 +160,7 @@ export default function Home() {
                 data-aos="zoom-in-right"
                 data-aos-offset="0"
               >
-                <SiGithub className="border-3 border-transparent w-22 h-22 p-3 rounded-2xl text-white transition duration-500 hover:border-white cursor-pointer" />
+                <SiGithub className="border-3 border-transparent w-15 h-15 p-2 rounded-2xl text-white transition duration-500 hover:border-white cursor-pointer" />
               </Link>
 
               <div
@@ -168,7 +168,7 @@ export default function Home() {
                 data-aos="zoom-in-left"
                 data-aos-offset="0"
               >
-                <SiGmail className="border-3 border-transparent w-22 h-22 p-3 rounded-2xl text-red-600 transition duration-500 hover:border-red-600 cursor-pointer" />
+                <SiGmail className="border-3 border-transparent w-15 h-15 p-2 rounded-2xl text-red-600 transition duration-500 hover:border-red-600 cursor-pointer" />
               </div>
 
               <Link
@@ -177,7 +177,7 @@ export default function Home() {
                 data-aos="zoom-in-left"
                 data-aos-offset="0"
               >
-                <SiInstagram className="border-3 border-transparent w-22 h-22 p-3 rounded-2xl text-white transition duration-500 hover:border-white cursor-pointer" />
+                <SiInstagram className="border-3 border-transparent w-15 h-15 p-2 rounded-2xl text-white transition duration-500 hover:border-white cursor-pointer" />
               </Link>
               <Link
                 href="https://www.instagram.com/fernando.ferreira._/"
@@ -185,7 +185,7 @@ export default function Home() {
                 data-aos="zoom-in-left"
                 data-aos-offset="0"
               >
-                <SiFacebook className="border-3 border-transparent w-22 h-22 p-3 rounded-2xl text-blue-800 transition duration-500 hover:border-blue-800  cursor-pointer" />
+                <SiFacebook className="border-3 border-transparent w-15 h-15 p-2 rounded-2xl text-blue-800 transition duration-500 hover:border-blue-800  cursor-pointer" />
               </Link>
             </div>
           </footer>
