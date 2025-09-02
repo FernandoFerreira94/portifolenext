@@ -71,6 +71,7 @@ export default function Projetos({
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full"
+                data-aos="zoom-in"
               >
                 <Image
                   src={imgProjeto}

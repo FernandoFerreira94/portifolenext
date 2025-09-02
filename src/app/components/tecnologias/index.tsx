@@ -36,6 +36,7 @@ export default function Tecnologias() {
             className="p-6 flex flex-col items-center
           max-sm:p-0  max-sm:pt-5
           "
+            data-aos="fade-right"
           >
             <TitleTecnologia titulo="Front-End" />
             <div
@@ -52,7 +53,10 @@ export default function Tecnologias() {
             </div>
           </article>
 
-          <article className=" rounded-xl p-6 flex flex-col items-center  min-h-[300px]">
+          <article
+            className=" rounded-xl p-6 flex flex-col items-center  min-h-[300px]"
+            data-aos="fade-up"
+          >
             <TitleTecnologia titulo="Design UI/UX" />
             <div className="flex flex-wrap  gap-15 py-2 justify-center w-full my-15">
               <CardTecnologia text={"CSS3"} icon={SiCss3} />
@@ -63,7 +67,10 @@ export default function Tecnologias() {
             </div>
           </article>
 
-          <article className=" rounded-xl p-6 flex flex-col items-center  min-h-[300px]">
+          <article
+            className=" rounded-xl p-6 flex flex-col items-center  min-h-[300px]"
+            data-aos="fade-left"
+          >
             <TitleTecnologia titulo="Back-End" />
             <div className="flex flex-wrap  gap-15 py-2 justify-center w-full my-15">
               <CardTecnologia text={"Node.js"} icon={SiNodedotjs} />

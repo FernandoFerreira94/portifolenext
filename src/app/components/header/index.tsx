@@ -22,7 +22,7 @@ export default function Header({
   onSobreMimClick,
   onContatoClick,
 }: FuncProps) {
-  const [isCollapsed, setIsCollapsed] = useState(false);
+  const [isCollapsed, setIsCollapsed] = useState(true);
   const isSmallScreen = useMediaQuery({ maxWidth: 639 });
 
   return (

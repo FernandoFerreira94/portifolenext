@@ -1,5 +1,7 @@
 "use client";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 import TypingEffect from "./components/TypeingEffect";
 import {
@@ -27,6 +29,10 @@ import Logo from "../assets/Made with insMind-slogan.png";
 import { ProjetoProps } from "./utils/type";
 
 export default function Home() {
+  useEffect(() => {
+    AOS.init({ duration: 3000 }); // duração da animação em ms
+  }, []);
+
   const projetosRef = useRef<HTMLFormElement>(null);
   const sobreMimRef = useRef<HTMLFormElement>(null);
   const contatoRef = useRef<HTMLFormElement>(null);
@@ -130,34 +136,54 @@ export default function Home() {
               max-sm:w-full max-sm:flex-wrap max-sm:gap-10 max-sm:py-3
             "
             >
-              <Link href="https://wa.me/12997041551" target="blank">
+              <Link
+                href="https://wa.me/12997041551"
+                target="blank"
+                data-aos="zoom-in-right"
+                data-aos-offset="0"
+              >
                 <SiWhatsapp className="border-3 border-transparent w-22 h-22 p-3 rounded-2xl text-green-600 transition duration-500 hover:border-green-600 cursor-pointer" />
               </Link>
 
               <Link
                 href="https://www.linkedin.com/in/fernando-ferreira-78927b203"
                 target="blank"
+                data-aos="zoom-in-right"
+                data-aos-offset="0"
               >
                 <SiLinkedin className="border-3 border-transparent w-22 h-22 p-3 rounded-2xl text-blue-500 transition duration-500 hover:border-blue-500 cursor-pointer" />
               </Link>
 
-              <Link href="https://github.com/FernandoFerreira94" target="blank">
+              <Link
+                href="https://github.com/FernandoFerreira94"
+                target="blank"
+                data-aos="zoom-in-right"
+                data-aos-offset="0"
+              >
                 <SiGithub className="border-3 border-transparent w-22 h-22 p-3 rounded-2xl text-white transition duration-500 hover:border-white cursor-pointer" />
               </Link>
 
-              <div onClick={() => toast.info("fernandoeqp59@gmail.com")}>
+              <div
+                onClick={() => toast.info("fernandoeqp59@gmail.com")}
+                data-aos="zoom-in-left"
+                data-aos-offset="0"
+              >
                 <SiGmail className="border-3 border-transparent w-22 h-22 p-3 rounded-2xl text-red-600 transition duration-500 hover:border-red-600 cursor-pointer" />
               </div>
 
               <Link
                 href="https://www.instagram.com/fernando.ferreira._/"
                 target="blank"
+                data-aos="zoom-in-left"
+                data-aos-offset="0"
               >
                 <SiInstagram className="border-3 border-transparent w-22 h-22 p-3 rounded-2xl text-white transition duration-500 hover:border-white cursor-pointer" />
               </Link>
               <Link
                 href="https://www.instagram.com/fernando.ferreira._/"
                 target="blank"
+                data-aos="zoom-in-left"
+                data-aos-offset="0"
               >
                 <SiFacebook className="border-3 border-transparent w-22 h-22 p-3 rounded-2xl text-blue-800 transition duration-500 hover:border-blue-800  cursor-pointer" />
               </Link>
