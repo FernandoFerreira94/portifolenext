@@ -71,27 +71,27 @@ export default function Home() {
               />
 
               <div
-                className="w-9/10
+                className="w-full
               "
               >
                 <Image
                   src={Logo}
                   alt="Logo"
-                  className="object-cover  mb-30 mt-20 ml-10 scale-80 max-sm:ml-0 max-sm:mb-20 max-sm:mt-30 max-sm:scale-100"
+                  className="object-cover  mb-30 mt-20 ml- scale-60 max-sm:ml-0 max-sm:mb-20 max-sm:mt-30 max-sm:scale-100"
                 />
               </div>
               <Modal>
                 <div className="flex flex-col gap-4">
-                  <h2 className="text-2xl  text-gray-200 font-bold">
+                  <h2 className="text-xl  text-gray-200 font-bold">
                     Olá sou o Fernando Ferreira.
                   </h2>
-                  <span className="text-xl text-yellow-400">
+                  <span className="text-lg text-yellow-400">
                     Desenvolvedor{" "}
                     <span className=" max-sm:block">
                       Full stack <TypingEffect />
                     </span>{" "}
                   </span>
-                  <span className="text-xl text-yellow-400">
+                  <span className="text-lg text-yellow-400">
                     Web Design{" "}
                     <span className="text-gray-200 ml-1"> Figma </span>
                   </span>

@@ -41,50 +41,50 @@ export default function Header({
         <Image
           src={Perfil}
           alt="Perfil"
-          className={` rounded-full  object-cover transition-all duration-300
+          className={` rounded-full mt-2  object-cover transition-all duration-300
              max-sm:m-0 max-sm:w-18  max-sm:h-18 max-sm:ml-2 
-             ${isCollapsed ? "w-18 h-18" : "w-40 h-40"}`}
+             ${isCollapsed ? "w-18 h-18" : "w-35 h-35"}`}
         />
 
         <nav
-          className={`flex  flex-col  mt-5 
+          className={`flex  flex-col  mt-5 w-full 
           max-sm:m-0  max-sm:flex-row max-sm:ml-10  max-sm:gap-0`}
         >
           <div
             onClick={onSobreMimClick}
-            className={`flex w-full  items-center  px-3 py-4 gap-3  cursor-pointer transition duration-300 hover:text-white  hover:bg-gray-900 text-lg 
+            className={`flex w-full  items-center  px-3 py-5 gap-3  cursor-pointer transition duration-300 hover:text-white  hover:bg-gray-900 text-sm 
              
               ${isCollapsed && "justify-center"}`}
           >
-            <ImProfile size={`${!isSmallScreen ? 32 : 35}`} />
+            <ImProfile size={`${!isSmallScreen ? 25 : 30}`} />
             {!isSmallScreen && !isCollapsed && (
               <span className="whitespace-nowrap">Sobre mim</span>
             )}
           </div>
           <div
             onClick={onTecnologiaClick}
-            className={`flex w-full  items-center   px-3 py-4 gap-3  cursor-pointer transition duration-300 hover:text-white  hover:bg-gray-900 text-lg ${
+            className={`flex w-full  items-center   px-3 py-5 gap-3  cursor-pointer transition duration-300 hover:text-white  hover:bg-gray-900 text-sm ${
               isCollapsed && "justify-center"
             }`}
           >
-            <LiaInternetExplorer size={`${!isSmallScreen ? 32 : 35}`} />
+            <LiaInternetExplorer size={`${!isSmallScreen ? 25 : 30}`} />
             {!isSmallScreen && !isCollapsed && (
               <span className="whitespace-nowrap">Projetos</span>
             )}
           </div>
           <div
             onClick={onContatoClick}
-            className={`flex w-full  items-center  px-3 py-4 gap-3  cursor-pointer transition duration-300 hover:text-white  hover:bg-gray-900 text-lg ${
+            className={`flex w-full  items-center  px-3 py-5 gap-3  cursor-pointer transition duration-300 hover:text-white  hover:bg-gray-900 text-sm ${
               isCollapsed && "justify-center"
             }`}
           >
-            <IoIosContact size={`${!isSmallScreen ? 32 : 35}`} />
+            <IoIosContact size={`${!isSmallScreen ? 25 : 30}`} />
             {!isSmallScreen && !isCollapsed && (
               <span className="whitespace-nowrap">Contato</span>
             )}
           </div>
           <div
-            className={`flex w-full  items-center  px-3 py-4 gap-3  cursor-pointer transition duration-300 hover:text-white  hover:bg-gray-900 text-lg ${
+            className={`flex w-full  items-center  px-3 py-5 gap-3  cursor-pointer transition duration-300 hover:text-white  hover:bg-gray-900 text-sm ${
               isCollapsed && "justify-center"
             }`}
           >
@@ -93,7 +93,7 @@ export default function Header({
               className="flex items-center gap-3"
               download="Fernando_Ferreira_Curriculo.pdf"
             >
-              <IoMdCloudDownload size={`${!isSmallScreen ? 32 : 35}`} />
+              <IoMdCloudDownload size={`${!isSmallScreen ? 25 : 30}`} />
               {!isSmallScreen && !isCollapsed && (
                 <span className="whitespace-nowrap">Currículo</span>
               )}
@@ -104,7 +104,7 @@ export default function Header({
 
       {!isSmallScreen && (
         <div
-          className=" top-50 left-10 text-gray-400 cursor-pointer flex justify-center items-center w-full  hover:bg-gray-900 transitio duration-300 hover:text-white py-3 mt-60"
+          className=" top-50 left-10 text-gray-400 cursor-pointer flex justify-center items-center w-full  hover:bg-gray-900 text-sm transitio duration-300 hover:text-white py-3 mt-20"
           onClick={() => setIsCollapsed(!isCollapsed)}
         >
           {isCollapsed ? (

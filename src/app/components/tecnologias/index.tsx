@@ -24,11 +24,11 @@ import { CardTecnologia, TitleTecnologia } from "./cardTecnologia";
 
 export default function Tecnologias() {
   return (
-    <div className=" bg-black">
+    <div className=" bg-black/10">
       <section
         id="tecnologia"
-        className=" content float-right text-white py-10 flex justify-center
-        max-sm:p-0
+        className=" content  text-white py-10 flex justify-center
+        max-sm:p-0 max-w-[1800px] mx-auto
         "
       >
         <div
@@ -39,14 +39,15 @@ export default function Tecnologias() {
           {/* Front-End */}
           <article
             className="p-6 flex flex-col items-center
-          max-sm:p-0   max-sm:pt-5
+          
           "
+            data-aos-delay="200"
             data-aos="fade-right"
           >
             <TitleTecnologia titulo="Front-End" />
             <div
-              className="flex flex-wrap  gap-8 py-2 justify-center  my-15
-                
+              className="flex flex-wrap gap-8 py-2 justify-center my-15
+                max-sm:2-full
               "
             >
               <CardTecnologia text="JavaScript" icon={SiJavascript} />
@@ -59,12 +60,20 @@ export default function Tecnologias() {
             </div>
           </article>
 
+          {/* Front-End */}
           <article
-            className=" rounded-xl p-6 flex flex-col items-center  min-h-[300px]"
+            className="p-6 flex flex-col items-center
+         
+          "
+            data-aos-delay="200"
             data-aos="fade-up"
           >
             <TitleTecnologia titulo="Design UI/UX" />
-            <div className="flex flex-wrap  gap-8 py-2 justify-center w-full my-15 ">
+            <div
+              className="flex flex-wrap gap-8 py-2 justify-center my-15
+                
+              "
+            >
               <CardTecnologia text={"Tailwind"} icon={SiTailwindcss} />
               <CardTecnologia text={"Shadcn UI"} icon={SiShadcnui} />
               <CardTecnologia text={"Figma"} icon={SiFigma} />
@@ -75,12 +84,20 @@ export default function Tecnologias() {
             </div>
           </article>
 
+          {/* Front-End */}
           <article
-            className=" rounded-xl p-6 flex flex-col items-center  min-h-[300px]"
+            className="p-6 flex flex-col items-center
+          
+          "
+            data-aos-delay="200"
             data-aos="fade-left"
           >
             <TitleTecnologia titulo="Back-End" />
-            <div className="flex flex-wrap  gap-8 py-2 justify-center w-full my-15">
+            <div
+              className="flex flex-wrap gap-8 py-2 justify-center my-15
+                
+              "
+            >
               <CardTecnologia text={"Node.js"} icon={SiNodedotjs} />
               <CardTecnologia text={"PostgreSQL"} icon={SiPostgresql} />
               <CardTecnologia text={"Supabase"} icon={SiSupabase} />

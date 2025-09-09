@@ -60,7 +60,7 @@ export default function Projetos({
           {projetos.map((iten) => (
             <div
               key={iten.id}
-              className="flex w-3/11 flex-col items-center bg-gray-950
+              className="flex w-3/12 max-w-[350px] flex-col items-center bg-gray-950
     hover:scale-105 transition duration-700 opacity-60 hover:opacity-100 
     max-sm:opacity-80 max-sm:hover:scale-100 max-sm:w-8/10
     xl2:w-3/10 shadow-[6px_6px_15px_black] hover:shadow-[10px_10px_15px_5px_black] 
@@ -80,8 +80,8 @@ export default function Projetos({
                 />
               </Link>
               <div className="mt-1 flex flex-col gap-2 items-center w-full">
-                <p className="font-bold text-xl tracking-wider">{iten.nome}</p>
-                <div className="text-[#9370db] text-xl flex gap-1 ">
+                <p className="font-bold text-lg tracking-wider">{iten.nome}</p>
+                <div className="text-[#9370db] text-lg flex gap-1 ">
                   <SiHtml5 />
                   <SiCss3 />
                   <SiJavascript />
@@ -96,7 +96,7 @@ export default function Projetos({
                 </div>
                 <button
                   onClick={() => handleModal(iten)}
-                  className="cursor-pointer text-xl w-full py-2 transition duration-500 hover:bg-gray-900 hover:text-white "
+                  className="cursor-pointer text-lg w-full py-2 transition duration-500 hover:bg-gray-900 hover:text-white "
                 >
                   Mais informações
                 </button>

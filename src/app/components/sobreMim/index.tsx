@@ -25,7 +25,7 @@ export default function Sobre() {
   return (
     <Modal>
       <div
-        className="flex flex-col text-xl tracking-wider leading-10 text-justify gap-2 
+        className="flex flex-col text-lg  tracking-wider leading-10 text-justify gap-2 
       max-sm:text-start max-sm:text-[22px]
       "
       >
