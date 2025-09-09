@@ -130,11 +130,11 @@ export default function Home() {
             <Contato />
           </section>
 
-          <footer className="w-full  bg-gray-900 h-full">
+          <footer className="w-full bg-gray-900 h-full">
             <div
               className="content float-right gap-15 h-full text-white flex items-center justify-center py-4
-              max-sm:w-full max-sm:flex-wrap max-sm:gap-10 max-sm:py-3
-            "
+    max-sm:w-full max-sm:flex-wrap max-sm:gap-10 max-sm:py-3
+  "
             >
               <Link
                 href="https://wa.me/12997041551"
@@ -142,7 +142,7 @@ export default function Home() {
                 data-aos="zoom-in-right"
                 data-aos-offset="0"
               >
-                <SiWhatsapp className="border-3 border-transparent w-15 h-15 p-2 rounded-2xl text-green-600 transition duration-500 hover:border-green-600 cursor-pointer" />
+                <SiWhatsapp className=" border-transparent w-12 h-15 p-2 rounded-2xl text-gray-400 transition duration-500 hover:text-green-600 hover:border-green-600 cursor-pointer" />
               </Link>
 
               <Link
@@ -151,7 +151,7 @@ export default function Home() {
                 data-aos="zoom-in-right"
                 data-aos-offset="0"
               >
-                <SiLinkedin className="border-3 border-transparent w-15 h-15 p-2 rounded-2xl text-blue-500 transition duration-500 hover:border-blue-500 cursor-pointer" />
+                <SiLinkedin className=" border-transparent w-12 h-15 p-2 rounded-2xl text-gray-400 transition duration-500 hover:text-blue-500 hover:border-blue-500 cursor-pointer" />
               </Link>
 
               <Link
@@ -160,7 +160,7 @@ export default function Home() {
                 data-aos="zoom-in-right"
                 data-aos-offset="0"
               >
-                <SiGithub className="border-3 border-transparent w-15 h-15 p-2 rounded-2xl text-white transition duration-500 hover:border-white cursor-pointer" />
+                <SiGithub className=" border-transparent w-12 h-15 p-2 rounded-2xl text-gray-400 transition duration-500 hover:text-white hover:border-white cursor-pointer" />
               </Link>
 
               <div
@@ -168,7 +168,7 @@ export default function Home() {
                 data-aos="zoom-in-left"
                 data-aos-offset="0"
               >
-                <SiGmail className="border-3 border-transparent w-15 h-15 p-2 rounded-2xl text-red-600 transition duration-500 hover:border-red-600 cursor-pointer" />
+                <SiGmail className=" border-transparent w-12 h-15 p-2 rounded-2xl text-gray-400 transition duration-500 hover:text-red-600 hover:border-red-600 cursor-pointer" />
               </div>
 
               <Link
@@ -177,7 +177,8 @@ export default function Home() {
                 data-aos="zoom-in-left"
                 data-aos-offset="0"
               >
-                <SiInstagram className="border-3 border-transparent w-15 h-15 p-2 rounded-2xl text-white transition duration-500 hover:border-white cursor-pointer" />
+                <SiInstagram className="border-transparent w-12 h-15 p-2 rounded-2xl text-gray-400 transition duration-500 hover:text-pink-500 hover:border-pink-500 cursor-pointer" />
+                {/* Ajustei o hover:text-white para pink-500, que é mais comum para Instagram */}
               </Link>
               <Link
                 href="https://www.instagram.com/fernando.ferreira._/"
@@ -185,7 +186,7 @@ export default function Home() {
                 data-aos="zoom-in-left"
                 data-aos-offset="0"
               >
-                <SiFacebook className="border-3 border-transparent w-15 h-15 p-2 rounded-2xl text-blue-800 transition duration-500 hover:border-blue-800  cursor-pointer" />
+                <SiFacebook className=" border-transparent w-12 h-15 p-2 rounded-2xl text-gray-400 transition duration-500 hover:text-blue-800 hover:border-blue-800 cursor-pointer" />
               </Link>
             </div>
           </footer>

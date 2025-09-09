@@ -13,8 +13,13 @@ import {
   SiPostgresql,
   SiExpress,
   SiPrisma,
+  SiExpo, // Adicionado para o Expo
+  SiSupabase, // Adicionado para o Supabase
+  SiShadcnui,
+  SiStyledcomponents,
 } from "react-icons/si";
 import { FaSass } from "react-icons/fa";
+import { TbBrandReactNative } from "react-icons/tb";
 import { CardTecnologia, TitleTecnologia } from "./cardTecnologia";
 
 export default function Tecnologias() {
@@ -34,22 +39,23 @@ export default function Tecnologias() {
           {/* Front-End */}
           <article
             className="p-6 flex flex-col items-center
-          max-sm:p-0  max-sm:pt-5
+          max-sm:p-0   max-sm:pt-5
           "
             data-aos="fade-right"
           >
             <TitleTecnologia titulo="Front-End" />
             <div
-              className="flex flex-wrap  gap-15 py-2 justify-center  my-15
-               max-sm:gap-15 
-            "
+              className="flex flex-wrap  gap-8 py-2 justify-center  my-15
+                
+              "
             >
-              <CardTecnologia text="HTML5" icon={SiHtml5} />
-
               <CardTecnologia text="JavaScript" icon={SiJavascript} />
-              <CardTecnologia text="TypeScript" icon={SiTypescript} />
               <CardTecnologia text="React" icon={SiReact} />
               <CardTecnologia text="Next.js" icon={SiNextdotjs} />
+              <CardTecnologia text="TypeScript" icon={SiTypescript} />
+              <CardTecnologia text="React Native" icon={TbBrandReactNative} />
+              <CardTecnologia text="Expo" icon={SiExpo} />
+              <CardTecnologia text="HTML5" icon={SiHtml5} />
             </div>
           </article>
 
@@ -58,12 +64,14 @@ export default function Tecnologias() {
             data-aos="fade-up"
           >
             <TitleTecnologia titulo="Design UI/UX" />
-            <div className="flex flex-wrap  gap-15 py-2 justify-center w-full my-15">
-              <CardTecnologia text={"CSS3"} icon={SiCss3} />
-              <CardTecnologia text={"Bootstrap"} icon={SiBootstrap} />
-              <CardTecnologia text={"Sass"} icon={FaSass} />
+            <div className="flex flex-wrap  gap-8 py-2 justify-center w-full my-15 ">
               <CardTecnologia text={"Tailwind"} icon={SiTailwindcss} />
+              <CardTecnologia text={"Shadcn UI"} icon={SiShadcnui} />
               <CardTecnologia text={"Figma"} icon={SiFigma} />
+              <CardTecnologia text={"Styled Comp"} icon={SiStyledcomponents} />
+              <CardTecnologia text={"Sass"} icon={FaSass} />
+              <CardTecnologia text={"Bootstrap"} icon={SiBootstrap} />
+              <CardTecnologia text={"CSS3"} icon={SiCss3} />
             </div>
           </article>
 
@@ -72,10 +80,11 @@ export default function Tecnologias() {
             data-aos="fade-left"
           >
             <TitleTecnologia titulo="Back-End" />
-            <div className="flex flex-wrap  gap-15 py-2 justify-center w-full my-15">
+            <div className="flex flex-wrap  gap-8 py-2 justify-center w-full my-15">
               <CardTecnologia text={"Node.js"} icon={SiNodedotjs} />
-              <CardTecnologia text={"Firebase"} icon={SiFirebase} />
               <CardTecnologia text={"PostgreSQL"} icon={SiPostgresql} />
+              <CardTecnologia text={"Supabase"} icon={SiSupabase} />
+              <CardTecnologia text={"Firebase"} icon={SiFirebase} />
               <CardTecnologia text={"Prisma"} icon={SiPrisma} />
               <CardTecnologia text={"Express"} icon={SiExpress} />
             </div>

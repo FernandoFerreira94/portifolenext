@@ -5,8 +5,22 @@ import {
   SiReact,
   SiNodedotjs,
   SiFigma,
+  SiSupabase,
+  SiExpo,
+  SiCss3,
+  SiBootstrap,
+  SiGit,
+  SiGithub,
+  SiShadcnui,
+  SiFirebase,
+  SiPostgresql,
+  SiExpress,
+  SiPrisma,
+  SiTailwindcss,
+  SiJavascript,
 } from "react-icons/si";
-import { FaMobileAlt } from "react-icons/fa";
+import { TbBrandReactNative } from "react-icons/tb";
+import { FaBrain, FaSass } from "react-icons/fa";
 export default function Sobre() {
   return (
     <Modal>
@@ -31,32 +45,49 @@ export default function Sobre() {
           <strong>
             <span className="text-2xl"> 🎓</span> Educação:
           </strong>{" "}
-          Atualmente estou no <strong>último semestre</strong> do curso
-          Tecnólogo em
-          <strong> Análise e Desenvolvimento de Sistemas</strong> na UNIP
-          (Universidade Paulista), com duração de 2 anos. Estudo inglês há 2
-          anos (ainda não sou fluente, mas já consigo pedir pizza sem problemas
-          rs). Além disso, estou me aprofundando em <strong>n8n</strong> para
-          automação de fluxos e integrações.
+          Estou no <strong>último semestre</strong> do curso Tecnólogo em
+          <strong> Análise e Desenvolvimento de Sistemas</strong> na UNIP, com 2
+          anos de duração. Tenho conhecimento em inglês (intermediário).
         </p>
 
         <p>
           <strong>
-            <span className="text-2xl">📚</span> Formação:
+            <span className="text-2xl">📚</span> Especialização:
           </strong>{" "}
-          Desenvolvedor <strong>Full Stack</strong> com especialização em
-          React.js
-          <SiReact size={25} className="mx-2 inline text-blue-500" />, Next.js
+          Como desenvolvedor <strong>Full Stack</strong>, tenho especialização
+          em React.js{" "}
+          <SiReact size={25} className="mx-2 inline text-blue-500" />, Next.js{" "}
           <SiNextdotjs size={25} className="mx-2 inline text-white" />,
-          TypeScript
+          TypeScript{" "}
           <SiTypescript
             size={25}
             className="mx-2 inline text-blue-500 bg-white"
           />
-          , e Node.js
-          <SiNodedotjs size={25} className="mx-2 inline text-green-600" />.{" "}
-          <strong>Web Design</strong> com foco em prototipação e design de
-          interfaces no{" "}
+          , e Node.js{" "}
+          <SiNodedotjs size={25} className="mx-2 inline text-green-600" />.
+          Também possuo experiência com React Native{" "}
+          <TbBrandReactNative size={25} className="mx-2 inline text-blue-500" />
+          , Expo <SiExpo size={25} className="mx-2 inline text-white" />, Shadcn
+          UI <SiShadcnui size={25} className="mx-2 inline text-white" /> e
+          Supabase
+          <SiSupabase size={25} className="mx-2 inline text-green-600" />
+          .Minhas habilidades incluem HTML, JavaScript{" "}
+          <SiJavascript size={25} className="mx-2 inline text-yellow-400" />,
+          CSS <SiCss3 size={25} className="mx-2 inline text-blue-500" />,
+          Tailwind CSS{" "}
+          <SiTailwindcss size={25} className="mx-2 inline text-cyan-400" />,
+          SASS <FaSass size={25} className="mx-2 inline text-pink-500" />,
+          Bootstrap{" "}
+          <SiBootstrap size={25} className="mx-2 inline text-violet-500" />, Git{" "}
+          <SiGit size={25} className="mx-2 inline text-orange-500" />, GitHub{" "}
+          <SiGithub size={25} className="mx-2 inline text-white" />, Firebase{" "}
+          <SiFirebase size={25} className="mx-2 inline text-yellow-500" />,
+          Postgresql{" "}
+          <SiPostgresql size={25} className="mx-2 inline text-blue-600" />,
+          Express <SiExpress size={25} className="mx-2 inline text-white" /> e
+          Prisma <SiPrisma size={25} className="mx-2 inline text-teal-500" />.
+          Além disso, tenho domínio em <strong>Web Design</strong>, com foco em
+          prototipação e design de interfaces usando{" "}
           <strong>
             Figma <SiFigma size={25} className="mx-2 inline text-violet-600" />
           </strong>
@@ -67,30 +98,19 @@ export default function Sobre() {
           <strong>
             <span className="text-2xl"> 💻</span> Profissão:
           </strong>{" "}
-          Atualmente atuando como Desenvolvedor Full stack, lidando com
-          aplicações web em React.js, Next.js e Node.js (sempre em busca do
-          código perfeito, mas aceitando que bugs fazem parte da vida ).
-        </p>
-        <p>
-          <strong>
-            <span className="text-2xl"> 🛠️</span> Habilidades:
-          </strong>{" "}
-          Conhecimento sólido em HTML, CSS, JavaScript, React.js, TypeScript,
-          Next.js, Tailwind CSS, SASS, Bootstrap, Git, GitHub, JQuery, Node.js,
-          Firebase e Postgressql. (Meu cinto de utilidades está sempre preparado
-          para qualquer desafio).
+          Atualmente atuo como Desenvolvedor Full Stack, construindo aplicações
+          web com React.js, Next.js e Node.js. Estou sempre em busca do código
+          perfeito, mas aceitando que bugs fazem parte da vida.
         </p>
         <p>
           <strong>
             <span className="text-2xl"> 🔮</span> Futuro:
           </strong>{" "}
-          Busco ingressar no mundo do desenvolvimento de aplicações mobile
-          <FaMobileAlt
-            size={25}
-            className="mx-2 inline text-white
-            "
-          />
-          . Porque não adicionar mais uma camada de complexidade à vida? rs
+          Meu objetivo é me aprofundar em automação e inteligência artificial,
+          explorando ferramentas como <strong>n8n</strong> e buscando criar
+          fluxos de trabalho inteligentes que otimizem processos e melhorem a
+          produtividade.
+          <FaBrain size={25} className="mx-2 inline text-white" />
         </p>
       </div>
     </Modal>
