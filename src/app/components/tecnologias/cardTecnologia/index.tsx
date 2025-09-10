@@ -13,13 +13,13 @@ export function CardTecnologia({ text, icon: Icon }: CardTecnologiaProps) {
   return (
     <div
       title={text}
-      className="min-w-[100px] flex flex-col items-center gap-3 justify-center
+      className=" flex flex-col  items-center gap-3 justify-center
                  
-                 h-30 w-1/10 rounded-[20px_0_20px_0]
+                 h-30 w-[100px] rounded-[20px_0_20px_0]
                  card text-[12px] transition duration-500 ease-out  tracking-widest
-                 max-sm:h-35 hover:shadow-[2px_2px_100px_5px_#9370db]"
+                  hover:shadow-[2px_2px_100px_5px_#9370db] "
     >
-      <Icon color="#9370db" size={40} /> {/* define a cor aqui */}
+      <Icon color="#9370db" className="text-[40px] max-sm:text-[30px]" />
       <p className="text-sm font-sans">{text}</p>
     </div>
   );

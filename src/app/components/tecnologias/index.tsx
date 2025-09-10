@@ -24,19 +24,18 @@ import { CardTecnologia, TitleTecnologia } from "./cardTecnologia";
 
 export default function Tecnologias() {
   return (
-    <div className=" bg-black/10">
+    <div className=" bg-gray-950/10 ">
       <section
         id="tecnologia"
-        className=" content  text-white py-10 flex justify-center
+        className="   text-white flex justify-center
         max-sm:p-0 max-w-[1800px] mx-auto
         "
       >
         <div
           className="w-9/10 grid grid-cols-3
-          max-sm:w-full max-sm:grid-cols-1
+          max-sm:w-full max-sm:grid-cols-1 
         "
         >
-          {/* Front-End */}
           <article
             className="p-6 flex flex-col items-center
           
@@ -46,8 +45,8 @@ export default function Tecnologias() {
           >
             <TitleTecnologia titulo="Front-End" />
             <div
-              className="flex flex-wrap gap-8 py-2 justify-center my-15
-                max-sm:2-full
+              className="flex flex-wrap gap-8 py-2 justify-center my-10
+                max-sm:gap-4 
               "
             >
               <CardTecnologia text="JavaScript" icon={SiJavascript} />
@@ -60,7 +59,6 @@ export default function Tecnologias() {
             </div>
           </article>
 
-          {/* Front-End */}
           <article
             className="p-6 flex flex-col items-center
          
@@ -70,8 +68,8 @@ export default function Tecnologias() {
           >
             <TitleTecnologia titulo="Design UI/UX" />
             <div
-              className="flex flex-wrap gap-8 py-2 justify-center my-15
-                
+              className="flex flex-wrap gap-8 py-2 justify-center my-10
+                max-sm:gap-4 
               "
             >
               <CardTecnologia text={"Tailwind"} icon={SiTailwindcss} />
@@ -84,7 +82,6 @@ export default function Tecnologias() {
             </div>
           </article>
 
-          {/* Front-End */}
           <article
             className="p-6 flex flex-col items-center
           
@@ -94,8 +91,8 @@ export default function Tecnologias() {
           >
             <TitleTecnologia titulo="Back-End" />
             <div
-              className="flex flex-wrap gap-8 py-2 justify-center my-15
-                
+              className="flex flex-wrap gap-8 py-2 justify-center my-10
+                max-sm:gap-4 
               "
             >
               <CardTecnologia text={"Node.js"} icon={SiNodedotjs} />

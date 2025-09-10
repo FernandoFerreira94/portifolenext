@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+
 import { ImProfile } from "react-icons/im";
 import { LiaInternetExplorer } from "react-icons/lia";
 import { IoMdCloudDownload, IoIosContact } from "react-icons/io";
@@ -7,6 +7,7 @@ import { FaAngleDoubleRight, FaAngleDoubleLeft } from "react-icons/fa";
 import { useMediaQuery } from "react-responsive";
 import Image from "next/image";
 import Link from "next/link";
+import { FaCode } from "react-icons/fa";
 
 import Perfil from "../../../assets/perfil.png";
 import Logo from "../../../assets/logo.png";
@@ -15,14 +16,19 @@ interface FuncProps {
   onTecnologiaClick: () => void;
   onSobreMimClick: () => void;
   onContatoClick: () => void;
+  onProjetosClick: () => void;
+  isCollapsed: boolean;
+  setIsCollapsed: (value: boolean) => void;
 }
 
 export default function Header({
   onTecnologiaClick,
   onSobreMimClick,
   onContatoClick,
+  onProjetosClick,
+  isCollapsed,
+  setIsCollapsed,
 }: FuncProps) {
-  const [isCollapsed, setIsCollapsed] = useState(true);
   const isSmallScreen = useMediaQuery({ maxWidth: 639 });
 
   return (
@@ -42,8 +48,8 @@ export default function Header({
           src={Perfil}
           alt="Perfil"
           className={` rounded-full mt-2  object-cover transition-all duration-300
-             max-sm:m-0 max-sm:w-18  max-sm:h-18 max-sm:ml-2 
-             ${isCollapsed ? "w-18 h-18" : "w-35 h-35"}`}
+              max-sm:m-0 max-sm:w-18  max-sm:h-18 max-sm:ml-2 
+              ${isCollapsed ? "w-18 h-18" : "w-35 h-35"}`}
         />
 
         <nav
@@ -53,7 +59,7 @@ export default function Header({
           <div
             onClick={onSobreMimClick}
             className={`flex w-full  items-center  px-3 py-5 gap-3  cursor-pointer transition duration-300 hover:text-white  hover:bg-gray-900 text-sm 
-             
+              
               ${isCollapsed && "justify-center"}`}
           >
             <ImProfile size={`${!isSmallScreen ? 25 : 30}`} />
@@ -61,8 +67,21 @@ export default function Header({
               <span className="whitespace-nowrap">Sobre mim</span>
             )}
           </div>
+          {/* Novo item de menu para Tecnologias */}
           <div
             onClick={onTecnologiaClick}
+            className={`flex w-full  items-center   px-3 py-5 gap-3  cursor-pointer transition duration-300 hover:text-white  hover:bg-gray-900 text-sm ${
+              isCollapsed && "justify-center"
+            }`}
+          >
+            <FaCode size={`${!isSmallScreen ? 25 : 30}`} />
+            {!isSmallScreen && !isCollapsed && (
+              <span className="whitespace-nowrap">Tecnologias</span>
+            )}
+          </div>
+          {/* O antigo "Projetos" agora usa a nova propriedade onProjetosClick */}
+          <div
+            onClick={onProjetosClick}
             className={`flex w-full  items-center   px-3 py-5 gap-3  cursor-pointer transition duration-300 hover:text-white  hover:bg-gray-900 text-sm ${
               isCollapsed && "justify-center"
             }`}

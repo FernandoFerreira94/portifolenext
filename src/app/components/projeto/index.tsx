@@ -53,8 +53,8 @@ export default function Projetos({
     <>
       {!isLoading ? (
         <section
-          className={`w-8/10 flex flex-wrap gap-30 mt-20  justify-center text-gray-300 
-          max-sm:gap-15 max-sm:w-full max-sm:mt-0
+          className={`w-8/10 flex flex-wrap gap-30   justify-center text-gray-300 
+          max-sm:gap-15 max-sm:w-full max-sm:px-4 max-sm:mt-0
           ${showModal ? "hidden" : ""}`}
         >
           {projetos.map((iten) => (
@@ -62,7 +62,9 @@ export default function Projetos({
               key={iten.id}
               className="flex w-3/12 max-w-[350px] flex-col items-center bg-gray-950
     hover:scale-105 transition duration-700 opacity-60 hover:opacity-100 
-    max-sm:opacity-80 max-sm:hover:scale-100 max-sm:w-8/10
+    
+    max-sm:opacity-80  max-sm:w-5/12
+
     xl2:w-3/10 shadow-[6px_6px_15px_black] hover:shadow-[10px_10px_15px_5px_black] 
   "
             >
@@ -81,7 +83,7 @@ export default function Projetos({
               </Link>
               <div className="mt-1 flex flex-col gap-2 items-center w-full">
                 <p className="font-bold text-lg tracking-wider">{iten.nome}</p>
-                <div className="text-[#9370db] text-lg flex gap-1 ">
+                <div className="text-[#9370db] text-lg flex gap-1.5  flex-wrap justify-center  ">
                   <SiHtml5 />
                   <SiCss3 />
                   <SiJavascript />

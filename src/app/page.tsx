@@ -29,22 +29,28 @@ import Logo from "../assets/Made with insMind-slogan.png";
 import { ProjetoProps } from "./utils/type";
 
 export default function Home() {
+  const [isCollapsed, setIsCollapsed] = useState(true);
+
   useEffect(() => {
-    AOS.init({ duration: 3000 }); // duração da animação em ms
+    AOS.init({ duration: 3000 });
   }, []);
 
   const projetosRef = useRef<HTMLFormElement>(null);
+  const tecnologiasRef = useRef<HTMLFormElement>(null);
   const sobreMimRef = useRef<HTMLFormElement>(null);
   const contatoRef = useRef<HTMLFormElement>(null);
 
   const scrollToTecnologia = () => {
-    projetosRef.current?.scrollIntoView({ behavior: "smooth" });
+    tecnologiasRef.current?.scrollIntoView({ behavior: "smooth" });
   };
   const scrollToSobreMim = () => {
     sobreMimRef.current?.scrollIntoView({ behavior: "smooth" });
   };
   const scrollToContato = () => {
     contatoRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+  const scrollToProjetos = () => {
+    projetosRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
   const [showModal, setShowModal] = useState(false);
@@ -61,19 +67,23 @@ export default function Home() {
   return (
     <>
       {!showModal && (
-        <main className={`w-full flex flex-col `}>
-          <section ref={sobreMimRef}>
-            <div className="flex flex-col items-center  relative content float-right max-sm:float-none max-sm:w-full max-sm:mt-15">
+        <main
+          className={`w-full flex flex-col transition-all duration-500
+          ${isCollapsed ? "pl-[60px]" : "pl-[200px]"}
+          max-sm:p-0`}
+        >
+          <section>
+            <div className="flex flex-col items-center relative float-right max-sm:float-none max-sm:w-full max-sm:mt-15">
               <Header
+                isCollapsed={isCollapsed}
+                setIsCollapsed={setIsCollapsed}
                 onTecnologiaClick={scrollToTecnologia}
                 onSobreMimClick={scrollToSobreMim}
                 onContatoClick={scrollToContato}
+                onProjetosClick={scrollToProjetos}
               />
 
-              <div
-                className="w-full
-              "
-              >
+              <div className="w-full">
                 <Image
                   src={Logo}
                   alt="Logo"
@@ -97,19 +107,21 @@ export default function Home() {
                   </span>
                 </div>
               </Modal>
-              <Title titulo="Sobre mim" />
+              <section ref={sobreMimRef}>
+                <Title titulo="Sobre mim" />
+              </section>
+
               <Sobre />
-              <Title titulo="Tecnologias" />
             </div>
           </section>
-          <section className="bg-gray-950 ">
+          <section ref={tecnologiasRef} className="w-full flex justify-center">
+            <Title titulo="Tecnologias" />
+          </section>
+          <section className="bg-gray-950 flex flex-col items-center  max-sm:pl-0">
             <Tecnologias />
           </section>
           <section ref={projetosRef}>
-            <div
-              className="flex flex-col items-center  relative content float-right
-              max-sm:w-full max-sm:mt-0"
-            >
+            <div className="flex flex-col items-center  relative  float-right max-sm:w-full ">
               <Title titulo="Projetos" />
               <Projetos
                 showModal={showModal}
@@ -119,75 +131,121 @@ export default function Home() {
             </div>
           </section>
           <section ref={contatoRef}>
-            <h1
-              className=" text-center ml-40 mt-30 italic text-xl tracking-wide text-gray-300 
-              max-sm:w-9/10 max-sm:m-auto max-sm:mt-20
-            "
-            >
+            <h1 className=" text-center  mt-20 italic text-lg tracking-wide text-gray-300 max-sm:w-9/10 max-sm:m-auto max-sm:mt-10 max-sm:text-sm">
               Se você tem um projeto em mente, eu tenho o código. Vamos colocar
               essa ideia pra rodar!
             </h1>
             <Contato />
           </section>
 
-          <footer className="w-full bg-gray-900 h-full">
+          <footer className="w-full pb-20 bg-gradient-to-b from-gray-900 to-gray-950 flex flex-col items-center  gap-4 max-sm:pl-0">
             <div
-              className="content float-right gap-15 h-full text-white flex items-center justify-center py-4
-    max-sm:w-full max-sm:flex-wrap max-sm:gap-10 max-sm:py-3
-  "
+              className=" float-right gap-4  text-white flex  justify-center  pt-10"
+              data-aos="zoom-in"
             >
               <Link
                 href="https://wa.me/12997041551"
                 target="blank"
-                data-aos="zoom-in-right"
-                data-aos-offset="0"
+                className=" rounded-full p-0.5 bg-white/8 transition duration-500 hover:-translate-y-2 "
               >
-                <SiWhatsapp className=" border-transparent w-12 h-15 p-2 rounded-2xl text-gray-400 transition duration-500 hover:text-green-600 hover:border-green-600 cursor-pointer" />
+                <SiWhatsapp
+                  size={40}
+                  className=" border-transparent  p-2 rounded-2xl text-white transition duration-500 0  cursor-pointer"
+                />
               </Link>
-
               <Link
                 href="https://www.linkedin.com/in/fernando-ferreira-78927b203"
                 target="blank"
-                data-aos="zoom-in-right"
-                data-aos-offset="0"
+                className=" rounded-full p-0.5 bg-white/8 transition duration-500 hover:-translate-y-2 "
               >
-                <SiLinkedin className=" border-transparent w-12 h-15 p-2 rounded-2xl text-gray-400 transition duration-500 hover:text-blue-500 hover:border-blue-500 cursor-pointer" />
+                <SiLinkedin
+                  size={40}
+                  className=" border-transparent  p-2 rounded-2xl text-white transition duration-500   cursor-pointer"
+                />
               </Link>
-
               <Link
                 href="https://github.com/FernandoFerreira94"
+                className=" rounded-full p-0.5 bg-white/8 transition duration-500 hover:-translate-y-2 "
                 target="blank"
-                data-aos="zoom-in-right"
-                data-aos-offset="0"
               >
-                <SiGithub className=" border-transparent w-12 h-15 p-2 rounded-2xl text-gray-400 transition duration-500 hover:text-white hover:border-white cursor-pointer" />
+                <SiGithub
+                  size={40}
+                  className=" border-transparent  p-2 rounded-2xl text-white transition duration-500   cursor-pointer"
+                />
               </Link>
-
               <div
                 onClick={() => toast.info("fernandoeqp59@gmail.com")}
-                data-aos="zoom-in-left"
-                data-aos-offset="0"
+                className=" rounded-full p-0.5 bg-white/8 transition duration-500 hover:-translate-y-2 "
               >
-                <SiGmail className=" border-transparent w-12 h-15 p-2 rounded-2xl text-gray-400 transition duration-500 hover:text-red-600 hover:border-red-600 cursor-pointer" />
+                <SiGmail
+                  size={40}
+                  className=" border-transparent  p-2 rounded-2xl text-white transition duration-500  cursor-pointer"
+                />
               </div>
-
               <Link
                 href="https://www.instagram.com/fernando.ferreira._/"
+                className=" rounded-full p-0.5 bg-white/8 transition duration-500 hover:-translate-y-2 "
                 target="blank"
-                data-aos="zoom-in-left"
-                data-aos-offset="0"
               >
-                <SiInstagram className="border-transparent w-12 h-15 p-2 rounded-2xl text-gray-400 transition duration-500 hover:text-pink-500 hover:border-pink-500 cursor-pointer" />
-                {/* Ajustei o hover:text-white para pink-500, que é mais comum para Instagram */}
+                <SiInstagram
+                  size={40}
+                  className=" border-transparent  p-2 rounded-2xl text-white transition duration-500   cursor-pointer"
+                />
               </Link>
               <Link
                 href="https://www.instagram.com/fernando.ferreira._/"
+                className=" rounded-full p-0.5 bg-white/8 transition duration-500 hover:-translate-y-2 "
                 target="blank"
-                data-aos="zoom-in-left"
-                data-aos-offset="0"
               >
-                <SiFacebook className=" border-transparent w-12 h-15 p-2 rounded-2xl text-gray-400 transition duration-500 hover:text-blue-800 hover:border-blue-800 cursor-pointer" />
+                <SiFacebook
+                  size={40}
+                  className=" border-transparent  p-2 rounded-2xl text-white transition duration-500 cursor-pointer"
+                />
               </Link>
+            </div>
+            <div
+              className="flex flex-col items-center gap-6 justify-center mt-5 text-gray-400"
+              data-aos="zoom-in"
+            >
+              <ul className="flex flex-wrap justify-center gap-6">
+                <li
+                  className="hover:text-white transition duration-300 cursor-pointer"
+                  onClick={scrollToSobreMim}
+                >
+                  Sobre mim
+                </li>
+                <li
+                  className="hover:text-white transition duration-300 cursor-pointer"
+                  onClick={scrollToTecnologia}
+                >
+                  Tecnologias
+                </li>
+                <li
+                  className="hover:text-white transition duration-300 cursor-pointer"
+                  onClick={scrollToProjetos}
+                >
+                  Projetos
+                </li>
+                <li
+                  className="hover:text-white transition duration-300 cursor-pointer"
+                  onClick={scrollToContato}
+                >
+                  Contato
+                </li>
+                <li>
+                  <Link
+                    href="/curriculo/Fernando-FullStack.pdf"
+                    download="Fernando_Ferreira_Curriculo.pdf"
+                    className="hover:text-white transition duration-300 cursor-pointer"
+                  >
+                    Currículo
+                  </Link>
+                </li>
+              </ul>
+              <p className="text-gray-400  text-sm">
+                {" "}
+                Todos os direitos reservados &copy; 2024 WebCodeFF.
+              </p>
             </div>
           </footer>
         </main>

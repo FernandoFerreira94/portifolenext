@@ -45,7 +45,7 @@ export default function Contato() {
     "
     >
       <section
-        className=" ml-auto content pb-40 pt-20 text-white px-5
+        className="   pb-30 pt-20 text-white 
       "
       >
         <h2 className="text-3xl font-bold text-center text-yellow-500 mb-5">
