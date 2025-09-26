@@ -20,6 +20,11 @@ import Link from "next/link";
 import imgProjeto from "../../../assets/360_F_308697506_9dsBYHXm9FwuW0qcEqimAEXUvzTwfzwe.jpg";
 import { fetchAllProjetos } from "@/service/api";
 import { ProjetoProps } from "@/app/utils/type";
+import ImgAyumi from "../../../assets/imgAyumiNails.png";
+import ImgFinaFlow from "../../../assets/imgFinaFlow.png";
+import ImgPrimeFlix from "../../../assets/imgPrimeFlix.png";
+import ImgDevMotor from "../../../assets/ImgDevMotors.png";
+import ImgDevPizza from "@/assets/ImgDevPizza.png";
 
 export default function Projetos({
   showModal,
@@ -48,7 +53,7 @@ export default function Projetos({
     setShowModal(true);
     console.log(iten);
   }
-
+  console.log(projetos);
   return (
     <>
       {!isLoading ? (
@@ -60,7 +65,7 @@ export default function Projetos({
           {projetos.map((iten) => (
             <div
               key={iten.id}
-              className="flex w-3/12 max-w-[350px] flex-col items-center bg-gray-950
+              className="flex w-3/12 max-w-[350px] flex-col items-center justify-center bg-gray-950
     hover:scale-105 transition duration-700 opacity-60 hover:opacity-100 
     
     max-sm:opacity-80  max-sm:w-5/12
@@ -76,9 +81,23 @@ export default function Projetos({
                 data-aos="zoom-in"
               >
                 <Image
-                  src={imgProjeto}
+                  src={
+                    // Início da nova lógica condicional
+                    iten.nome === "AyumiNails"
+                      ? ImgAyumi
+                      : iten.nome === "Finan Flow"
+                      ? ImgFinaFlow
+                      : iten.nome === "Prime Flix" // Nova condição para PrimeFlix
+                      ? ImgPrimeFlix
+                      : iten.nome === "Dev Motors" // Nova condição para Dev Motors
+                      ? ImgDevMotor
+                      : iten.nome === "Dev Pizza" // Nova condição para Dev Pizza
+                      ? ImgDevPizza
+                      : imgProjeto // Imagem padrão se nenhuma condição for atendida
+                  }
                   alt="imagem projeto"
-                  className="w-full border-3 border-black"
+                  quality={100}
+                  className="w-120 border-3 border-black object-cover h-90 "
                 />
               </Link>
               <div className="mt-1 flex flex-col gap-2 items-center w-full">
