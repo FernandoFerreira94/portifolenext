@@ -63,14 +63,16 @@ export default function Projetos({
     <>
       {!isLoading ? (
         <section
-          className={`w-8/10 flex flex-wrap gap-30   justify-center text-gray-300 
-          max-sm:gap-15 max-sm:w-full max-sm:px-4 max-sm:mt-0
-          ${showModal ? "hidden" : ""}`}
+          className={`w-8/10 mx-auto  max-[2000px]:w-12/12 flex flex-wrap gap-15 justify-center text-gray-300 
+    max-sm:gap-15 max-sm:w-full max-sm:px-4 max-sm:mt-0
+    ${showModal ? "hidden" : ""}`}
         >
+          {/* Conteúdo da sua seção */}
+
           {projetos.map((iten) => (
             <div
               key={iten.id}
-              className="flex w-3/12 max-w-[350px] flex-col items-center justify-center bg-gray-950
+              className="flex w-3/12 max-w-[350px] rounded-2xl  flex-col items-center justify-center bg-gray-950
     hover:scale-105 transition duration-700 opacity-60 hover:opacity-100 
     
     max-sm:opacity-80  max-sm:w-5/12
@@ -82,7 +84,7 @@ export default function Projetos({
                 href={iten.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full"
+                className="w-full rounded-2xl"
                 data-aos="zoom-in"
               >
                 <Image
@@ -110,7 +112,7 @@ export default function Projetos({
                   }
                   alt="imagem projeto"
                   quality={100}
-                  className="w-120 border-3 border-black object-cover h-90 "
+                  className="w-full border-3  object-cover h-90 rounded-2xl"
                 />
               </Link>
               <div className="mt-1 flex flex-col gap-2 items-center w-full">
