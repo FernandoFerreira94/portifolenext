@@ -20,6 +20,9 @@ export interface ProjetoProps {
   sass: boolean;
   node: boolean;
   firebase: boolean;
+  figma: boolean;
   postgressql: boolean;
   created: Timestamp | Date; // Agora aceita Timestamp ou Date
+  github: string;
+  figmaUrl: string;
 }

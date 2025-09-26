@@ -12,6 +12,7 @@ import {
   SiFirebase,
   SiPostgresql,
   SiSass,
+  SiFigma,
 } from "react-icons/si";
 
 import Image from "next/image";
@@ -25,6 +26,10 @@ import ImgFinaFlow from "../../../assets/imgFinaFlow.png";
 import ImgPrimeFlix from "../../../assets/imgPrimeFlix.png";
 import ImgDevMotor from "../../../assets/ImgDevMotors.png";
 import ImgDevPizza from "@/assets/ImgDevPizza.png";
+import ImgMataMosca from "@/assets/ImgMataMosca.png";
+import ImgDevShop from "@/assets/ImgDevShop.png";
+import ImgTask from "@/assets/ImgTask.png";
+import ImgCoinsDev from "@/assets/ImgCoinsDev.png";
 
 export default function Projetos({
   showModal,
@@ -93,6 +98,14 @@ export default function Projetos({
                       ? ImgDevMotor
                       : iten.nome === "Dev Pizza" // Nova condição para Dev Pizza
                       ? ImgDevPizza
+                      : iten.nome === "Mata Mosca" // Nova condição para Mata Mosca
+                      ? ImgMataMosca
+                      : iten.nome === "Dev Shop" // Nova condição para Dev Shop
+                      ? ImgDevShop
+                      : iten.nome === "Task  +" // Nova condição para Task
+                      ? ImgTask
+                      : iten.nome === "Coins Dev" // Nova condição para Coins Dev
+                      ? ImgCoinsDev
                       : imgProjeto // Imagem padrão se nenhuma condição for atendida
                   }
                   alt="imagem projeto"
@@ -114,6 +127,7 @@ export default function Projetos({
                   {iten.firebase && <SiFirebase />}
                   {iten.node && <SiNodedotjs />}
                   {iten.postgressql && <SiPostgresql />}
+                  {iten.figma && <SiFigma />}
                 </div>
                 <button
                   onClick={() => handleModal(iten)}

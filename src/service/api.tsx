@@ -38,6 +38,9 @@ export async function fetchAllProjetos() {
         node: data.node || false,
         firebase: data.firebase || false,
         postgressql: data.postgressql || false,
+        github: data.github || "",
+        figma: data.figma || false,
+        figmaUrl: data.figmaUrl || "",
         created:
           data.created instanceof Timestamp
             ? data.created.toDate()

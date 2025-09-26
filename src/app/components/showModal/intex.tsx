@@ -1,4 +1,9 @@
-import { FaRegWindowClose } from "react-icons/fa";
+import {
+  IoArrowBack,
+  IoLogoGithub,
+  IoGlobeOutline,
+  IoLogoFigma,
+} from "react-icons/io5";
 import Link from "next/link";
 
 import Modal from "../modal";
@@ -10,6 +15,7 @@ interface ShowModal {
 }
 
 export default function ShowModal({ iten, handleClose }: ShowModal) {
+  console.log(iten);
   return (
     <section
       className=" flex justify-center  border h-full p-50 z-50
@@ -22,7 +28,7 @@ export default function ShowModal({ iten, handleClose }: ShowModal) {
         max-sm:p-1
         "
         >
-          <FaRegWindowClose
+          <IoArrowBack
             onClick={handleClose}
             className="absolute text-4xl top-0 right-10 cursor-pointer text-red-500 transition duration-300 hover:scale-110
             max-sm:right-0 max-sm:text-3xl
@@ -60,12 +66,27 @@ export default function ShowModal({ iten, handleClose }: ShowModal) {
               </ul>
             ))}
           {iten?.url && (
-            <p>
-              <strong className="text-2xl text-yellow-500">Site :</strong>{" "}
-              <Link href={iten.url} className="text-blue-400" target="_blank">
-                {iten.nome}
-              </Link>
-            </p>
+            <div className="flex gap-5  w-full justify-center mt-8">
+              <span className="hover:scale-110 transition duration-800 text-blue-400  p-1 rounded-2xl  ">
+                <Link href={iten.url} target="_blank">
+                  <IoGlobeOutline size={40} />
+                </Link>
+              </span>
+              {iten?.github && (
+                <span className="hover:scale-110 transition duration-800  p-1 rounded-2xl  ">
+                  <Link href={iten.github} target="_blank">
+                    <IoLogoGithub size={40} />
+                  </Link>
+                </span>
+              )}
+              {iten?.figma && (
+                <span className="hover:scale-110 transition duration-800  text-purple-600 p-1 rounded-2xl  ">
+                  <Link href={iten.figmaUrl} target="_blank">
+                    <IoLogoFigma size={40} />
+                  </Link>
+                </span>
+              )}
+            </div>
           )}
         </div>
       </Modal>
