@@ -9,7 +9,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaCode } from "react-icons/fa";
 
-import Perfil from "../../../assets/perfil.png";
+import Perfil from "../../../assets/perfilGemini.jpg";
 import Logo from "../../../assets/logo.png";
 
 interface FuncProps {
@@ -108,9 +108,9 @@ export default function Header({
             }`}
           >
             <Link
-              href="/curriculo/Fernando-FullStack.pdf"
+              href="/curriculo/Curriculo_Fernando_Fullstack.pdf"
               className="flex items-center gap-3"
-              download="Fernando_Ferreira_Curriculo.pdf"
+              download="Curriculo_Fernando_Fullstack.pdf"
             >
               <IoMdCloudDownload size={`${!isSmallScreen ? 25 : 30}`} />
               {!isSmallScreen && !isCollapsed && (
