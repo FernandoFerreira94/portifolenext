@@ -35,30 +35,29 @@ export default function ShowModal({ iten, handleClose }: ShowModal) {
             "
           />
           <p>
-            <strong className="text-2xl text-yellow-500">Nome :</strong>{" "}
-            {iten?.nome}
+            <strong className=" text-yellow-500">Nome :</strong> {iten?.nome}
           </p>
           <p>
-            <strong className="text-2xl text-yellow-500">Front-End :</strong>{" "}
+            <strong className=" text-yellow-500">Front-End :</strong>{" "}
             {iten?.front}
           </p>
           {iten?.back.length !== 0 && (
             <p>
-              <strong className="text-2xl text-yellow-500">Back-End :</strong>{" "}
+              <strong className=" text-yellow-500">Back-End :</strong>{" "}
               {iten?.back}
             </p>
           )}
           {iten?.database && (
             <p>
-              <strong className="text-2xl text-yellow-500">Data Base :</strong>{" "}
+              <strong className=" text-yellow-500">Data Base :</strong>{" "}
               {iten?.database}
             </p>
           )}
           <p>
-            <strong className="text-2xl text-yellow-500">Descrição :</strong>{" "}
+            <strong className=" text-yellow-500">Descrição :</strong>{" "}
             {iten?.descricao}
           </p>
-          <strong className="text-2xl text-yellow-500">Funcionalidade :</strong>
+          <strong className=" text-yellow-500">Funcionalidade :</strong>
           {Array.isArray(iten?.funcionalidade) &&
             iten?.funcionalidade.map((doc, index) => (
               <ul key={index}>

@@ -44,13 +44,17 @@ export default function Header({
         max-sm:gap-0  
       max-sm:flex-row max-sm:w-full  max-sm:justify-around"
       >
-        <Image
-          src={Perfil}
-          alt="Perfil"
-          className={` rounded-full mt-2  object-cover transition-all duration-300
-              max-sm:m-0 max-sm:w-18  max-sm:h-18 max-sm:ml-2 
-              ${isCollapsed ? "w-18 h-18" : "w-35 h-35"}`}
-        />
+        <div
+          className={`w-full h-full   flex items-center justify-center bg-black max-sm:bg-transparent `}
+        >
+          <Image
+            src={Perfil}
+            alt="Perfil"
+            className={` rounded-full mt-5  object-cover transition-all duration-300
+            max-sm:m-0 max-sm:w-18  max-sm:h-18 max-sm:ml-2 
+            ${isCollapsed ? "w-18 h-18" : "w-35 h-35"}`}
+          />
+        </div>
 
         <nav
           className={`flex  flex-col  mt-5 w-full 

@@ -5,22 +5,12 @@ import {
   SiReact,
   SiNodedotjs,
   SiFigma,
-  SiSupabase,
-  SiExpo,
-  SiCss3,
-  SiBootstrap,
   SiGit,
-  SiGithub,
-  SiShadcnui,
-  SiFirebase,
   SiPostgresql,
-  SiExpress,
-  SiPrisma,
   SiTailwindcss,
-  SiJavascript,
 } from "react-icons/si";
 import { TbBrandReactNative } from "react-icons/tb";
-import { FaBrain, FaSass } from "react-icons/fa";
+import { FaBrain } from "react-icons/fa";
 export default function Sobre() {
   return (
     <Modal>
@@ -67,27 +57,16 @@ export default function Sobre() {
           <SiNodedotjs size={25} className="mx-2 inline text-green-600" />.
           Também possuo experiência com React Native{" "}
           <TbBrandReactNative size={25} className="mx-2 inline text-blue-500" />
-          , Expo <SiExpo size={25} className="mx-2 inline text-white" />, Shadcn
-          UI <SiShadcnui size={25} className="mx-2 inline text-white" /> e
-          Supabase
-          <SiSupabase size={25} className="mx-2 inline text-green-600" />
-          .Minhas habilidades incluem HTML, JavaScript{" "}
-          <SiJavascript size={25} className="mx-2 inline text-yellow-400" />,
-          CSS <SiCss3 size={25} className="mx-2 inline text-blue-500" />,
-          Tailwind CSS{" "}
+          , Expo , Shadcn UI e Supabase .Minhas habilidades incluem HTML,
+          JavaScript , CSS, Tailwind CSS{" "}
           <SiTailwindcss size={25} className="mx-2 inline text-cyan-400" />,
-          SASS <FaSass size={25} className="mx-2 inline text-pink-500" />,
-          Bootstrap{" "}
-          <SiBootstrap size={25} className="mx-2 inline text-violet-500" />, Git{" "}
-          <SiGit size={25} className="mx-2 inline text-orange-500" />, GitHub{" "}
-          <SiGithub size={25} className="mx-2 inline text-white" />, Firebase{" "}
-          <SiFirebase size={25} className="mx-2 inline text-yellow-500" />,
-          Postgresql{" "}
+          SASS , Bootstrap , Git{" "}
+          <SiGit size={25} className="mx-2 inline text-orange-500" />, GitHub ,
+          Firebase , Postgresql{" "}
           <SiPostgresql size={25} className="mx-2 inline text-blue-600" />,
-          Express <SiExpress size={25} className="mx-2 inline text-white" /> e
-          Prisma <SiPrisma size={25} className="mx-2 inline text-teal-500" />.
-          Além disso, tenho domínio em <strong>Web Design</strong>, com foco em
-          prototipação e design de interfaces usando{" "}
+          Express e Prisma . Além disso, tenho domínio em{" "}
+          <strong>Web Design</strong>, com foco em prototipação e design de
+          interfaces usando{" "}
           <strong>
             Figma <SiFigma size={25} className="mx-2 inline text-violet-600" />
           </strong>
