@@ -8,6 +8,7 @@ import {
   SiGit,
   SiPostgresql,
   SiTailwindcss,
+  SiN8N,
 } from "react-icons/si";
 import { TbBrandReactNative } from "react-icons/tb";
 import { FaBrain } from "react-icons/fa";
@@ -86,9 +87,13 @@ export default function Sobre() {
             <span className="text-2xl"> 🔮</span> Futuro:
           </strong>{" "}
           Meu objetivo é me aprofundar em automação e inteligência artificial,
-          explorando ferramentas como <strong>n8n</strong> e buscando criar
-          fluxos de trabalho inteligentes que otimizem processos e melhorem a
-          produtividade.
+          explorando ferramentas como{" "}
+          <strong>
+            n8n
+            <SiN8N size={25} className="mx-2 inline text-[#EA4B71]" />
+          </strong>{" "}
+          e buscando criar fluxos de trabalho inteligentes que otimizem
+          processos e melhorem a produtividade.
           <FaBrain size={25} className="mx-2 inline text-white" />
         </p>
       </div>
