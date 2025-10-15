@@ -50,9 +50,9 @@ export default function Header({
           <Image
             src={Perfil}
             alt="Perfil"
-            className={` rounded-full mt-5  object-cover transition-all duration-300
+            className={`  object-cover transition-all duration-300
             max-sm:m-0 max-sm:w-18  max-sm:h-18 max-sm:ml-2 
-            ${isCollapsed ? "w-18 h-18" : "w-35 h-35"}`}
+            ${isCollapsed ? "w-18 h-18" : "w-35 h-45"}`}
           />
         </div>
 

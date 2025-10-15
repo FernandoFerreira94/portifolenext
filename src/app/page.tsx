@@ -3,7 +3,6 @@ import { useRef, useState, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-import TypingEffect from "./components/TypeingEffect";
 import {
   SiInstagram,
   SiWhatsapp,
@@ -93,17 +92,27 @@ export default function Home() {
               <Modal>
                 <div className="flex flex-col gap-4">
                   <h2 className="text-xl  text-gray-200 font-bold">
-                    Olá sou o Fernando Ferreira.
+                    Olá sou Fernando Ferreira.
                   </h2>
                   <span className="text-lg text-yellow-400">
                     Desenvolvedor{" "}
                     <span className=" max-sm:block">
-                      Full stack <TypingEffect />
+                      Full stack{" "}
+                      <span className="text-blue-500 font-bold">React.js</span>{" "}
+                      <span className="text-green-500 font-bold">Node.js</span>
+                    </span>{" "}
+                  </span>
+                  <span className="text-lg text-yellow-400">
+                    <span className=" max-sm:block">
+                      Mobile{" "}
+                      <span className="text-blue-400 font-bold">
+                        React Native
+                      </span>
                     </span>{" "}
                   </span>
                   <span className="text-lg text-yellow-400">
                     Web Design{" "}
-                    <span className="text-gray-200 ml-1"> Figma </span>
+                    <span className="text-violet-600 ml-1"> Figma </span>
                   </span>
                 </div>
               </Modal>
