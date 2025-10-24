@@ -25,4 +25,7 @@ export interface ProjetoProps {
   created: Timestamp | Date; // Agora aceita Timestamp ou Date
   github: string;
   figmaUrl: string;
+  shancn: boolean;
+  reactNative: boolean;
+  supabase: boolean;
 }

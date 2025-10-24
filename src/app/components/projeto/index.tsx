@@ -13,8 +13,10 @@ import {
   SiPostgresql,
   SiSass,
   SiFigma,
+  SiShadcnui,
+  SiSupabase,
 } from "react-icons/si";
-
+import { TbBrandReactNative } from "react-icons/tb";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -30,6 +32,7 @@ import ImgMataMosca from "@/assets/ImgMataMosca.png";
 import ImgDevShop from "@/assets/ImgDevShop.png";
 import ImgTask from "@/assets/ImgTask.png";
 import ImgCoinsDev from "@/assets/ImgCoinsDev.png";
+import ImgGestaoColinas from "@/assets/imgGestaoColinas.png";
 
 export default function Projetos({
   showModal,
@@ -70,7 +73,7 @@ export default function Projetos({
           {projetos.map((iten) => (
             <div
               key={iten.id}
-              className="flex w-3/12 max-w-[300px] rounded-2xl  flex-col items-center justify-center bg-gray-950
+              className="flex w-3/12 max-w-[350px] ] rounded-2xl  flex-col items-center justify-center bg-gray-950
     hover:scale-105 transition duration-700 opacity-60 hover:opacity-100 max-sm:w-full
     
     max-sm:opacity-80  
@@ -82,7 +85,7 @@ export default function Projetos({
                 href={iten.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full rounded-2xl"
+                className="w-full h-full rounded-2xl"
                 data-aos="zoom-in"
               >
                 <Image
@@ -106,27 +109,37 @@ export default function Projetos({
                       ? ImgTask
                       : iten.nome === "Coins Dev" // Nova condição para Coins Dev
                       ? ImgCoinsDev
-                      : imgProjeto // Imagem padrão se nenhuma condição for atendida
+                      : iten.nome === "Gestão Colinas" // Nova condição para Gestão Colinas
+                      ? ImgGestaoColinas
+                      : imgProjeto
                   }
                   alt="imagem projeto"
                   quality={100}
-                  className="w-full border-3   object-cover h-80 rounded-2xl"
+                  className="w-full border-3  object-cover  h-80 rounded-2xl"
                 />
               </Link>
               <div className="mt-1 flex flex-col gap-2 items-center w-full">
                 <p className="font-bold text-lg tracking-wider">{iten.nome}</p>
                 <div className="text-[#9370db] text-lg flex gap-1.5  flex-wrap justify-center  ">
-                  <SiHtml5 />
-                  <SiCss3 />
-                  <SiJavascript />
+                  {iten.nome === "Coins Dev" ||
+                    (iten.nome === "Mata Mosca" && (
+                      <>
+                        <SiJavascript />
+                        <SiHtml5 />
+                        <SiCss3 />
+                      </>
+                    ))}
                   {iten.react && <SiReact />}
                   {iten.next && <SiNextdotjs />}
                   {iten.typescript && <SiTypescript />}
                   {iten.tailwind && <SiTailwindcss />}
                   {iten.sass && <SiSass />}
-                  {iten.firebase && <SiFirebase />}
                   {iten.node && <SiNodedotjs />}
+                  {iten.shancn && <SiShadcnui />}
+                  {iten.firebase && <SiFirebase />}
                   {iten.postgressql && <SiPostgresql />}
+                  {iten.supabase && <SiSupabase />}
+                  {iten.reactNative && <TbBrandReactNative />}
                   {iten.figma && <SiFigma />}
                 </div>
                 <button

@@ -41,6 +41,9 @@ export async function fetchAllProjetos() {
         github: data.github || "",
         figma: data.figma || false,
         figmaUrl: data.figmaUrl || "",
+        shancn: data.shancn || false,
+        reactNative: data.reactNative || false,
+        supabase: data.supabase || false,
         created:
           data.created instanceof Timestamp
             ? data.created.toDate()
