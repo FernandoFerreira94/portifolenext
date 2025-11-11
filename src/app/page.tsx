@@ -30,7 +30,7 @@ import {
   Terminal,
   TypingAnimation,
 } from "@/components/ui/terminal";
-import { IconCloudDemo } from "./components/icon";
+import { IconCloudDemo } from "../components/ui/icon";
 import { TextAnimate } from "@/components/ui/text-animate";
 import SobreMim from "./components/Sobre";
 
