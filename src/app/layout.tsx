@@ -73,7 +73,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={`${unbounded}  ${inter} ${poppins} antialiased`}>
+      <body
+        className={`${unbounded}  ${inter} ${poppins.className} antialiased`}
+      >
         <ToastContainer autoClose={4000} />
         {children}
       </body>

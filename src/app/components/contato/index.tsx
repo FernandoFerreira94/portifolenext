@@ -41,7 +41,7 @@ export default function Contato() {
   return (
     <div
       className="w-full bg-gray-950 mt-20 
-    max-sm:mt-25
+    max-sm:mt-25 max-sm:px-2
     "
     >
       <section

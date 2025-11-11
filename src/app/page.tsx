@@ -17,8 +17,6 @@ import Image from "next/image";
 
 import Header from "./components/header";
 import Title from "./components/title";
-import Modal from "./components/modal";
-import Sobre from "./components/sobreMim";
 import Tecnologias from "./components/tecnologias";
 import Projetos from "./components/projeto";
 import ShowModal from "./components/showModal/intex";
@@ -26,6 +24,15 @@ import Contato from "./components/contato";
 import Logo from "../assets/Made with insMind-slogan.png";
 
 import { ProjetoProps } from "./utils/type";
+
+import {
+  AnimatedSpan,
+  Terminal,
+  TypingAnimation,
+} from "@/components/ui/terminal";
+import { IconCloudDemo } from "./components/icon";
+import { TextAnimate } from "@/components/ui/text-animate";
+import SobreMim from "./components/Sobre";
 
 export default function Home() {
   const [isCollapsed, setIsCollapsed] = useState(true);
@@ -82,45 +89,68 @@ export default function Home() {
                 onProjetosClick={scrollToProjetos}
               />
 
-              <div className="w-full">
+              <div className="w-full flex">
                 <Image
                   src={Logo}
                   alt="Logo"
-                  className="object-cover  mb-30 mt-20 ml- scale-60 max-sm:ml-0 max-sm:mb-20 max-sm:mt-30 max-sm:scale-100"
+                  className="object-cover  mb-10 mt-20  scale-60 max-sm:ml-0 max-sm:mb-20 max-sm:mt-30 max-sm:scale-100"
                 />
               </div>
-              <Modal>
-                <div className="flex flex-col gap-4">
-                  <h2 className="text-xl  text-gray-200 font-bold">
-                    Olá sou Fernando Ferreira.
-                  </h2>
-                  <span className="text-lg text-yellow-400">
-                    Desenvolvedor{" "}
-                    <span className=" max-sm:block">
-                      Full stack{" "}
-                      <span className="text-blue-500 font-bold">React.js</span>{" "}
-                      <span className="text-green-500 font-bold">Node.js</span>
-                    </span>{" "}
-                  </span>
-                  <span className="text-lg text-yellow-400">
-                    <span className=" max-sm:block">
-                      Mobile{" "}
-                      <span className="text-blue-400 font-bold">
-                        React Native
-                      </span>
-                    </span>{" "}
-                  </span>
-                  <span className="text-lg text-yellow-400">
-                    Web Design{" "}
-                    <span className="text-violet-600 ml-1"> Figma </span>
-                  </span>
+
+              <div className="w-8/10 ">
+                <div className="w-full items-center flex justify-between">
+                  <div className="flex">
+                    <Terminal className="">
+                      <TypingAnimation className="text-2xl text-gray-200 font-bold font-sans">
+                        Olá sou Fernando Ferreira.
+                      </TypingAnimation>
+                      <AnimatedSpan className="font-sans  font-semibold">
+                        <span className="text-xl  text-yellow-400 ">
+                          Desenvolvedor{" "}
+                          <span className="max-sm:h-1 max-sm:block max-sm:mt-1">
+                            Full stack{" "}
+                            <span className="text-blue-500 font-bold">
+                              React.js
+                            </span>{" "}
+                            <span className="text-green-500 font-bold">
+                              Node.js
+                            </span>
+                          </span>{" "}
+                        </span>
+                      </AnimatedSpan>
+                      <AnimatedSpan className="font-sans  font-semibold">
+                        {" "}
+                        <span className="text-xl text-yellow-400">
+                          <span className="max-sm:h-1 max-sm:block">
+                            Mobile{" "}
+                            <span className="text-blue-400 font-bold">
+                              React Native
+                            </span>
+                          </span>{" "}
+                        </span>
+                      </AnimatedSpan>
+                      <AnimatedSpan className="font-sans font-semibold ">
+                        <span className="text-xl text-yellow-400">
+                          Web Design{" "}
+                          <span className="text-violet-600 ml-1"> Figma </span>
+                        </span>
+                      </AnimatedSpan>
+                    </Terminal>
+                  </div>
+                  <div
+                    data-aos-delay="400"
+                    data-aos="zoom-in"
+                    className="pr-30  max-sm:hidden"
+                  >
+                    <IconCloudDemo />
+                  </div>
                 </div>
-              </Modal>
+              </div>
+
               <section ref={sobreMimRef}>
                 <Title titulo="Sobre mim" />
               </section>
-
-              <Sobre />
+              <SobreMim />
             </div>
           </section>
           <section ref={tecnologiasRef} className="w-full flex justify-center">
@@ -140,10 +170,14 @@ export default function Home() {
             </div>
           </section>
           <section ref={contatoRef}>
-            <h1 className=" text-center  mt-20 italic text-lg tracking-wide text-gray-300 max-sm:w-9/10 max-sm:m-auto max-sm:mt-10 max-sm:text-sm">
+            <TextAnimate
+              animation="blurIn"
+              as="h1"
+              className="text-center  mt-20 italic text-lg tracking-wide text-gray-300 max-sm:w-9/10 max-sm:m-auto max-sm:mt-10 max-sm:text-sm"
+            >
               Se você tem um projeto em mente, eu tenho o código. Vamos colocar
               essa ideia pra rodar!
-            </h1>
+            </TextAnimate>
             <Contato />
           </section>
 

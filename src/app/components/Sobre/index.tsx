@@ -1,24 +1,24 @@
-import Modal from "../modal";
+import { CardModal } from "../Card";
 import {
-  SiTypescript,
-  SiNextdotjs,
-  SiReact,
-  SiNodedotjs,
   SiFigma,
   SiGit,
-  SiPostgresql,
-  SiTailwindcss,
   SiN8N,
+  SiNextdotjs,
+  SiNodedotjs,
+  SiPostgresql,
+  SiReact,
+  SiTailwindcss,
+  SiTypescript,
 } from "react-icons/si";
 import { TbBrandReactNative } from "react-icons/tb";
 import { FaBrain } from "react-icons/fa";
-export default function Sobre() {
+export default function SobreMim() {
   return (
-    <Modal>
+    <CardModal>
       <div
         className="flex flex-col text-lg  tracking-wider leading-10 text-justify gap-2 
-      max-sm:text-start max-sm:text-[16px]
-      "
+         max-sm:text-start max-sm:text-[16px] text-white p-8 rounded-xl border-[0.1px] border-gray-100/20
+         "
       >
         <p>
           <strong>
@@ -97,6 +97,6 @@ export default function Sobre() {
           <FaBrain size={25} className="mx-2 inline text-white" />
         </p>
       </div>
-    </Modal>
+    </CardModal>
   );
 }

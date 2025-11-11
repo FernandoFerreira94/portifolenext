@@ -6,8 +6,8 @@ import {
 } from "react-icons/io5";
 import Link from "next/link";
 
-import Modal from "../modal";
 import { ProjetoProps } from "@/app/utils/type";
+import { CardModal } from "../Card";
 
 interface ShowModal {
   iten: ProjetoProps | null;
@@ -18,22 +18,22 @@ export default function ShowModal({ iten, handleClose }: ShowModal) {
   console.log(iten);
   return (
     <section
-      className=" flex justify-center  border h-full p-50 z-50
+      className=" flex justify-center  h-full p-30 z-50 relative
     max-sm:p-5 
     "
     >
-      <Modal>
-        <div
-          className="flex text-xl flex-col relative gap-2 tracking-wider p-5 
-        max-sm:p-1
-        "
-        >
-          <IoArrowBack
-            onClick={handleClose}
-            className="absolute text-4xl top-0 right-10 cursor-pointer text-red-500 transition duration-300 hover:scale-110
+      <IoArrowBack
+        onClick={handleClose}
+        className="absolute text-4xl top-10 right-70 cursor-pointer text-red-400 transition duration-300 hover:scale-110 hover:text-red-500
             max-sm:right-0 max-sm:text-3xl
             "
-          />
+      />
+      <CardModal>
+        <div
+          className="flex text-xl flex-col relative gap-2 tracking-wider leading-8
+        max-sm:p-1 text-white p-8 rounded-xl border-[0.1px] border-gray-100/20
+        "
+        >
           <p>
             <strong className=" text-yellow-500">Nome :</strong> {iten?.nome}
           </p>
@@ -88,7 +88,7 @@ export default function ShowModal({ iten, handleClose }: ShowModal) {
             </div>
           )}
         </div>
-      </Modal>
+      </CardModal>
     </section>
   );
 }

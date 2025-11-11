@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:is(.dark *));
+
 .titulo,
 .card {
   font-family: "unbounded";
@@ -106,8 +108,6 @@ body::before {
   mask-composite: intersect;
   animation: s4 1s infinite steps(10);
 }
-
-
 
 @keyframes s4 {
   to {
