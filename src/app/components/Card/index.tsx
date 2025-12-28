@@ -1,5 +1,4 @@
 import { Card } from "@/components/ui/card";
-import { BorderBeam } from "@/components/ui/border-beam";
 
 import { ReactNode } from "react";
 interface ModalProps {
@@ -7,22 +6,10 @@ interface ModalProps {
 }
 export function CardModal({ children }: ModalProps) {
   return (
-    <Card className="relative w-8/10 bg-gray-950/60 max-sm:w-11/12">
-      {children}
-      
-      <BorderBeam
-        duration={8}
-        size={600}
-        borderWidth={3}
-        className="from-transparent via-gray-200 to-transparent"
-      />
-      <BorderBeam
-        duration={8}
-        delay={4}
-        size={600}
-        borderWidth={3}
-        className="from-transparent via-gray-200 to-transparent"
-      />
+    <Card className=" w-full  bg-gradient-to-b from-gray-950 via-gray-950  to-gray-950/10 max-sm:w-11/12 pb-20  ">
+      <div className="container mx-auto flex flex-col justify-center items-center">
+        {children}
+      </div>
     </Card>
   );
 }

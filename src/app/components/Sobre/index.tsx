@@ -1,101 +1,106 @@
 import { CardModal } from "../Card";
-import {
-  SiFigma,
-  SiGit,
-  SiN8N,
-  SiNextdotjs,
-  SiNodedotjs,
-  SiPostgresql,
-  SiReact,
-  SiTailwindcss,
-  SiTypescript,
-} from "react-icons/si";
-import { TbBrandReactNative } from "react-icons/tb";
-import { FaBrain } from "react-icons/fa";
+
+import Title from "../title";
+import { User, Database, Star } from "lucide-react";
+import { AuroraText } from "@/components/ui/aurora-text";
+import { Card, CardContent, CardDescription } from "@/components/ui/card";
+import { FaCode } from "react-icons/fa";
+
 export default function SobreMim() {
   return (
     <CardModal>
+      <article className="my-12">
+        <Title icon={<User />} titulo="Sobre mim" />
+      </article>
+
+      <article className="mt-6 mb-8 text-gray-200 text-4xl  tracking-wide">
+        <h1 className="">
+          Prazer em{" "}
+          <AuroraText className="font-semibold">conhecê-lo!</AuroraText>{" "}
+        </h1>
+      </article>
       <div
-        className="flex flex-col text-lg  tracking-wider leading-10 text-justify gap-2 
-         max-sm:text-start max-sm:text-[16px] text-white p-8 rounded-xl border-[0.1px] border-gray-100/20
-         "
+        className="grid grid-cols-2 container relative gap-12 text-lg py-20  h-full tracking-wider leading-10 text-justify 
+         max-sm:text-start max-sm:text-[16px] text-white p-8  "
       >
-        <p>
-          <strong>
-            <span className="text-2xl"> 📅</span> Idade:
-          </strong>{" "}
-          31 anos.
-        </p>
-        <p>
-          <strong>
-            <span className="text-2xl"> 🏠</span> Residência:
-          </strong>{" "}
-          São José dos Campos, SP.
-        </p>
-        <p>
-          <strong>
-            <span className="text-2xl"> 🎓</span> Educação:
-          </strong>{" "}
-          Estou no <strong>último semestre</strong> do curso Tecnólogo em
-          <strong> Análise e Desenvolvimento de Sistemas</strong> na UNIP, com 2
-          anos de duração. Tenho conhecimento em inglês (intermediário).
-        </p>
+        <section className="grid  gap-6 text-gray-200/70 text-sm ml-20">
+          <p>
+            Sou desenvolvedor Front-end com foco na construção de interfaces
+            modernas, escaláveis e orientadas à experiência do usuário. Atuo
+            principalmente com React e Next.js, aplicando boas práticas de
+            componentização, organização de código e performance em aplicações
+            web.
+          </p>
+          <p>
+            Tenho experiência no desenvolvimento de aplicações que consomem APIs
+            REST, gerenciamento de estado, integração com serviços externos e
+            preocupação constante com acessibilidade, responsividade e
+            consistência visual. Meu trabalho no Front-end vai além da
+            interface: busco compreender o fluxo completo da aplicação para
+            entregar soluções coesas e funcionais
+          </p>
+          <p>
+            Embora meu foco seja Front-end, possuo conhecimento em Back-end com
+            Node.js e Express, o que me permite colaborar de forma mais
+            eficiente em arquiteturas full stack, entendendo regras de negócio,
+            estrutura de dados e comunicação entre camadas.
+          </p>
+          <p>
+            Busco constantemente evoluir tecnicamente, aprimorando a qualidade
+            do código, a experiência do usuário e a manutenibilidade das
+            aplicações, sempre com uma abordagem pragmática e orientada a
+            produto.
+          </p>
+        </section>
 
-        <p>
-          <strong>
-            <span className="text-2xl">📚</span> Especialização:
-          </strong>{" "}
-          Como desenvolvedor <strong>Full Stack</strong>, tenho especialização
-          em React.js{" "}
-          <SiReact size={25} className="mx-2 inline text-blue-500" />, Next.js{" "}
-          <SiNextdotjs size={25} className="mx-2 inline text-white" />,
-          TypeScript{" "}
-          <SiTypescript
-            size={25}
-            className="mx-2 inline text-blue-500 bg-white"
-          />
-          , e Node.js{" "}
-          <SiNodedotjs size={25} className="mx-2 inline text-green-600" />.
-          Também possuo experiência com React Native{" "}
-          <TbBrandReactNative size={25} className="mx-2 inline text-blue-500" />
-          , Expo , Shadcn UI e Supabase .Minhas habilidades incluem HTML,
-          JavaScript , CSS, Tailwind CSS{" "}
-          <SiTailwindcss size={25} className="mx-2 inline text-cyan-400" />,
-          SASS , Bootstrap , Git{" "}
-          <SiGit size={25} className="mx-2 inline text-orange-500" />, GitHub ,
-          Firebase , Postgresql{" "}
-          <SiPostgresql size={25} className="mx-2 inline text-blue-600" />,
-          Express e Prisma . Além disso, tenho domínio em{" "}
-          <strong>Web Design</strong>, com foco em prototipação e design de
-          interfaces usando{" "}
-          <strong>
-            Figma <SiFigma size={25} className="mx-2 inline text-violet-600" />
-          </strong>
-          .
-        </p>
+        <section className="grid gap-6 items-center justify-center">
+          <Card className="border border-white/30 bg-gradient-to-r from-neutral-950 via-neutral-950 to-neutral-900 w-3/4">
+            <CardContent className="flex items-start pt-4 gap-4">
+              {" "}
+              <span className=" p-2 rounded-lg bg-[#03243a]">
+                <FaCode size={20} className="text-sky-600" />
+              </span>
+              <CardDescription>
+                <h2 className="text-sm mb-1">Front-End</h2>
+                <span className="text-[12px] text-gray-200/60 ">
+                  Interfaces modernas e responsivas com foco na experiência do
+                  usuário
+                </span>
+              </CardDescription>
+            </CardContent>
+          </Card>
 
-        <p>
-          <strong>
-            <span className="text-2xl"> 💻</span> Profissão:
-          </strong>{" "}
-          Atualmente atuo como Desenvolvedor Full Stack, construindo aplicações
-          web com React.js, Next.js e Node.js. Estou sempre em busca do código
-          perfeito, mas aceitando que bugs fazem parte da vida.
-        </p>
-        <p>
-          <strong>
-            <span className="text-2xl"> 🔮</span> Futuro:
-          </strong>{" "}
-          Meu objetivo é me aprofundar em automação e inteligência artificial,
-          explorando ferramentas como{" "}
-          <strong>
-            n8n
-            <SiN8N size={25} className="mx-2 inline text-[#EA4B71]" />
-          </strong>{" "}
-          e buscando criar fluxos de trabalho inteligentes que otimizem
-          processos e melhorem a produtividade.
-          <FaBrain size={25} className="mx-2 inline text-white" />
-        </p>
+          <Card className="border border-white/30 bg-gradient-to-r from-neutral-950 via-neutral-950 to-neutral-900 w-3/4">
+            <CardContent className="flex items-start pt-4 gap-4">
+              {" "}
+              <span className=" p-2 rounded-lg bg-[#2b0249]">
+                <Database size={20} className="text-fuchsia-600" />
+              </span>
+              <CardDescription>
+                <h2 className="text-sm mb-1">Back-End</h2>
+                <span className="text-[12px] text-gray-200/60 ">
+                  Sistemas seguros e escaláveis, com arquiteturas bem
+                  estruturadas
+                </span>
+              </CardDescription>
+            </CardContent>
+          </Card>
+          <Card className="border border-white/30 bg-gradient-to-r from-neutral-950 via-neutral-950 to-neutral-900 w-3/4">
+            <CardContent className="flex items-start pt-4 gap-4">
+              {" "}
+              <span className=" p-2 rounded-lg bg-green-950">
+                <Star size={20} className="text-green-600" />
+              </span>
+              <CardDescription>
+                <h2 className="text-sm mb-1">Qualidade</h2>
+                <span className="text-[12px] text-gray-200/60 ">
+                  Código limpo, versionamento com Git e práticas ágeis de
+                  desenvolvimento
+                </span>
+              </CardDescription>
+            </CardContent>
+          </Card>
+        </section>
       </div>
     </CardModal>
   );

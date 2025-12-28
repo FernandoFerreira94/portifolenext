@@ -3,36 +3,27 @@ import { useRef, useState, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-import {
-  SiInstagram,
-  SiWhatsapp,
-  SiFacebook,
-  SiGithub,
-  SiGmail,
-  SiLinkedin,
-} from "react-icons/si";
-import { toast } from "react-toastify";
 import Link from "next/link";
-import Image from "next/image";
 
 import Header from "./components/header";
-import Title from "./components/title";
 import Tecnologias from "./components/tecnologias";
 import Projetos from "./components/projeto";
 import ShowModal from "./components/showModal/intex";
 import Contato from "./components/contato";
-import Logo from "../assets/Made with insMind-slogan.png";
 
 import { ProjetoProps } from "./utils/type";
 
-import {
-  AnimatedSpan,
-  Terminal,
-  TypingAnimation,
-} from "@/components/ui/terminal";
-import { IconCloudDemo } from "../components/ui/icon";
 import { TextAnimate } from "@/components/ui/text-animate";
 import SobreMim from "./components/Sobre";
+
+import { ShimmerButton } from "@/components/ui/shimmer-button";
+import { AuroraText } from "@/components/ui/aurora-text";
+
+import { Meteors } from "@/components/ui/meteors";
+
+import ContatosWeb from "./components/ContatosWeb";
+import ButtonHero from "./components/ButtonHero";
+import { ScrollBasedVelocityDemo } from "@/components/ui/ScrolSkill";
 
 export default function Home() {
   const [isCollapsed, setIsCollapsed] = useState(true);
@@ -72,227 +63,149 @@ export default function Home() {
 
   return (
     <>
-      {!showModal && (
-        <main
-          className={`w-full flex flex-col transition-all duration-500
-          ${isCollapsed ? "pl-[60px]" : "pl-[200px]"}
-          max-sm:p-0`}
+      <div className=" min-h-screen w-full fixed   ">
+        <Meteors className="" />
+      </div>
+      <main
+        className={`w-full  flex flex-col transition-all duration-500 bg-neutral-950/85 
+          "}
+          max-sm:p-0 
+          ${isCollapsed ? "pl-0" : "pl-[200px]"}
+          `}
+      >
+        <section className="w-full container mx-auto min-h-screen flex items-center justify-center">
+          <div className=" flex flex-col w-full items-center relative float-right max-sm:float-none max-sm:w-full max-sm:mt-15">
+            <Header
+              isCollapsed={isCollapsed}
+              setIsCollapsed={setIsCollapsed}
+              onTecnologiaClick={scrollToTecnologia}
+              onSobreMimClick={scrollToSobreMim}
+              onContatoClick={scrollToContato}
+              onProjetosClick={scrollToProjetos}
+            />
+
+            <div className="w-full flex justify-center text-sm flex-col items-center  ">
+              <ShimmerButton className="text-sm">
+                Disponivel para contratação
+              </ShimmerButton>
+              <div className="mt-24 flex flex-col items-center">
+                <h1 className="text-gray-50 text-6xl font-semibold font-sans ">
+                  Olá, eu sou <AuroraText>Fernando Ferreira</AuroraText>
+                </h1>
+                <TextAnimate
+                  className="text-gray-50 mt-16 text-2xl font-semibold font-sans "
+                  animation="blurIn"
+                  as="h1"
+                >
+                  Desenvolvedor Front-end
+                </TextAnimate>
+                <TextAnimate
+                  className="text-gray-200/60 mt-8 text-lg font-medium w-2/4 text-center "
+                  animation="blurIn"
+                  as="h1"
+                  delay={1}
+                >
+                  Desenvolvedor Front-end com foco em experiência do usuário,
+                  performance e qualidade de código, construindo interfaces
+                  robustas com React e Next.js em ambientes de produção.
+                </TextAnimate>
+                <article className="mt-16">
+                  <ContatosWeb />
+                </article>
+              </div>
+              <article
+                className="mt-16 "
+                data-aos="zoom-in"
+                data-aos-delay="1300"
+              >
+                <ButtonHero
+                  onProjetosClick={scrollToProjetos}
+                  onContatoClick={scrollToContato}
+                />
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section ref={sobreMimRef} className="">
+          <SobreMim />
+        </section>
+
+        <section
+          ref={tecnologiasRef}
+          className=" w-full container mx-auto flex items-center justify-center "
         >
-          <section>
-            <div className="flex flex-col items-center relative float-right max-sm:float-none max-sm:w-full max-sm:mt-15">
-              <Header
-                isCollapsed={isCollapsed}
-                setIsCollapsed={setIsCollapsed}
-                onTecnologiaClick={scrollToTecnologia}
-                onSobreMimClick={scrollToSobreMim}
-                onContatoClick={scrollToContato}
-                onProjetosClick={scrollToProjetos}
-              />
+          <Tecnologias />
+        </section>
 
-              <div className="w-full flex">
-                <Image
-                  src={Logo}
-                  alt="Logo"
-                  className="object-cover  mb-10 mt-20  scale-60 max-sm:ml-0 max-sm:mb-20 max-sm:mt-30 max-sm:scale-100"
-                />
-              </div>
+        <div className=" w-full my-28">
+          <ScrollBasedVelocityDemo />
+        </div>
 
-              <div className="w-8/10 ">
-                <div className="w-full items-center flex justify-between">
-                  <div className="flex">
-                    <Terminal className="">
-                      <TypingAnimation className="text-2xl text-gray-200 font-bold font-sans">
-                        Olá sou Fernando Ferreira.
-                      </TypingAnimation>
-                      <AnimatedSpan className="font-sans  font-semibold">
-                        <span className="text-xl  text-yellow-400 ">
-                          Desenvolvedor{" "}
-                          <span className="max-sm:h-1 max-sm:block max-sm:mt-1">
-                            Full stack{" "}
-                            <span className="text-blue-500 font-bold">
-                              React.js
-                            </span>{" "}
-                            <span className="text-green-500 font-bold">
-                              Node.js
-                            </span>
-                          </span>{" "}
-                        </span>
-                      </AnimatedSpan>
-                      <AnimatedSpan className="font-sans  font-semibold">
-                        {" "}
-                        <span className="text-xl text-yellow-400">
-                          <span className="max-sm:h-1 max-sm:block">
-                            Mobile{" "}
-                            <span className="text-blue-400 font-bold">
-                              React Native
-                            </span>
-                          </span>{" "}
-                        </span>
-                      </AnimatedSpan>
-                      <AnimatedSpan className="font-sans font-semibold ">
-                        <span className="text-xl text-yellow-400">
-                          Web Design{" "}
-                          <span className="text-violet-600 ml-1"> Figma </span>
-                        </span>
-                      </AnimatedSpan>
-                    </Terminal>
-                  </div>
-                  <div
-                    data-aos-delay="400"
-                    data-aos="zoom-in"
-                    className="pr-30  max-sm:hidden"
-                  >
-                    <IconCloudDemo />
-                  </div>
-                </div>
-              </div>
+        <section ref={projetosRef} className="w-full bg-gray-950 py-12 z-20">
+          <Projetos />
+        </section>
+        <section ref={contatoRef}>
+          <TextAnimate
+            animation="blurIn"
+            as="h1"
+            className="text-center  mt-20 italic text-lg tracking-wide text-gray-300 max-sm:w-9/10 max-sm:m-auto max-sm:mt-10 max-sm:text-sm"
+          >
+            Se você tem um projeto em mente, eu tenho o código. Vamos colocar
+            essa ideia pra rodar!
+          </TextAnimate>
+          <Contato />
+        </section>
 
-              <section ref={sobreMimRef}>
-                <Title titulo="Sobre mim" />
-              </section>
-              <SobreMim />
-            </div>
-          </section>
-          <section ref={tecnologiasRef} className="w-full flex justify-center">
-            <Title titulo="Tecnologias" />
-          </section>
-          <section className="bg-gray-950 flex flex-col items-center  max-sm:pl-0">
-            <Tecnologias />
-          </section>
-          <section ref={projetosRef}>
-            <div className="flex flex-col items-center  relative  float-right max-sm:w-full ">
-              <Title titulo="Projetos" />
-              <Projetos
-                showModal={showModal}
-                setShowModal={setShowModal}
-                setProjetoModal={setProjetoModal}
-              />
-            </div>
-          </section>
-          <section ref={contatoRef}>
-            <TextAnimate
-              animation="blurIn"
-              as="h1"
-              className="text-center  mt-20 italic text-lg tracking-wide text-gray-300 max-sm:w-9/10 max-sm:m-auto max-sm:mt-10 max-sm:text-sm"
-            >
-              Se você tem um projeto em mente, eu tenho o código. Vamos colocar
-              essa ideia pra rodar!
-            </TextAnimate>
-            <Contato />
-          </section>
+        <footer className="w-full pb-20 bg-gradient-to-b from-gray-900 to-gray-950 flex flex-col items-center  gap-4 max-sm:pl-0">
+          <ContatosWeb />{" "}
+          <div
+            className="flex flex-col items-center gap-6 justify-center mt-5 text-gray-400"
+            data-aos="zoom-in"
+          >
+            <ul className="flex flex-wrap justify-center gap-6">
+              <li
+                className="hover:text-white transition duration-300 cursor-pointer"
+                onClick={scrollToSobreMim}
+              >
+                Sobre mim
+              </li>
+              <li
+                className="hover:text-white transition duration-300 cursor-pointer"
+                onClick={scrollToTecnologia}
+              >
+                Tecnologias
+              </li>
+              <li
+                className="hover:text-white transition duration-300 cursor-pointer"
+                onClick={scrollToProjetos}
+              >
+                Projetos
+              </li>
+              <li
+                className="hover:text-white transition duration-300 cursor-pointer"
+                onClick={scrollToContato}
+              >
+                Contato
+              </li>
+              <li>
+                <Link
+                  href="/curriculo/Fernando-FullStack.pdf"
+                  download="Fernando_Ferreira_Curriculo.pdf"
+                  className="hover:text-white transition duration-300 cursor-pointer"
+                >
+                  Currículo
+                </Link>
+              </li>
+            </ul>
+            <p className="text-gray-400  text-sm">
+              {" "}
+              Todos os direitos reservados &copy; 2024 WebCodeFF.
+            </p>
+          </div>
+        </footer>
+      </main>
 
-          <footer className="w-full pb-20 bg-gradient-to-b from-gray-900 to-gray-950 flex flex-col items-center  gap-4 max-sm:pl-0">
-            <div
-              className=" float-right gap-4  text-white flex  justify-center  pt-10"
-              data-aos="zoom-in"
-            >
-              <Link
-                href="https://wa.me/12997041551"
-                target="blank"
-                className=" rounded-full p-0.5 bg-white/8 transition duration-500 hover:-translate-y-2 "
-              >
-                <SiWhatsapp
-                  size={40}
-                  className=" border-transparent  p-2 rounded-2xl text-white transition duration-500 0  cursor-pointer"
-                />
-              </Link>
-              <Link
-                href="https://www.linkedin.com/in/fernando-ferreira-78927b203"
-                target="blank"
-                className=" rounded-full p-0.5 bg-white/8 transition duration-500 hover:-translate-y-2 "
-              >
-                <SiLinkedin
-                  size={40}
-                  className=" border-transparent  p-2 rounded-2xl text-white transition duration-500   cursor-pointer"
-                />
-              </Link>
-              <Link
-                href="https://github.com/FernandoFerreira94"
-                className=" rounded-full p-0.5 bg-white/8 transition duration-500 hover:-translate-y-2 "
-                target="blank"
-              >
-                <SiGithub
-                  size={40}
-                  className=" border-transparent  p-2 rounded-2xl text-white transition duration-500   cursor-pointer"
-                />
-              </Link>
-              <div
-                onClick={() => toast.info("fernandoeqp59@gmail.com")}
-                className=" rounded-full p-0.5 bg-white/8 transition duration-500 hover:-translate-y-2 "
-              >
-                <SiGmail
-                  size={40}
-                  className=" border-transparent  p-2 rounded-2xl text-white transition duration-500  cursor-pointer"
-                />
-              </div>
-              <Link
-                href="https://www.instagram.com/fernando.ferreira._/"
-                className=" rounded-full p-0.5 bg-white/8 transition duration-500 hover:-translate-y-2 "
-                target="blank"
-              >
-                <SiInstagram
-                  size={40}
-                  className=" border-transparent  p-2 rounded-2xl text-white transition duration-500   cursor-pointer"
-                />
-              </Link>
-              <Link
-                href="https://www.instagram.com/fernando.ferreira._/"
-                className=" rounded-full p-0.5 bg-white/8 transition duration-500 hover:-translate-y-2 "
-                target="blank"
-              >
-                <SiFacebook
-                  size={40}
-                  className=" border-transparent  p-2 rounded-2xl text-white transition duration-500 cursor-pointer"
-                />
-              </Link>
-            </div>
-            <div
-              className="flex flex-col items-center gap-6 justify-center mt-5 text-gray-400"
-              data-aos="zoom-in"
-            >
-              <ul className="flex flex-wrap justify-center gap-6">
-                <li
-                  className="hover:text-white transition duration-300 cursor-pointer"
-                  onClick={scrollToSobreMim}
-                >
-                  Sobre mim
-                </li>
-                <li
-                  className="hover:text-white transition duration-300 cursor-pointer"
-                  onClick={scrollToTecnologia}
-                >
-                  Tecnologias
-                </li>
-                <li
-                  className="hover:text-white transition duration-300 cursor-pointer"
-                  onClick={scrollToProjetos}
-                >
-                  Projetos
-                </li>
-                <li
-                  className="hover:text-white transition duration-300 cursor-pointer"
-                  onClick={scrollToContato}
-                >
-                  Contato
-                </li>
-                <li>
-                  <Link
-                    href="/curriculo/Fernando-FullStack.pdf"
-                    download="Fernando_Ferreira_Curriculo.pdf"
-                    className="hover:text-white transition duration-300 cursor-pointer"
-                  >
-                    Currículo
-                  </Link>
-                </li>
-              </ul>
-              <p className="text-gray-400  text-sm">
-                {" "}
-                Todos os direitos reservados &copy; 2024 WebCodeFF.
-              </p>
-            </div>
-          </footer>
-        </main>
-      )}
       {showModal && (
         <ShowModal iten={projetoModal} handleClose={handleCloseModal} />
       )}

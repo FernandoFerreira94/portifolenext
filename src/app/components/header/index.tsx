@@ -1,7 +1,5 @@
 "use client";
 
-import { ImProfile } from "react-icons/im";
-import { LiaInternetExplorer } from "react-icons/lia";
 import { IoMdCloudDownload, IoIosContact } from "react-icons/io";
 import { FaAngleDoubleRight, FaAngleDoubleLeft } from "react-icons/fa";
 import { useMediaQuery } from "react-responsive";
@@ -11,6 +9,7 @@ import { FaCode } from "react-icons/fa";
 
 import Perfil from "../../../assets/perfilGemini.jpg";
 import Logo from "../../../assets/logo.png";
+import { FolderGit2, User } from "lucide-react";
 
 interface FuncProps {
   onTecnologiaClick: () => void;
@@ -66,7 +65,7 @@ export default function Header({
               
               ${isCollapsed && "justify-center"}`}
           >
-            <ImProfile size={`${!isSmallScreen ? 25 : 30}`} />
+            <User size={`${!isSmallScreen ? 25 : 30}`} />
             {!isSmallScreen && !isCollapsed && (
               <span className="whitespace-nowrap">Sobre mim</span>
             )}
@@ -90,7 +89,7 @@ export default function Header({
               isCollapsed && "justify-center"
             }`}
           >
-            <LiaInternetExplorer size={`${!isSmallScreen ? 25 : 30}`} />
+            <FolderGit2 size={`${!isSmallScreen ? 25 : 30}`} />
             {!isSmallScreen && !isCollapsed && (
               <span className="whitespace-nowrap">Projetos</span>
             )}

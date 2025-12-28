@@ -310,13 +310,13 @@ export function IconCloud({ icons, images }: IconCloudProps) {
   return (
     <canvas
       ref={canvasRef}
-      width={300}
+      width={400}
       height={250}
       onMouseDown={handleMouseDown}
       onMouseMove={handleMouseMove}
       onMouseUp={handleMouseUp}
       onMouseLeave={handleMouseUp}
-      className={`rounded-sm ${
+      className={`rounded-sm w-80 ${
         isDragging ? "cursor-grabbing" : "cursor-grab"
       } `}
       aria-label="Interactive 3D Icon Cloud"
