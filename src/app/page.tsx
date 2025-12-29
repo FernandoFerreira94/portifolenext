@@ -136,14 +136,6 @@ export default function Home() {
           <Projetos />
         </section>
         <section ref={contatoRef}>
-          <TextAnimate
-            animation="blurIn"
-            as="h1"
-            className="text-center text-sm mt-20 italic  tracking-wide text-gray-300 max-sm:w-9/10 max-sm:m-auto max-sm:mt-10 max-sm:text-sm"
-          >
-            Se você tem um projeto em mente, eu tenho o código. Vamos colocar
-            essa ideia pra rodar!
-          </TextAnimate>
           <Contato />
         </section>
 

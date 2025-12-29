@@ -18,6 +18,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { toast } from "react-toastify";
 import Link from "next/link";
+import { TextAnimate } from "@/components/ui/text-animate";
 export default function Contato() {
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
@@ -71,126 +72,136 @@ export default function Contato() {
           transformar ideias em soluções bem executadas.
         </p>
       </article>
-      <section className="w-3/4 text-white flex  border border-gray-200/10 rounded-xl bg-neutral-900 z-20 relative  px-12 py-8">
-        <Card className="w-full max-w-xl text-gray-100 relative ">
-          <CardHeader>
-            <CardDescription className="text-gray-200/60 text-[12px]">
-              Obrigada por visitar meu portfólio. Para mais informações ou para
-              conversar sobre oportunidades, fique à vontade para entrar em
-              contato.
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <form className="font-sans relative" onSubmit={enviarEmail}>
-              <div className="flex flex-col gap-4">
-                <div className="grid gap-2">
-                  <Input
-                    placeholder="Seu nome:"
-                    className="text-[12px]  bg-gray-800 border border-gray-600"
-                    value={nome}
-                    onChange={(e) => setNome(e.target.value)}
-                    required
-                  />
-                </div>
-                <div className="grid gap-2">
-                  <Input
-                    id="email"
-                    type="email"
-                    placeholder="Seu email:"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    className=" bg-gray-800 border border-gray-600"
-                    required
-                  />
-                </div>
-                <div className="grid gap-2">
-                  <Textarea
-                    id="message"
-                    placeholder="Sua mensagem:"
-                    className="bg-gray-800 border border-gray-600"
-                    rows={6}
-                    value={mensagem}
-                    onChange={(e) => setMensagem(e.target.value)}
-                    required
-                  />
-                </div>
-              </div>
-
-              <Button
-                variant="outline"
-                type="submit"
-                className={`relative mt-6 bg-yellow-400 w-full text-gray-800 font-semibold py-2 px-4 rounded-lg transition cursor-pointer ${
-                  enviando
-                    ? "opacity-50 cursor-not-allowed"
-                    : "hover:bg-yellow-500"
-                }`}
-              >
-                {enviando ? "Enviando..." : "Enviar mensagem"}
-              </Button>
-            </form>
-          </CardContent>
-        </Card>
-
-        <div className="flex flex-col gap-4 justify-center items-center w-full ">
-          <Card className="border border-white/30 bg-gradient-to-r from-neutral-950 via-neutral-950 to-neutral-900 w-3/4">
-            <CardContent className="flex items-start pt-4 gap-4 ">
-              {" "}
-              <span className=" p-2 rounded-lg bg-[#03243a]">
-                <FaGithub size={20} className="text-gray-200" />
-              </span>
-              <CardDescription>
-                <h2 className="text-sm mb-1">GitHub</h2>
-                <Link
-                  target="_blank"
-                  href="https://github.com/FernandoFerreira94"
-                  className="text-[12px] text-gray-200/60  hover:text-gray-50  transition duration-300 "
-                >
-                  https://github.com
-                </Link>
+      <section className="w-3/4 text-white flex flex-col  border border-gray-200/10 rounded-xl bg-neutral-900 z-20 relative  px-12 py-8">
+        <div className="flex">
+          <Card className="w-full max-w-xl text-gray-100 relative ">
+            <CardHeader>
+              <CardDescription className="text-gray-200/60 text-[12px]">
+                Obrigada por visitar meu portfólio. Para mais informações ou
+                para conversar sobre oportunidades, fique à vontade para entrar
+                em contato.
               </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <form className="font-sans relative" onSubmit={enviarEmail}>
+                <div className="flex flex-col gap-4">
+                  <div className="grid gap-2">
+                    <Input
+                      placeholder="Seu nome:"
+                      className="text-[12px]  bg-gray-800 border border-gray-600"
+                      value={nome}
+                      onChange={(e) => setNome(e.target.value)}
+                      required
+                    />
+                  </div>
+                  <div className="grid gap-2">
+                    <Input
+                      id="email"
+                      type="email"
+                      placeholder="Seu email:"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      className=" bg-gray-800 border border-gray-600"
+                      required
+                    />
+                  </div>
+                  <div className="grid gap-2">
+                    <Textarea
+                      id="message"
+                      placeholder="Sua mensagem:"
+                      className="bg-gray-800 border border-gray-600"
+                      rows={6}
+                      value={mensagem}
+                      onChange={(e) => setMensagem(e.target.value)}
+                      required
+                    />
+                  </div>
+                </div>
+
+                <Button
+                  variant="outline"
+                  type="submit"
+                  className={`relative mt-6 bg-yellow-400 w-full text-gray-800 font-semibold py-2 px-4 rounded-lg transition cursor-pointer ${
+                    enviando
+                      ? "opacity-50 cursor-not-allowed"
+                      : "hover:bg-yellow-500"
+                  }`}
+                >
+                  {enviando ? "Enviando..." : "Enviar mensagem"}
+                </Button>
+              </form>
             </CardContent>
           </Card>
 
-          <Card className="border border-white/30 bg-gradient-to-r from-neutral-950 via-neutral-950 to-neutral-900 w-3/4">
-            <CardContent className="flex items-start pt-4 gap-4">
-              {" "}
-              <span className=" p-2 rounded-lg bg-[#03243a]">
-                <FaLinkedin size={20} className="text-gray-200" />
-              </span>
-              <CardDescription>
-                <h2 className="text-sm mb-1">Linkedin</h2>
-                <Link
-                  target="_blank"
-                  href={
-                    "https://www.linkedin.com/in/fernando-ferreira-78927b203/"
-                  }
-                  className="text-[12px] text-gray-200/60  hover:text-gray-50  transition duration-300 "
-                >
-                  https://www.linkedin.com
-                </Link>
-              </CardDescription>
-            </CardContent>
-          </Card>
+          <div className="flex flex-col gap-4 justify-center items-center w-full ">
+            <Card className="border border-white/30 bg-gradient-to-r from-neutral-950 via-neutral-950 to-neutral-900 w-3/4">
+              <CardContent className="flex items-start pt-4 gap-4 ">
+                {" "}
+                <span className=" p-2 rounded-lg bg-[#03243a]">
+                  <FaGithub size={20} className="text-gray-200" />
+                </span>
+                <CardDescription>
+                  <h2 className="text-sm mb-1">GitHub</h2>
+                  <Link
+                    target="_blank"
+                    href="https://github.com/FernandoFerreira94"
+                    className="text-[12px] text-gray-200/60  hover:text-gray-50  transition duration-300 "
+                  >
+                    https://github.com
+                  </Link>
+                </CardDescription>
+              </CardContent>
+            </Card>
 
-          <Card className="border border-white/30 bg-gradient-to-r from-neutral-950 via-neutral-950 to-neutral-900 w-3/4">
-            <CardContent className="flex items-start pt-4 gap-4">
-              {" "}
-              <span className=" p-2 rounded-lg bg-[#03243a]">
-                <FaInstagram size={20} className="text-gray-200" />
-              </span>
-              <CardDescription>
-                <h2 className="text-sm mb-1">Instagram</h2>
-                <Link
-                  target="_blank"
-                  href={"https://www.instagram.com/webcodeff/"}
-                  className="text-[12px] text-gray-200/60  hover:text-gray-50  transition duration-300 "
-                >
-                  https://www.instagram.com
-                </Link>
-              </CardDescription>
-            </CardContent>
-          </Card>
+            <Card className="border border-white/30 bg-gradient-to-r from-neutral-950 via-neutral-950 to-neutral-900 w-3/4">
+              <CardContent className="flex items-start pt-4 gap-4">
+                {" "}
+                <span className=" p-2 rounded-lg bg-[#03243a]">
+                  <FaLinkedin size={20} className="text-gray-200" />
+                </span>
+                <CardDescription>
+                  <h2 className="text-sm mb-1">Linkedin</h2>
+                  <Link
+                    target="_blank"
+                    href={
+                      "https://www.linkedin.com/in/fernando-ferreira-78927b203/"
+                    }
+                    className="text-[12px] text-gray-200/60  hover:text-gray-50  transition duration-300 "
+                  >
+                    https://www.linkedin.com
+                  </Link>
+                </CardDescription>
+              </CardContent>
+            </Card>
+
+            <Card className="border border-white/30 bg-gradient-to-r from-neutral-950 via-neutral-950 to-neutral-900 w-3/4">
+              <CardContent className="flex items-start pt-4 gap-4">
+                {" "}
+                <span className=" p-2 rounded-lg bg-[#03243a]">
+                  <FaInstagram size={20} className="text-gray-200" />
+                </span>
+                <CardDescription>
+                  <h2 className="text-sm mb-1">Instagram</h2>
+                  <Link
+                    target="_blank"
+                    href={"https://www.instagram.com/webcodeff/"}
+                    className="text-[12px] text-gray-200/60  hover:text-gray-50  transition duration-300 "
+                  >
+                    https://www.instagram.com
+                  </Link>
+                </CardDescription>
+              </CardContent>
+            </Card>
+          </div>
         </div>
+        <TextAnimate
+          animation="blurIn"
+          as="h1"
+          className=" text-center text-sm my-8 italic  tracking-wide text-gray-300 max-sm:w-9/10 max-sm:m-auto max-sm:mt-10 max-sm:text-sm"
+        >
+          Se você tem um projeto em mente, eu tenho o código. Vamos colocar essa
+          ideia pra rodar!
+        </TextAnimate>
         <BorderBeam size={400} duration={15} />
       </section>
     </div>
