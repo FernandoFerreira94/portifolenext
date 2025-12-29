@@ -5,7 +5,7 @@ import { User, Database, Star } from "lucide-react";
 import { AuroraText } from "@/components/ui/aurora-text";
 import { Card, CardContent, CardDescription } from "@/components/ui/card";
 import { FaCode } from "react-icons/fa";
-
+import { Highlighter } from "@/components/ui/highlighter";
 export default function SobreMim() {
   return (
     <CardModal>
@@ -25,25 +25,46 @@ export default function SobreMim() {
       >
         <section className="grid  gap-6 text-gray-200/70 text-sm ml-20">
           <p>
-            Sou desenvolvedor Front-end com foco na construção de interfaces
-            modernas, escaláveis e orientadas à experiência do usuário. Atuo
-            principalmente com React e Next.js, aplicando boas práticas de
-            componentização, organização de código e performance em aplicações
-            web.
+            Sou desenvolvedor{" "}
+            <Highlighter action="underline" color="#FF9800">
+              Front-end
+            </Highlighter>{" "}
+            com foco na construção de interfaces modernas, escaláveis e
+            orientadas à experiência do usuário. Atuo principalmente com{" "}
+            <Highlighter action="underline" color="#61DAFB">
+              {" "}
+              React
+            </Highlighter>{" "}
+            e{" "}
+            <Highlighter action="highlight" color="#1e2939">
+              Next.js{" "}
+            </Highlighter>
+            , aplicando boas práticas de componentização, organização de código
+            e performance em aplicações web.
           </p>
           <p>
-            Tenho experiência no desenvolvimento de aplicações que consomem APIs
-            REST, gerenciamento de estado, integração com serviços externos e
+            Tenho experiência no desenvolvimento de aplicações que consomem{" "}
+            <Highlighter action="box" color="#e12afb">
+              APIs REST
+            </Highlighter>{" "}
+            , gerenciamento de estado, integração com serviços externos e
             preocupação constante com acessibilidade, responsividade e
             consistência visual. Meu trabalho no Front-end vai além da
             interface: busco compreender o fluxo completo da aplicação para
             entregar soluções coesas e funcionais
           </p>
           <p>
-            Embora meu foco seja Front-end, possuo conhecimento em Back-end com
-            Node.js e Express, o que me permite colaborar de forma mais
-            eficiente em arquiteturas full stack, entendendo regras de negócio,
-            estrutura de dados e comunicação entre camadas.
+            Embora meu foco seja Front-end, possuo conhecimento em{" "}
+            <Highlighter action="highlight" color="#2b0249">
+              Back-end{" "}
+            </Highlighter>{" "}
+            com{" "}
+            <Highlighter action="circle" color="#339933">
+              Node.js
+            </Highlighter>{" "}
+            e Express, o que me permite colaborar de forma mais eficiente em
+            arquiteturas full stack, entendendo regras de negócio, estrutura de
+            dados e comunicação entre camadas.
           </p>
           <p>
             Busco constantemente evoluir tecnicamente, aprimorando a qualidade

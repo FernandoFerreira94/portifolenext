@@ -166,6 +166,7 @@ export default function Projetos() {
 
                             <div className="w-full flex  gap-6 pt-2 mt-auto">
                               <Link
+                                target="_blank"
                                 href={iten.github}
                                 className="w-full border-sky-800 py-2 transition duration-300 hover:bg-sky-900/60 text-gray-100  font-light text-sm m-0 p-0 cursor-pointer flex rounded-lg items-center gap-2 relative border justify-center "
                               >
@@ -173,6 +174,7 @@ export default function Projetos() {
                                 Código
                               </Link>
                               <Link
+                                target="_blank"
                                 href={iten.url}
                                 className="w-full transition duration-300 hover:bg-neutral-700/60 relative flex items-center justify-center py-2 bg-neutral-700 text-gray-100 rounded-lg text-sm gap-2 cursor-pointer"
                               >

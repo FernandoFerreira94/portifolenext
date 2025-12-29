@@ -4,11 +4,7 @@ import { toast } from "react-toastify";
 
 export default function ContatosWeb() {
   return (
-    <div
-      className=" float-right gap-4  text-gray-200/50 hover:text-gray-50 flex  justify-center  "
-      data-aos="zoom-in"
-      data-aos-delay="1300"
-    >
+    <div className=" float-right gap-4  text-gray-200/50 hover:text-gray-50 flex  justify-center  ">
       <Link
         href="https://www.linkedin.com/in/fernando-ferreira-78927b203"
         target="blank"

@@ -1,7 +1,5 @@
 "use client";
 
-import { IoMdCloudDownload, IoIosContact } from "react-icons/io";
-import { FaAngleDoubleRight, FaAngleDoubleLeft } from "react-icons/fa";
 import { useMediaQuery } from "react-responsive";
 import Image from "next/image";
 import Link from "next/link";
@@ -9,7 +7,14 @@ import { FaCode } from "react-icons/fa";
 
 import Perfil from "../../../assets/perfilGemini.jpg";
 import Logo from "../../../assets/logo.png";
-import { FolderGit2, User } from "lucide-react";
+import {
+  ChevronFirst,
+  ChevronLast,
+  Download,
+  FolderGit2,
+  PhoneCall,
+  User,
+} from "lucide-react";
 
 interface FuncProps {
   onTecnologiaClick: () => void;
@@ -32,7 +37,7 @@ export default function Header({
 
   return (
     <header
-      className={`fixed top-0 left-0  z-50 h-screen bg-gray-950 text-gray-400 flex flex-col transition-all duration-500  
+      className={`fixed top-0 left-0  z-50 h-screen bg-neutral-950 text-gray-400 flex flex-col transition-all duration-500  
         max-sm:w-full max-sm:h-25  max-sm:bg-black max-sm:flex-row max-sm:items-center max-sm:justify-center ${
           isCollapsed ? "w-[60px]" : "w-[200px]"
         }`}
@@ -65,7 +70,7 @@ export default function Header({
               
               ${isCollapsed && "justify-center"}`}
           >
-            <User size={`${!isSmallScreen ? 25 : 30}`} />
+            <User size={`${!isSmallScreen ? 22 : 30}`} />
             {!isSmallScreen && !isCollapsed && (
               <span className="whitespace-nowrap">Sobre mim</span>
             )}
@@ -77,7 +82,7 @@ export default function Header({
               isCollapsed && "justify-center"
             }`}
           >
-            <FaCode size={`${!isSmallScreen ? 25 : 30}`} />
+            <FaCode size={`${!isSmallScreen ? 22 : 30}`} />
             {!isSmallScreen && !isCollapsed && (
               <span className="whitespace-nowrap">Tecnologias</span>
             )}
@@ -89,7 +94,7 @@ export default function Header({
               isCollapsed && "justify-center"
             }`}
           >
-            <FolderGit2 size={`${!isSmallScreen ? 25 : 30}`} />
+            <FolderGit2 size={`${!isSmallScreen ? 22 : 30}`} />
             {!isSmallScreen && !isCollapsed && (
               <span className="whitespace-nowrap">Projetos</span>
             )}
@@ -100,7 +105,7 @@ export default function Header({
               isCollapsed && "justify-center"
             }`}
           >
-            <IoIosContact size={`${!isSmallScreen ? 25 : 30}`} />
+            <PhoneCall size={`${!isSmallScreen ? 22 : 30}`} />
             {!isSmallScreen && !isCollapsed && (
               <span className="whitespace-nowrap">Contato</span>
             )}
@@ -115,7 +120,7 @@ export default function Header({
               className="flex items-center gap-3"
               download="Curriculo_Fernando_Fullstack.pdf"
             >
-              <IoMdCloudDownload size={`${!isSmallScreen ? 25 : 30}`} />
+              <Download size={`${!isSmallScreen ? 22 : 30}`} />
               {!isSmallScreen && !isCollapsed && (
                 <span className="whitespace-nowrap">Currículo</span>
               )}
@@ -129,11 +134,7 @@ export default function Header({
           className=" top-50 left-10 text-gray-400 cursor-pointer flex justify-center items-center w-full  hover:bg-gray-900 text-sm transitio duration-300 hover:text-white py-3 mt-20"
           onClick={() => setIsCollapsed(!isCollapsed)}
         >
-          {isCollapsed ? (
-            <FaAngleDoubleRight size={24} />
-          ) : (
-            <FaAngleDoubleLeft size={24} />
-          )}
+          {isCollapsed ? <ChevronLast size={24} /> : <ChevronFirst size={24} />}
         </div>
       )}
 

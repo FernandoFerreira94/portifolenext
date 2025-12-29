@@ -8,10 +8,7 @@ import Link from "next/link";
 import Header from "./components/header";
 import Tecnologias from "./components/tecnologias";
 import Projetos from "./components/projeto";
-import ShowModal from "./components/showModal/intex";
 import Contato from "./components/contato";
-
-import { ProjetoProps } from "./utils/type";
 
 import { TextAnimate } from "@/components/ui/text-animate";
 import SobreMim from "./components/Sobre";
@@ -50,24 +47,13 @@ export default function Home() {
     projetosRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
-  const [showModal, setShowModal] = useState(false);
-  const [projetoModal, setProjetoModal] = useState<ProjetoProps | null>(null);
-
-  function handleCloseModal() {
-    setShowModal(false);
-    setProjetoModal(null);
-    setTimeout(() => {
-      projetosRef.current?.scrollIntoView({ behavior: "smooth" });
-    }, 200);
-  }
-
   return (
     <>
       <div className=" min-h-screen w-full fixed   ">
         <Meteors className="" />
       </div>
       <main
-        className={`w-full  flex flex-col transition-all duration-500 bg-neutral-950/85 
+        className={`w-full  flex flex-col transition-all duration-500 bg-neutral-950/60 
           "}
           max-sm:p-0 
           ${isCollapsed ? "pl-0" : "pl-[200px]"}
@@ -109,7 +95,11 @@ export default function Home() {
                   performance e qualidade de código, construindo interfaces
                   robustas com React e Next.js em ambientes de produção.
                 </TextAnimate>
-                <article className="mt-16">
+                <article
+                  className="mt-16"
+                  data-aos="zoom-in"
+                  data-aos-delay="1300"
+                >
                   <ContatosWeb />
                 </article>
               </div>
@@ -149,7 +139,7 @@ export default function Home() {
           <TextAnimate
             animation="blurIn"
             as="h1"
-            className="text-center  mt-20 italic text-lg tracking-wide text-gray-300 max-sm:w-9/10 max-sm:m-auto max-sm:mt-10 max-sm:text-sm"
+            className="text-center text-sm mt-20 italic  tracking-wide text-gray-300 max-sm:w-9/10 max-sm:m-auto max-sm:mt-10 max-sm:text-sm"
           >
             Se você tem um projeto em mente, eu tenho o código. Vamos colocar
             essa ideia pra rodar!
@@ -158,7 +148,9 @@ export default function Home() {
         </section>
 
         <footer className="w-full pb-20 bg-gradient-to-b from-gray-900 to-gray-950 flex flex-col items-center  gap-4 max-sm:pl-0">
-          <ContatosWeb />{" "}
+          <div className="mt-10" data-aos="zoom-in">
+            <ContatosWeb />{" "}
+          </div>
           <div
             className="flex flex-col items-center gap-6 justify-center mt-5 text-gray-400"
             data-aos="zoom-in"
@@ -205,10 +197,6 @@ export default function Home() {
           </div>
         </footer>
       </main>
-
-      {showModal && (
-        <ShowModal iten={projetoModal} handleClose={handleCloseModal} />
-      )}
     </>
   );
 }
