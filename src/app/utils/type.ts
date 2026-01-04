@@ -28,4 +28,5 @@ export interface ProjetoProps {
   shancn: boolean;
   reactNative: boolean;
   supabase: boolean;
+  is_academico: boolean;
 }

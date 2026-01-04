@@ -2,16 +2,16 @@ import {
   collection,
   getDocs,
   query,
-  orderBy,
   Timestamp,
+  where,
 } from "firebase/firestore";
 import { db } from "@/service/fireBaseConective";
 import { ProjetoProps } from "@/app/utils/type";
 
-export async function fetchAllProjetos() {
+export async function fetchProjetosProfissionais() {
   try {
     const proRef = collection(db, "projeto");
-    const q = query(proRef, orderBy("created", "desc"));
+    const q = query(proRef, where("is_academico", "==", false));
     const snapshot = await getDocs(q);
 
     const projetos = snapshot.docs.map((doc) => {
@@ -19,6 +19,7 @@ export async function fetchAllProjetos() {
 
       const converted: ProjetoProps = {
         id: doc.id,
+        is_academico: data.is_academico || false,
         nome: data.nome || "",
         back: data.back || "",
         database: data.database || "",
