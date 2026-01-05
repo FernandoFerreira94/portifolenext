@@ -33,36 +33,34 @@ export default function Header({
   isCollapsed,
   setIsCollapsed,
 }: FuncProps) {
-  const isSmallScreen = useMediaQuery({ maxWidth: 639 });
+  const isSmallScreen = useMediaQuery({ maxWidth: 768 });
 
   return (
     <header
-      className={`fixed top-0 left-0  z-50 h-screen bg-neutral-950 text-gray-400 flex flex-col transition-all duration-500  
-        max-sm:w-full max-sm:h-25  max-sm:bg-black max-sm:flex-row max-sm:items-center max-sm:justify-center ${
-          isCollapsed ? "w-[60px]" : "w-[200px]"
-        }`}
+      className={`fixed top-0 left-0  z-50 h-screen bg-neutral-950 text-gray-400 flex flex-col transition-all duration-500  ease-in-out
+       ${isCollapsed ? "w-[60px]" : "w-[200px] "} 
+        max-sm:w-full max-sm:h-25  max-sm:bg-black max-sm:flex-row max-sm:items-center  max:sm:justify-between  `}
     >
-      {/* Conteúdo do topo */}
       <div
         className="flex flex-col  items-center 
         max-sm:gap-0  
-      max-sm:flex-row max-sm:w-full  max-sm:justify-around"
+      max-sm:flex-row max-sm:w-full  max-sm:justify-around "
       >
         <div
-          className={`w-full h-full   flex items-center justify-center bg-black max-sm:bg-transparent `}
+          className={`xl:w-full h-full   flex items-center justify-center bg-black max-sm:bg-transparent `}
         >
           <Image
             src={Perfil}
             alt="Perfil"
             className={`  object-cover transition-all duration-300
-            max-sm:m-0 max-sm:w-18  max-sm:h-18 max-sm:ml-2 
+            max-sm:m-0 max-sm:w-22  max-sm:h-18  max-sm:ml-2 
             ${isCollapsed ? "w-18 h-18" : "w-35 h-45"}`}
           />
         </div>
 
         <nav
           className={`flex  flex-col  mt-5 w-full 
-          max-sm:m-0  max-sm:flex-row max-sm:ml-10  max-sm:gap-0`}
+          max-sm:m-0  max-sm:flex-row  `}
         >
           <div
             onClick={onSobreMimClick}
@@ -140,7 +138,7 @@ export default function Header({
 
       <div
         className="mt-auto flex justify-center mb-10 w-full items-center 
-      max-sm:m-0 max-sm:w-12 max-sm:mr-3
+      max-sm:m-0 max-sm:w-12 max-sm:mr-3 max-sm:hidden
       "
       >
         {!isSmallScreen && (

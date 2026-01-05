@@ -8,11 +8,14 @@ import { FaCode } from "react-icons/fa";
 export default function Tecnologias() {
   return (
     <div className="w-full flex flex-col container items-center">
-      <article className="my-12 mt-20">
+      <article className="mb-12 mt-20 max-sm:m-0">
         <Title icon={<FaCode />} titulo="Tecnologias" />
       </article>
 
-      <article className="mt-2  text-gray-200 text-4xl  tracking-wide flex flex-col items-center gap-6">
+      <article
+        className="mt-2  text-gray-200 text-4xl  tracking-wide flex flex-col items-center gap-6 
+      max-sm:text-3xl"
+      >
         <h1 className="">
           Skills &{" "}
           <AuroraText className="font-semibold ">Ferramentas</AuroraText>{" "}
@@ -27,7 +30,7 @@ export default function Tecnologias() {
         max-sm:p-0 max-w-[1800px] mx-auto 
         "
       >
-        <div className="w-full flex  justify-between mt-24 gap-18 ">
+        <div className="w-full grid grid-cols-3 max-sm:grid-cols-1  justify-between mt-24 gap-18 ">
           <article
             className=" w-full "
             data-aos-delay="200"

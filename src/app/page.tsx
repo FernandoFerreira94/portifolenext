@@ -49,18 +49,16 @@ export default function Home() {
 
   return (
     <>
-      <div className=" min-h-screen w-full fixed   ">
+      <div className=" min-h-screen w-full fixed">
         <Meteors className="" />
       </div>
       <main
         className={`w-full  flex flex-col transition-all duration-500 bg-neutral-950/60 
-          "}
-          max-sm:p-0 
           ${isCollapsed ? "pl-0" : "pl-[200px]"}
-          `}
+         max-sm:p-0  max-sm:mt-8 `}
       >
         <section className="w-full container mx-auto min-h-screen flex items-center justify-center">
-          <div className=" flex flex-col w-full items-center relative float-right max-sm:float-none max-sm:w-full max-sm:mt-15">
+          <div className=" flex flex-col w-full items-center relative float-right max-sm:float-none max-sm:w-full max-sm:mt-0">
             <Header
               isCollapsed={isCollapsed}
               setIsCollapsed={setIsCollapsed}
@@ -70,12 +68,16 @@ export default function Home() {
               onProjetosClick={scrollToProjetos}
             />
 
-            <div className="w-full flex justify-center text-sm flex-col items-center  ">
+            <div className="w-full flex justify-center text-sm flex-col items-center  max-sm:px-5">
               <ShimmerButton className="text-sm">
                 Disponivel para contratação
               </ShimmerButton>
-              <div className="mt-24 flex flex-col items-center">
-                <h1 className="text-gray-50 text-6xl font-semibold font-sans ">
+              <div className="mt-24 flex flex-col items-center max-sm:mt-15">
+                <h1
+                  className="text-gray-50 text-6xl font-semibold font-sans text-center 
+                max-sm:text-[40px]
+                "
+                >
                   Olá, eu sou <AuroraText>Fernando Ferreira</AuroraText>
                 </h1>
                 <TextAnimate
@@ -86,7 +88,8 @@ export default function Home() {
                   Desenvolvedor Front-end
                 </TextAnimate>
                 <TextAnimate
-                  className="text-gray-200/60 mt-8 text-lg font-medium w-2/4 text-center "
+                  className="text-gray-200/60 mt-8 text-lg  font-medium w-2/4 text-center 
+                  max-sm:w-full max-sm:text-base"
                   animation="blurIn"
                   as="h1"
                   delay={1}
@@ -104,7 +107,7 @@ export default function Home() {
                 </article>
               </div>
               <article
-                className="mt-16 "
+                className="mt-16 max-sm:w-full max-sm:mx-5"
                 data-aos="zoom-in"
                 data-aos-delay="1300"
               >
@@ -117,7 +120,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section ref={sobreMimRef} className="">
+        <section ref={sobreMimRef} className="max-sm:w-full max-sm:z-20">
           <SobreMim />
         </section>
 
@@ -128,13 +131,17 @@ export default function Home() {
           <Tecnologias />
         </section>
 
-        <div className=" w-full my-28">
+        <div className=" w-full my-28 max-sm:my-16">
           <ScrollBasedVelocityDemo />
         </div>
 
-        <section ref={projetosRef} className="w-full bg-gray-950 py-12 z-20">
+        <section
+          ref={projetosRef}
+          className="w-full bg-gray-950 py-12 z-20 max-sm:py-0"
+        >
           <Projetos />
         </section>
+        
         <section ref={contatoRef}>
           <Contato />
         </section>

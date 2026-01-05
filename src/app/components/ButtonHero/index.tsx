@@ -14,10 +14,14 @@ export default function ButtonHero({
 }: FuncProps) {
   return (
     <>
-      <div className=" cursor-pointer flex  gap-10 items-center">
+      <div
+        className=" cursor-pointer flex  gap-10 items-center 
+      max-sm:flex-col max-sm:w-full max-sm:gap-4"
+      >
         <div
           onClick={onProjetosClick}
-          className="group relative mx-auto flex items-center justify-center rounded-full px-8 py-2.5 shadow-[inset_0_-8px_10px_#8fdfff1f] transition-shadow duration-500 ease-out hover:shadow-[inset_0_-5px_10px_#8fdfff3f]"
+          className=" group relative mx-auto flex items-center justify-center rounded-full px-8 py-2.5 shadow-[inset_0_-8px_10px_#8fdfff1f] transition-shadow duration-500 ease-out hover:shadow-[inset_0_-5px_10px_#8fdfff3f]
+          max-sm:w-full "
         >
           <span
             className={cn(
@@ -33,16 +37,17 @@ export default function ButtonHero({
             }}
           />
 
-          <AnimatedGradientText className="text-sm font-medium flex items-center gap-2">
+          <AnimatedGradientText className="text-sm font-medium flex items-center gap-2 ">
             Ver projetos
             <ChevronRight className="ml-1 size-4 stroke-neutral-500 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
           </AnimatedGradientText>
         </div>
-        <div className="z-10 flex   items-center justify-center">
+
+        <div className="z-10 flex   items-center justify-center max-sm:w-full">
           <div
             onClick={onContatoClick}
             className={cn(
-              "group rounded-full border  border-black/5 bg-gray-100/90  transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800"
+              "max-sm:w-full max-sm:py-1 group rounded-full border  border-black/5 bg-gray-100/90  transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800"
             )}
           >
             <AnimatedShinyText className="flex gap-4  cursor-pointer items-center justify-center px-5 py-1.5 text-sm transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">

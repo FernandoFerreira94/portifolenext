@@ -60,10 +60,10 @@ export default function Projetos() {
   console.log(projetosAcademicos);
   return (
     <>
-      <section className="w-full container mx-auto ">
+      <section className="w-full container mx-auto pb-12">
         <article className="w-full flex flex-col items-center mt-6 mb-8 text-gray-200 text-4xl  tracking-wide">
           <Title icon={<FolderGit2 />} titulo="Projetos" />
-          <h1 className="mt-10">
+          <h1 className="mt-10 max-sm:text-3xl text-center max-sm:m-0">
             Conheça meus{" "}
             <AuroraText className="font-semibold">Projetos</AuroraText>{" "}
           </h1>
@@ -74,7 +74,7 @@ export default function Projetos() {
         <p className=" text-center text-xl text-gray-200/90 mt-20">
           Projetos profissionais
         </p>
-        <section className="w-full flex items-center mx-auto  justify-center gap-20 mt-10 px-20">
+        <section className="w-full flex items-center mx-auto  justify-center gap-20 mt-10 px-20 max-sm:px-0">
           <Carousel
             opts={{
               align: "start",
@@ -89,8 +89,8 @@ export default function Projetos() {
                 >
                   <div className=" h-full ">
                     <Card className="h-full ">
-                      <CardContent className="p-4 h-full">
-                        <div className="h-full  relative flex flex-col bg-neutral-900 rounded-2xl  opacity-60 hover:opacity-100 transition duration-300 ease-in hover:scale-101">
+                      <CardContent className="p-4 h-full ">
+                        <div className="h-full   flex flex-col bg-neutral-900 rounded-2xl  opacity-60 hover:opacity-100 transition duration-300 ease-in hover:scale-101">
                           <Image
                             src={
                               // Início da nova lógica condicional
@@ -167,6 +167,11 @@ export default function Projetos() {
                                 <SpanTecnologia nome="React Native" />
                               )}
                               {iten.node && <SpanTecnologia nome="Node" />}
+
+                              {iten.express && (
+                                <SpanTecnologia nome="Express" />
+                              )}
+
                               {iten.postgressql && (
                                 <SpanTecnologia nome="Postgressql" />
                               )}
@@ -204,14 +209,14 @@ export default function Projetos() {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="text-gray-100" />
-            <CarouselNext className="text-gray-100" />
+            <CarouselPrevious className="text-gray-100 max-sm:top-1/2 max-sm:left-2 max-sm:bg-white/40 scale-120 " />
+            <CarouselNext className="text-gray-100  max-sm:top-1/2 max-sm:right-2 max-sm:bg-white/40 scale-120" />
           </Carousel>
         </section>
         <p className=" text-center text-xl text-gray-200/90 mt-20">
           Projetos academicos
         </p>
-        <section className="w-full flex  justify-center gap-20 mt-10 px-20">
+        <section className="w-full flex  justify-center gap-20 mt-10 px-20 max-sm:p-0">
           <Carousel
             opts={{
               align: "start",
@@ -304,6 +309,9 @@ export default function Projetos() {
                                 <SpanTecnologia nome="React Native" />
                               )}
                               {iten.node && <SpanTecnologia nome="Node" />}
+                              {iten.express && (
+                                <SpanTecnologia nome="Express" />
+                              )}
                               {iten.postgressql && (
                                 <SpanTecnologia nome="Postgressql" />
                               )}
@@ -341,8 +349,8 @@ export default function Projetos() {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="text-gray-100" />
-            <CarouselNext className="text-gray-100" />
+            <CarouselPrevious className="text-gray-100 max-sm:top-1/2 max-sm:left-2 max-sm:bg-white/40 scale-120 " />
+            <CarouselNext className="text-gray-100  max-sm:top-1/2 max-sm:right-2 max-sm:bg-white/40 scale-120" />
           </Carousel>
         </section>
       </section>

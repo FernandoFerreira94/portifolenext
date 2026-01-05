@@ -12,7 +12,7 @@ export default function ContatosWeb() {
       >
         <SiLinkedin
           size={33}
-          className=" border-transparent  p-1.5 rounded-2xl text-gray-200/50 hover:text-gray-50 transition duration-500   cursor-pointer"
+          className=" border-transparent  p-1.5 max-sm:p-1 rounded-2xl text-gray-200/50 hover:text-gray-50 transition duration-500   cursor-pointer"
         />
       </Link>
       <Link
@@ -22,7 +22,7 @@ export default function ContatosWeb() {
       >
         <SiGithub
           size={33}
-          className=" border-transparent  p-1.5 rounded-2xl text-gray-200/50 hover:text-gray-50 transition duration-500   cursor-pointer"
+          className=" border-transparent  p-1.5 max-sm:p-1 rounded-2xl text-gray-200/50 hover:text-gray-50 transition duration-500   cursor-pointer"
         />
       </Link>
       <div
@@ -31,7 +31,7 @@ export default function ContatosWeb() {
       >
         <SiGmail
           size={33}
-          className=" border-transparent  p-1.5 rounded-2xl text-gray-200/50 hover:text-gray-50 transition duration-500  cursor-pointer"
+          className=" border-transparent  p-1.5 max-sm:p-1 rounded-2xl text-gray-200/50 hover:text-gray-50 transition duration-500  cursor-pointer"
         />
       </div>
       <Link
@@ -41,7 +41,7 @@ export default function ContatosWeb() {
       >
         <SiInstagram
           size={33}
-          className=" border-transparent  p-1.5 rounded-2xl text-gray-200/50 hover:text-gray-50 transition duration-500   cursor-pointer"
+          className=" border-transparent  p-1.5 max-sm:p-1 rounded-2xl text-gray-200/50 hover:text-gray-50 transition duration-500   cursor-pointer"
         />
       </Link>
     </div>

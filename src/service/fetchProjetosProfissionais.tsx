@@ -45,6 +45,7 @@ export async function fetchProjetosProfissionais() {
         shancn: data.shancn || false,
         reactNative: data.reactNative || false,
         supabase: data.supabase || false,
+        express: data.express || false,
         created:
           data.created instanceof Timestamp
             ? data.created.toDate()

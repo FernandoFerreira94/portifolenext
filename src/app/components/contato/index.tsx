@@ -57,32 +57,32 @@ export default function Contato() {
   return (
     <div
       className="w-full container mx-auto mt-20 flex flex-col items-center  mb-20
-    max-sm:mt-25 max-sm:px-2
+    max-sm:mt-0 max-sm:px-5
     "
     >
       {" "}
       <article className="w-full flex flex-col items-center mt-6 mb-8 text-gray-200 text-4xl  tracking-wide">
         <Title icon={<PhoneCall />} titulo="Contato" />
-        <h1 className="mt-6">
+        <h1 className="mt-6 max-sm:mt-0 text-center max-sm:text-3xl">
           Vamos trabalhar{" "}
           <AuroraText className="font-semibold"> juntos?</AuroraText>{" "}
         </h1>
-        <p className="text-sm text-gray-200/60 text-center mt-8 w-1/2">
+        <p className="text-sm text-gray-200/60 text-center mt-8 w-1/2 max-sm:w-full">
           Disponível para novos projetos e colaborações. Vamos discutir como
           transformar ideias em soluções bem executadas.
         </p>
       </article>
-      <section className="w-3/4 text-white flex flex-col  border border-gray-200/10 rounded-xl bg-neutral-900 z-20 relative  px-12 py-8">
-        <div className="flex">
-          <Card className="w-full max-w-xl text-gray-100 relative ">
-            <CardHeader>
-              <CardDescription className="text-gray-200/60 text-[12px]">
+      <section className="w-3/4 text-white  max-sm:w-full max-sm:mt-4 border border-gray-200/10 rounded-xl bg-neutral-900 z-20 relative  px-12 py-8">
+        <div className=" grid grid-cols-2 max-sm:grid-cols-1 ">
+          <Card className="w-full max-w-xl text-gray-100 relative">
+            <CardHeader className=" ">
+              <CardDescription className="text-gray-200/60 text-[12px] max-sm:text-sm max-sm:mb-4">
                 Obrigada por visitar meu portfólio. Para mais informações ou
                 para conversar sobre oportunidades, fique à vontade para entrar
                 em contato.
               </CardDescription>
             </CardHeader>
-            <CardContent>
+            <CardContent className=" max-sm:w-full max-sm:p-0 ">
               <form className="font-sans relative" onSubmit={enviarEmail}>
                 <div className="flex flex-col gap-4">
                   <div className="grid gap-2">
@@ -121,7 +121,7 @@ export default function Contato() {
                 <Button
                   variant="outline"
                   type="submit"
-                  className={`relative mt-6 bg-yellow-400 w-full text-gray-800 font-semibold py-2 px-4 rounded-lg transition cursor-pointer ${
+                  className={`relative mt-6 max-sm:my-6 bg-yellow-400 w-full text-gray-800 font-semibold py-2 px-4 rounded-lg transition cursor-pointer ${
                     enviando
                       ? "opacity-50 cursor-not-allowed"
                       : "hover:bg-yellow-500"
@@ -134,7 +134,7 @@ export default function Contato() {
           </Card>
 
           <div className="flex flex-col gap-4 justify-center items-center w-full ">
-            <Card className="border border-white/30 bg-gradient-to-r from-neutral-950 via-neutral-950 to-neutral-900 w-3/4">
+            <Card className="border border-white/30 bg-gradient-to-r from-neutral-950 via-neutral-950 to-neutral-900 w-3/4 max-sm:w-full ">
               <CardContent className="flex items-start pt-4 gap-4 ">
                 {" "}
                 <span className=" p-2 rounded-lg bg-[#03243a]">
@@ -153,7 +153,7 @@ export default function Contato() {
               </CardContent>
             </Card>
 
-            <Card className="border border-white/30 bg-gradient-to-r from-neutral-950 via-neutral-950 to-neutral-900 w-3/4">
+            <Card className="border border-white/30 bg-gradient-to-r from-neutral-950 via-neutral-950 to-neutral-900 w-3/4 max-sm:w-full">
               <CardContent className="flex items-start pt-4 gap-4">
                 {" "}
                 <span className=" p-2 rounded-lg bg-[#03243a]">
@@ -174,7 +174,7 @@ export default function Contato() {
               </CardContent>
             </Card>
 
-            <Card className="border border-white/30 bg-gradient-to-r from-neutral-950 via-neutral-950 to-neutral-900 w-3/4">
+            <Card className="border border-white/30 bg-gradient-to-r from-neutral-950 via-neutral-950 to-neutral-900 w-3/4 max-sm:w-full">
               <CardContent className="flex items-start pt-4 gap-4">
                 {" "}
                 <span className=" p-2 rounded-lg bg-[#03243a]">

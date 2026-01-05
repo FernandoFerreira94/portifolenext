@@ -9,21 +9,24 @@ import { Highlighter } from "@/components/ui/highlighter";
 export default function SobreMim() {
   return (
     <CardModal>
-      <article className="my-12">
+      <article className="my-12 max-sm:my-0 ">
         <Title icon={<User />} titulo="Sobre mim" />
       </article>
 
-      <article className="mt-6 mb-8 text-gray-200 text-4xl  tracking-wide">
-        <h1 className="">
+      <article
+        className="mt-6 mb-8 text-gray-200 text-4xl  tracking-wide 
+      max-sm:m-0 max-sm:text-3xl "
+      >
+        <h1 className="text-center">
           Prazer em{" "}
           <AuroraText className="font-semibold">conhecê-lo!</AuroraText>{" "}
         </h1>
       </article>
       <div
         className="grid grid-cols-2 container relative gap-12 text-lg py-20  h-full tracking-wider leading-10 text-justify 
-         max-sm:text-start max-sm:text-[16px] text-white p-8  "
+          max-sm:text-[16px] text-white p-8  max-sm:grid-cols-1 max-sm:p-5 max-sm:py-12 "
       >
-        <section className="grid  gap-6 text-gray-200/70 text-sm ml-20">
+        <section className="grid max-sm:gap-5 gap-6 text-gray-200/70 text-sm ml-20 max-sm:m-0">
           <p>
             Sou desenvolvedor{" "}
             <Highlighter action="underline" color="#FF9800">
@@ -74,8 +77,8 @@ export default function SobreMim() {
           </p>
         </section>
 
-        <section className="grid gap-6 items-center justify-center">
-          <Card className="border border-white/30 bg-gradient-to-r from-neutral-950 via-neutral-950 to-neutral-900 w-3/4">
+        <section className="grid gap-6 items-center justify-center ">
+          <Card className="border border-white/30 bg-gradient-to-r from-neutral-950 via-neutral-950 to-neutral-900 w-3/4 max-sm:w-full">
             <CardContent className="flex items-start pt-4 gap-4">
               {" "}
               <span className=" p-2 rounded-lg bg-[#03243a]">
@@ -91,7 +94,7 @@ export default function SobreMim() {
             </CardContent>
           </Card>
 
-          <Card className="border border-white/30 bg-gradient-to-r from-neutral-950 via-neutral-950 to-neutral-900 w-3/4">
+          <Card className="border border-white/30 bg-gradient-to-r from-neutral-950 via-neutral-950 to-neutral-900 w-3/4 max-sm:w-full">
             <CardContent className="flex items-start pt-4 gap-4">
               {" "}
               <span className=" p-2 rounded-lg bg-[#2b0249]">
@@ -106,7 +109,7 @@ export default function SobreMim() {
               </CardDescription>
             </CardContent>
           </Card>
-          <Card className="border border-white/30 bg-gradient-to-r from-neutral-950 via-neutral-950 to-neutral-900 w-3/4">
+          <Card className="border border-white/30 bg-gradient-to-r from-neutral-950 via-neutral-950 to-neutral-900 w-3/4 max-sm:w-full">
             <CardContent className="flex items-start pt-4 gap-4">
               {" "}
               <span className=" p-2 rounded-lg bg-green-950">

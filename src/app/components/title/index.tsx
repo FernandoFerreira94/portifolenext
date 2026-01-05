@@ -6,7 +6,7 @@ interface TituloProps {
 export default function Title({ titulo, icon }: TituloProps) {
   return (
     <h2
-      className="text-gray-400 text-xl  flex gap-4 titulo max-sm:
+      className="text-gray-400 text-xl  flex gap-4 items-center text-center 
     max-sm:my-22
     "
     >
