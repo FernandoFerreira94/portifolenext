@@ -44,6 +44,7 @@ export async function fetchProjetoAcademicos() {
         figmaUrl: data.figmaUrl || "",
         shancn: data.shancn || false,
         reactNative: data.reactNative || false,
+        express: data.express || false,
         supabase: data.supabase || false,
         created:
           data.created instanceof Timestamp
