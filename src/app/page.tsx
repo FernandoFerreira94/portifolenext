@@ -53,9 +53,9 @@ export default function Home() {
         <Meteors className="" />
       </div>
       <main
-        className={`w-full  flex flex-col transition-all duration-500 bg-neutral-950/60 
+        className={`w-full min-h-screen flex flex-col max-sm:justify-center  transition-all duration-500 bg-neutral-950/60 
           ${isCollapsed ? "pl-0" : "pl-[200px]"}
-         max-sm:p-0  max-sm:mt-8 `}
+         max-sm:p-0  max-sm:mt-14 `}
       >
         <section className="w-full container mx-auto min-h-screen flex items-center justify-center">
           <div className=" flex flex-col w-full items-center relative float-right max-sm:float-none max-sm:w-full max-sm:mt-0">
@@ -141,7 +141,7 @@ export default function Home() {
         >
           <Projetos />
         </section>
-        
+
         <section ref={contatoRef}>
           <Contato />
         </section>
