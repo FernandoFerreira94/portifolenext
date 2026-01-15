@@ -114,9 +114,9 @@ export default function Header({
             }`}
           >
             <Link
-              href="/curriculo/Curriculo_Fernando_Fullstack.pdf"
+              href="/curriculo/Curriculo-Front-End.pdf"
               className="flex items-center gap-3"
-              download="Curriculo_Fernando_Fullstack.pdf"
+              download="Curriculo-Front-End"
             >
               <Download size={`${!isSmallScreen ? 22 : 30}`} />
               {!isSmallScreen && !isCollapsed && (
