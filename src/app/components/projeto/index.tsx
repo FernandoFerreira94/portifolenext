@@ -69,12 +69,10 @@ export default function Projetos() {
             <AuroraText className="font-semibold">Projetos</AuroraText>{" "}
           </h1>
           <p className="text-[12px] text-gray-200/60 text-center mt-6">
-            Projetos profissionais e academicos
+            Projetos profissionais
           </p>
         </article>
-        <p className=" text-center text-xl text-gray-200/90 mt-20">
-          Projetos profissionais
-        </p>
+        <p className=" text-center text-xl text-gray-200/90 mt-20">Projetos</p>
         <section className="w-full flex items-center mx-auto  justify-center gap-20 mt-10 px-20 max-sm:px-0">
           <Carousel
             opts={{
