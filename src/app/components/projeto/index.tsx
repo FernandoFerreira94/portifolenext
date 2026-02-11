@@ -58,7 +58,6 @@ export default function Projetos() {
     debugProjetos();
   }, []);
 
-  console.log(projetosProfissioanis);
   console.log(projetosAcademicos);
   return (
     <>
