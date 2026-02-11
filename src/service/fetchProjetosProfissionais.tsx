@@ -37,6 +37,7 @@ export async function fetchProjetosProfissionais() {
         tailwind: data.tailwind || false,
         sass: data.sass || false,
         node: data.node || false,
+        nest: data.nest || false,
         firebase: data.firebase || false,
         postgressql: data.postgressql || false,
         github: data.github || "",
