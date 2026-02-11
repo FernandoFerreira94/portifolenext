@@ -19,6 +19,7 @@ import ImgTask from "@/assets/ImgTask.png";
 import ImgCoinsDev from "@/assets/ImgCoinsDev.png";
 import ImgGestaoColinas from "@/assets/imgGestaoColinas.png";
 import ImgFlume from "@/assets/imgFlume1.png";
+import ImgAxion from "@/assets/imgAxion.png";
 import { FolderGit2 } from "lucide-react";
 import Title from "../title";
 import { AuroraText } from "@/components/ui/aurora-text";
@@ -38,7 +39,7 @@ import { ordenarPorCriacaoAsc } from "@/app/actions/ordenarProjeto";
 
 export default function Projetos() {
   const [projetosAcademicos, setProjetosAcademicos] = useState<ProjetoProps[]>(
-    []
+    [],
   );
   const [projetosProfissioanis, setProjetosProfissionais] = useState<
     ProjetoProps[]
@@ -96,26 +97,28 @@ export default function Projetos() {
                               iten.nome === "AyumiNails"
                                 ? ImgAyumi
                                 : iten.nome === "Finan Flow"
-                                ? ImgFinaFlow
-                                : iten.nome === "Prime Flix" // Nova condição para PrimeFlix
-                                ? ImgPrimeFlix
-                                : iten.nome === "Dev Motors" // Nova condição para Dev Motors
-                                ? ImgDevMotor
-                                : iten.nome === "Dev Pizza" // Nova condição para Dev Pizza
-                                ? ImgDevPizza
-                                : iten.nome === "Mata Mosca" // Nova condição para Mata Mosca
-                                ? ImgMataMosca
-                                : iten.nome === "Dev Shop" // Nova condição para Dev Shop
-                                ? ImgDevShop
-                                : iten.nome === "Task  +" // Nova condição para Task
-                                ? ImgTask
-                                : iten.nome === "Coins Dev" // Nova condição para Coins Dev
-                                ? ImgCoinsDev
-                                : iten.nome === "Gestão Colinas" // Nova condição para Gestão Colinas
-                                ? ImgGestaoColinas
-                                : iten.nome === "Flume"
-                                ? ImgFlume // Nova condição para Dev Shop
-                                : imgProjeto
+                                  ? ImgFinaFlow
+                                  : iten.nome === "Prime Flix" // Nova condição para PrimeFlix
+                                    ? ImgPrimeFlix
+                                    : iten.nome === "Dev Motors" // Nova condição para Dev Motors
+                                      ? ImgDevMotor
+                                      : iten.nome === "Dev Pizza" // Nova condição para Dev Pizza
+                                        ? ImgDevPizza
+                                        : iten.nome === "Mata Mosca" // Nova condição para Mata Mosca
+                                          ? ImgMataMosca
+                                          : iten.nome === "Dev Shop" // Nova condição para Dev Shop
+                                            ? ImgDevShop
+                                            : iten.nome === "Task  +" // Nova condição para Task
+                                              ? ImgTask
+                                              : iten.nome === "Coins Dev" // Nova condição para Coins Dev
+                                                ? ImgCoinsDev
+                                                : iten.nome === "Gestão Colinas" // Nova condição para Gestão Colinas
+                                                  ? ImgGestaoColinas
+                                                  : iten.nome === "Flume"
+                                                    ? ImgFlume // Nova condição para Dev Shop
+                                                    : iten.nome === "Axion"
+                                                      ? ImgAxion
+                                                      : imgProjeto // Nova condição para Dev Shop
                             }
                             alt="imagem projeto"
                             quality={100}
@@ -136,7 +139,7 @@ export default function Projetos() {
                                 <button
                                   onClick={() =>
                                     setExpandedId(
-                                      expandedId === iten.id ? null : iten.id
+                                      expandedId === iten.id ? null : iten.id,
                                     )
                                   }
                                   className="ml-1 text-blue-400/60 hover:underline"
