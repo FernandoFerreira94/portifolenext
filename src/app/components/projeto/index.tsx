@@ -171,6 +171,7 @@ export default function Projetos() {
                                 <SpanTecnologia nome="React Native" />
                               )}
                               {iten.node && <SpanTecnologia nome="Node" />}
+                              {iten.nest && <SpanTecnologia nome="Nest" />}
 
                               {iten.express && (
                                 <SpanTecnologia nome="Express" />

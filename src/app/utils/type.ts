@@ -30,4 +30,5 @@ export interface ProjetoProps {
   supabase: boolean;
   express: boolean;
   is_academico: boolean;
+  nest: boolean;
 }
