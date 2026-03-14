@@ -1,5 +1,5 @@
 "use client";
-import { SiShadcnui, SiDocker, SiN8N, SiGit } from "react-icons/si";
+import { SiShadcnui, SiDocker, SiN8N, SiGit, SiGithub, SiClaude } from "react-icons/si";
 
 import React, { forwardRef, useRef } from "react";
 import { FaAws } from "react-icons/fa";
@@ -38,6 +38,7 @@ export function BeemSkill() {
   const div5Ref = useRef<HTMLDivElement>(null);
   const div6Ref = useRef<HTMLDivElement>(null);
   const div7Ref = useRef<HTMLDivElement>(null);
+  const div8Ref = useRef<HTMLDivElement>(null);
 
   return (
     <div
@@ -54,6 +55,14 @@ export function BeemSkill() {
             />
           </Circle>
 
+          <Circle ref={div8Ref}>
+            <CardHover
+             nome="Claude AI"
+    descricao="IA da Anthropic utilizada como assistente técnico para acelerar desenvolvimento, revisar código e apoiar decisões de arquitetura."
+              icon={<SiClaude size={30} className="text-[#D97757]" />}
+            />
+            <SiDocker size={38} className="text-[#2496ED]" />
+          </Circle>
           <Circle ref={div5Ref}>
             <CardHover
               nome="Docker"
@@ -82,13 +91,12 @@ export function BeemSkill() {
               icon={<Star size={30} className="text-green-600 " />}
             />
           </Circle>
-          <Circle ref={div6Ref}>
+         <Circle ref={div6Ref}>
             <CardHover
-              nome="Shadcn UI"
-              descricao="Biblioteca de componentes acessíveis e customizáveis para aplicações React."
-              icon={<SiShadcnui size={30} className="text-neutral-300" />}
+              nome="GitHub"
+              descricao="Plataforma de hospedagem de código com controle de versão, colaboração e CI/CD."
+              icon={<SiGithub size={30} className="text-gray-100" />}
             />
-            <SiShadcnui size={38} className="text-neutral-300" />
           </Circle>
         </div>
         <div className="flex flex-row items-center justify-between">
@@ -117,6 +125,7 @@ export function BeemSkill() {
         curvature={-75}
         endYOffset={-10}
       />
+        
 
       <AnimatedBeam
         containerRef={containerRef}
@@ -144,6 +153,12 @@ export function BeemSkill() {
         toRef={div4Ref}
         reverse
       />
+        <AnimatedBeam
+              containerRef={containerRef}
+              fromRef={div8Ref}
+              toRef={div4Ref}
+              reverse
+            />
       <AnimatedBeam
         containerRef={containerRef}
         fromRef={div7Ref}

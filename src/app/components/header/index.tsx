@@ -114,9 +114,9 @@ export default function Header({
             }`}
           >
             <Link
-              href="/curriculo/Curriculo-Front-End.pdf"
+              href="/curriculo/Fernando-Ferreira-FullStack.pdf"
               className="flex items-center gap-3"
-              download="Curriculo-Front-End"
+              download="Fernando-Ferreira-FullStack.pdf"
             >
               <Download size={`${!isSmallScreen ? 22 : 30}`} />
               {!isSmallScreen && !isCollapsed && (
@@ -145,7 +145,7 @@ export default function Header({
           <Image
             src={Logo}
             alt="logotipo"
-            className={`${!isCollapsed ? "w-18" : "w-10"} max-sm:w-12`}
+            className={`${!isCollapsed ? "w-30" : "w-18"} max-sm:w-12`}
           />
         )}
       </div>
