@@ -20,6 +20,7 @@ import {
   SiJavascript,
   SiNuxtdotjs,
   SiPrisma,
+  SiClaude
 } from "react-icons/si";
 import { FaAws } from "react-icons/fa";
 import { FaFigma } from "react-icons/fa";
@@ -43,6 +44,7 @@ export function ScrollBasedVelocityDemo() {
           <SiTailwindcss className="mr-8" /> <SiTypescript className="mr-8" />{" "}
           <SiExpo className="mr-8" /> <SiJavascript className="mr-8" />{" "}
           <SiNuxtdotjs className="mr-8" /> <SiPrisma className="mr-8" />
+          <SiClaude className="mr-8" />
         </ScrollVelocityRow>
       </ScrollVelocityContainer>
     </div>

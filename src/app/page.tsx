@@ -9,11 +9,9 @@ import Header from "./components/header";
 import Tecnologias from "./components/tecnologias";
 import Projetos from "./components/projeto";
 import Contato from "./components/contato";
-
 import { TextAnimate } from "@/components/ui/text-animate";
 import SobreMim from "./components/Sobre";
 
-import { ShimmerButton } from "@/components/ui/shimmer-button";
 import { AuroraText } from "@/components/ui/aurora-text";
 
 import { Meteors } from "@/components/ui/meteors";
@@ -21,6 +19,8 @@ import { Meteors } from "@/components/ui/meteors";
 import ContatosWeb from "./components/ContatosWeb";
 import ButtonHero from "./components/ButtonHero";
 import { ScrollBasedVelocityDemo } from "@/components/ui/ScrolSkill";
+const date = new Date()
+const year = date.getFullYear()
 
 export default function Home() {
   const [isCollapsed, setIsCollapsed] = useState(true);
@@ -69,9 +69,7 @@ export default function Home() {
             />
 
             <div className="w-full flex justify-center text-sm flex-col items-center  max-sm:px-5">
-              <ShimmerButton className="text-sm">
-                Disponivel para contratação
-              </ShimmerButton>
+          
               <div className="mt-24 flex flex-col items-center max-sm:mt-15">
                 <h1
                   className="text-gray-50 text-6xl font-semibold font-sans text-center 
@@ -85,19 +83,19 @@ export default function Home() {
                   animation="blurIn"
                   as="h1"
                 >
-                  Desenvolvedor Front-end
+                  Full-Stack Developer
                 </TextAnimate>
-                <TextAnimate
-                  className="text-gray-200/60 mt-8 text-lg  font-medium w-2/4 text-center 
-                  max-sm:w-full max-sm:text-base"
-                  animation="blurIn"
-                  as="h1"
-                  delay={1}
-                >
-                  Desenvolvedor Front-end com foco em experiência do usuário,
-                  performance e qualidade de código, construindo interfaces
-                  robustas com React e Next.js em ambientes de produção.
-                </TextAnimate>
+            <TextAnimate
+  className="text-gray-200/60 mt-8 text-lg font-medium w-2/4 text-center 
+  max-sm:w-full max-sm:text-base"
+  animation="blurIn"
+  as="h1"
+  delay={1}
+>
+  Desenvolvedor Full-Stack especializado em sistemas críticos, SaaS e
+  automação — entregando ERPs, dashboards e APIs robustas com React,
+  Next.js e NestJS em ambientes de produção.
+</TextAnimate>
                 <article
                   className="mt-16"
                   data-aos="zoom-in"
@@ -161,12 +159,14 @@ export default function Home() {
               >
                 Sobre mim
               </li>
-              <li
-                className="hover:text-white transition duration-300 cursor-pointer"
-                onClick={scrollToTecnologia}
-              >
-                Tecnologias
-              </li>
+          <li
+  role="button"
+  tabIndex={0}
+  className="hover:text-white transition duration-300 cursor-pointer"
+  onClick={scrollToTecnologia}
+>
+  Tecnologias
+</li>
               <li
                 className="hover:text-white transition duration-300 cursor-pointer"
                 onClick={scrollToProjetos}
@@ -181,18 +181,27 @@ export default function Home() {
               </li>
               <li>
                 <Link
-                  href="/curriculo/Fernando-FullStack.pdf"
-                  download="Fernando_Ferreira_Curriculo.pdf"
+                  href="/curriculo/Fernando-Ferreira-FullStack.pdf"
+                  download="Fernando-Ferreira-FullStack.pdf"
                   className="hover:text-white transition duration-300 cursor-pointer"
                 >
                   Currículo
                 </Link>
               </li>
             </ul>
-            <p className="text-gray-400  text-sm">
-              {" "}
-              Todos os direitos reservados &copy; 2024 WebCodeFF.
-            </p>
+            <article>
+
+           Todos os direitos reservados &copy; {year}{" "}
+<Link
+  href="https://webcodeff.com.br"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="hover:text-[#2E90B8] transition duration-300"
+>
+  WebCodeFF
+</Link>
+  </article>
+
           </div>
         </footer>
       </main>

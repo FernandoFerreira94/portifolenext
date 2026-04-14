@@ -4,7 +4,8 @@ import {
   SiNextdotjs,
   SiReact,
   SiExpo,
-  SiTailwindcss, // Adicionado para o Expo
+  SiTailwindcss,
+  SiShadcnui, // Adicionado para o Expo
 } from "react-icons/si";
 import { TbBrandReactNative } from "react-icons/tb";
 import { IoLogoJavascript } from "react-icons/io";
@@ -116,9 +117,9 @@ export function BeemFront() {
 
           <Circle ref={div7Ref}>
             <CardHover
-              nome="Expo"
-              descricao="Camada sobre React Native que simplifica build, deploy e acesso a APIs nativas."
-              icon={<SiExpo size={38} className="text-gray-100" />}
+              nome="Shadcn Ui"
+  descricao="Biblioteca de componentes acessíveis e customizáveis para aplicações React."
+                icon={<SiShadcnui size={38} className="text-gray-100" />}
             />
           </Circle>
         </div>
