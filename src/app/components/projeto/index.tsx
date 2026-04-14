@@ -20,7 +20,7 @@ import ImgCoinsDev from "@/assets/ImgCoinsDev.png";
 import ImgGestaoColinas from "@/assets/imgGestaoColinas.png";
 import ImgFlume from "@/assets/imgFlume1.png";
 import ImgAxion from "@/assets/imgAxion.png";
-import ImgColinasAtivo from "@/assets/imgColinasAtivo.png";
+import ImgColinasAtivo from "@/assets/imgcolinasativo.png";
 import { FolderGit2 } from "lucide-react";
 import Title from "../title";
 import { AuroraText } from "@/components/ui/aurora-text";
