@@ -42,6 +42,8 @@ function useCarousel() {
   return context
 }
 
+
+
 const Carousel = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement> & CarouselProps
@@ -58,6 +60,7 @@ const Carousel = React.forwardRef<
     },
     ref
   ) => {
+    
     const [carouselRef, api] = useEmblaCarousel(
       {
         ...opts,

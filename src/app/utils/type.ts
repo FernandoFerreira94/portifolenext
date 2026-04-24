@@ -1,4 +1,4 @@
-import { Timestamp } from "firebase/firestore";
+import { Timestamp } from "firebase/firestore/lite";
 
 export interface ProjetoProps {
   id: string; // Garantindo que seja uma string

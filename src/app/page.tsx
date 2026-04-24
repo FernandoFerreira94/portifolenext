@@ -1,5 +1,5 @@
 "use client";
-import { useRef, useState, useEffect } from "react";
+import { useRef, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -14,16 +14,23 @@ import SobreMim from "./components/Sobre";
 
 import { AuroraText } from "@/components/ui/aurora-text";
 
-import { Meteors } from "@/components/ui/meteors";
-
 import ContatosWeb from "./components/ContatosWeb";
 import ButtonHero from "./components/ButtonHero";
 import { ScrollBasedVelocityDemo } from "@/components/ui/ScrolSkill";
+import Chatbot from "./components/chatbot";
+import { Particles } from "@/components/ui/particles";
+import { Meteors } from "@/components/ui/meteors";
+import { useLanguage } from "@/context/LanguageContext";
+import NebulaFooter from "@/components/ui/nebulosa";
+
+
+
 const date = new Date()
 const year = date.getFullYear()
 
 export default function Home() {
-  const [isCollapsed, setIsCollapsed] = useState(true);
+  const { t } = useLanguage();
+
 
   useEffect(() => {
     AOS.init({ duration: 3000 });
@@ -49,19 +56,28 @@ export default function Home() {
 
   return (
     <>
-      <div className=" min-h-screen w-full fixed">
-        <Meteors className="" />
+      {/* Ambient background — glows fixos */}
+      <div className="" />
+
+   
+      {/* Camada de Fundo (Imagem) */}
+      <div 
+        className="fixed inset-0 z-0 pointer-events-none" 
+      />
+
+      {/* Camada de Animações (Meteoros e Partículas) */}
+      <div className="fixed inset-0 z-[1] pointer-events-none">
+        {/* Adicione outros efeitos globais se necessário, mas mantenha o NebulaFooter no layout.tsx */}
+  <Particles/>
+  <Meteors/>
+        <NebulaFooter />
       </div>
-      <main
-        className={`w-full min-h-screen flex flex-col max-sm:justify-center  transition-all duration-500 bg-neutral-950/60 
-          ${isCollapsed ? "pl-0" : "pl-[200px]"}
-         max-sm:p-0  max-sm:mt-14 `}
-      >
+
+      <main className="relative z-10 w-full min-h-screen flex flex-col">
+
         <section className="w-full container mx-auto min-h-screen flex items-center justify-center">
           <div className=" flex flex-col w-full items-center relative float-right max-sm:float-none max-sm:w-full max-sm:mt-0">
             <Header
-              isCollapsed={isCollapsed}
-              setIsCollapsed={setIsCollapsed}
               onTecnologiaClick={scrollToTecnologia}
               onSobreMimClick={scrollToSobreMim}
               onContatoClick={scrollToContato}
@@ -75,27 +91,29 @@ export default function Home() {
                   className="text-gray-50 text-6xl font-semibold font-sans text-center 
                 max-sm:text-[40px]
                 "
+                data-aos="zoom-in"
+        data-aos-delay="100"
+        data-aos-duration="2000"
+        data-aos-easing="ease-in-out"
                 >
-                  Olá, eu sou <AuroraText>Fernando Ferreira</AuroraText>
+                  {t("hero_greeting")} <AuroraText>WebCode</AuroraText>
                 </h1>
                 <TextAnimate
                   className="text-gray-50 mt-16 text-2xl font-semibold font-sans "
                   animation="blurIn"
                   as="h1"
                 >
-                  Full-Stack Developer
+                  {t("hero_role")}
                 </TextAnimate>
-            <TextAnimate
-  className="text-gray-200/60 mt-8 text-lg font-medium w-2/4 text-center 
+                <TextAnimate
+                  className="text-gray-200/60 mt-8 text-lg font-medium w-2/4 text-center 
   max-sm:w-full max-sm:text-base"
-  animation="blurIn"
-  as="h1"
-  delay={1}
->
-  Desenvolvedor Full-Stack especializado em sistemas críticos, SaaS e
-  automação — entregando ERPs, dashboards e APIs robustas com React,
-  Next.js e NestJS em ambientes de produção.
-</TextAnimate>
+                  animation="blurIn"
+                  as="h1"
+                  delay={1}
+                >
+                  {t("hero_description")}
+                </TextAnimate>
                 <article
                   className="mt-16"
                   data-aos="zoom-in"
@@ -118,13 +136,13 @@ export default function Home() {
           </div>
         </section>
 
-        <section ref={sobreMimRef} className="max-sm:w-full max-sm:z-20">
+        <section ref={sobreMimRef} className="max-sm:w-full max-sm:z-20 min-h-100dvh">
           <SobreMim />
         </section>
 
         <section
           ref={tecnologiasRef}
-          className=" w-full container mx-auto flex items-center justify-center "
+          className=" w-full container mx-auto flex items-center justify-center min-h-100dvh"
         >
           <Tecnologias />
         </section>
@@ -135,16 +153,16 @@ export default function Home() {
 
         <section
           ref={projetosRef}
-          className="w-full bg-gray-950 py-12 z-20 max-sm:py-0"
+          className="w-full bg-gray-950 py-12 z-20 max-sm:py-0 min-h-100dvh"
         >
           <Projetos />
         </section>
 
-        <section ref={contatoRef}>
+        <section id="contato" ref={contatoRef} className="min-h-100dvh">
           <Contato />
         </section>
 
-        <footer className="w-full pb-20 bg-gradient-to-b from-gray-900 to-gray-950 flex flex-col items-center  gap-4 max-sm:pl-0">
+        <footer className="w-full pb-20 bg-transparent from-gray-900 to-gray-950 flex flex-col items-center  gap-4 max-sm:pl-0">
           <div className="mt-10" data-aos="zoom-in">
             <ContatosWeb />{" "}
           </div>
@@ -157,27 +175,27 @@ export default function Home() {
                 className="hover:text-white transition duration-300 cursor-pointer"
                 onClick={scrollToSobreMim}
               >
-                Sobre mim
+                {t("nav_about")}
               </li>
-          <li
-  role="button"
-  tabIndex={0}
-  className="hover:text-white transition duration-300 cursor-pointer"
-  onClick={scrollToTecnologia}
->
-  Tecnologias
-</li>
+              <li
+                role="button"
+                tabIndex={0}
+                className="hover:text-white transition duration-300 cursor-pointer"
+                onClick={scrollToTecnologia}
+              >
+                {t("nav_tech")}
+              </li>
               <li
                 className="hover:text-white transition duration-300 cursor-pointer"
                 onClick={scrollToProjetos}
               >
-                Projetos
+                {t("nav_projects")}
               </li>
               <li
                 className="hover:text-white transition duration-300 cursor-pointer"
                 onClick={scrollToContato}
               >
-                Contato
+                {t("nav_contact")}
               </li>
               <li>
                 <Link
@@ -185,26 +203,26 @@ export default function Home() {
                   download="Fernando-Ferreira-FullStack.pdf"
                   className="hover:text-white transition duration-300 cursor-pointer"
                 >
-                  Currículo
+                  {t("nav_resume")}
                 </Link>
               </li>
             </ul>
             <article>
-
-           Todos os direitos reservados &copy; {year}{" "}
-<Link
-  href="https://webcodeff.com.br"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="hover:text-[#2E90B8] transition duration-300"
->
-  WebCodeFF
-</Link>
-  </article>
+              {t("footer_rights")} &copy; {year}{" "}
+              <Link
+                href="https://webcodeff.com.br"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-[#2E90B8] transition duration-300"
+              >
+                WebCodeFF
+              </Link>
+            </article>
 
           </div>
         </footer>
       </main>
+      <Chatbot />
     </>
   );
 }

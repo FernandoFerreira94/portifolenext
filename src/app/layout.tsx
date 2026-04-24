@@ -66,18 +66,24 @@ export const metadata: Metadata = {
 
   category: "technology",
 };
+import { LanguageProvider } from "@/context/LanguageContext";
+import NebulaFooter from "@/components/ui/nebulosa";
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR">
+    <html lang="pt-BR" className="dark" suppressHydrationWarning>
       <body
         className={`${unbounded}  ${inter} ${poppins.className} antialiased`}
       >
-        <ToastContainer autoClose={4000} />
-        {children}
+            <NebulaFooter />
+        <LanguageProvider>  
+          <ToastContainer autoClose={4000} />
+          {children}
+        </LanguageProvider>
       </body>
     </html>
   );

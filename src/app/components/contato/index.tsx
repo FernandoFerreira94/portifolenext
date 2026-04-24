@@ -19,12 +19,16 @@ import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { toast } from "react-toastify";
 import Link from "next/link";
 import { TextAnimate } from "@/components/ui/text-animate";
+import { useLanguage } from "@/context/LanguageContext";
+
 export default function Contato() {
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
   const [mensagem, setMensagem] = useState("");
 
   const [enviando, setEnviando] = useState(false);
+  const { t } = useLanguage();
+
 
   const enviarEmail = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -42,13 +46,13 @@ export default function Contato() {
         templateParams,
         process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
       );
-      toast.success("Mensagem enviada com sucesso!");
+      toast.success(t("contact_success"));
       setNome("");
       setEmail("");
       setMensagem("");
     } catch (error) {
       console.error(error);
-      toast.error("Erro ao enviar. Tente novamente.");
+      toast.error(t("contact_error"));
     } finally {
       setEnviando(false);
     }
@@ -62,14 +66,16 @@ export default function Contato() {
     >
       {" "}
       <article className="w-full flex flex-col items-center mt-6 mb-8 text-gray-200 text-4xl  tracking-wide">
-        <Title icon={<PhoneCall />} titulo="Contato" />
+        <Title icon={<PhoneCall />} titulo={t("contact_title")} />
         <h1 className="mt-6 max-sm:mt-0 text-center max-sm:text-3xl">
-          Vamos trabalhar{" "}
-          <AuroraText className="font-semibold"> juntos?</AuroraText>{" "}
+          {t("contact_subtitle").split("juntos?")[0]}
+          {t("contact_subtitle").split("together?")[0]}
+          <AuroraText className="font-semibold">
+            {t("contact_subtitle").includes("juntos?") ? "juntos?" : "together?"}
+          </AuroraText>{" "}
         </h1>
         <p className="text-sm text-gray-200/60 text-center mt-8 w-1/2 max-sm:w-full">
-          Disponível para novos projetos e colaborações. Vamos discutir como
-          transformar ideias em soluções bem executadas.
+          {t("contact_description")}
         </p>
       </article>
       <section className="w-3/4 text-white  max-sm:w-full max-sm:mt-4 border border-gray-200/10 rounded-xl bg-neutral-900 z-20 relative  px-12 py-8">
@@ -77,9 +83,7 @@ export default function Contato() {
           <Card className="w-full max-w-xl text-gray-100 relative">
             <CardHeader className=" ">
               <CardDescription className="text-gray-200/60 text-[12px] max-sm:text-sm max-sm:mb-4">
-                Obrigada por visitar meu portfólio. Para mais informações ou
-                para conversar sobre oportunidades, fique à vontade para entrar
-                em contato.
+                {t("contact_form_info")}
               </CardDescription>
             </CardHeader>
             <CardContent className=" max-sm:w-full max-sm:p-0 ">
@@ -87,7 +91,7 @@ export default function Contato() {
                 <div className="flex flex-col gap-4">
                   <div className="grid gap-2">
                     <Input
-                      placeholder="Seu nome:"
+                      placeholder={t("contact_name_placeholder")}
                       className="text-[12px]  bg-gray-800 border border-gray-600"
                       value={nome}
                       onChange={(e) => setNome(e.target.value)}
@@ -98,7 +102,7 @@ export default function Contato() {
                     <Input
                       id="email"
                       type="email"
-                      placeholder="Seu email:"
+                      placeholder={t("contact_email_placeholder")}
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       className=" bg-gray-800 border border-gray-600"
@@ -108,7 +112,7 @@ export default function Contato() {
                   <div className="grid gap-2">
                     <Textarea
                       id="message"
-                      placeholder="Sua mensagem:"
+                      placeholder={t("contact_message_placeholder")}
                       className="bg-gray-800 border border-gray-600"
                       rows={6}
                       value={mensagem}
@@ -127,7 +131,7 @@ export default function Contato() {
                       : "hover:bg-yellow-500"
                   }`}
                 >
-                  {enviando ? "Enviando..." : "Enviar mensagem"}
+                  {enviando ? t("contact_sending") : t("contact_send")}
                 </Button>
               </form>
             </CardContent>
@@ -199,8 +203,7 @@ export default function Contato() {
           as="h1"
           className=" text-center text-sm my-8 italic  tracking-wide text-gray-300 max-sm:w-9/10 max-sm:m-auto max-sm:mt-10 max-sm:text-sm"
         >
-          Se você tem um projeto em mente, eu tenho o código. Vamos colocar essa
-          ideia pra rodar!
+          {t("contact_footer_text")}
         </TextAnimate>
         <BorderBeam size={400} duration={15} />
       </section>

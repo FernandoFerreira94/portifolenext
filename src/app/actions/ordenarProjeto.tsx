@@ -1,4 +1,4 @@
-import { Timestamp } from "firebase/firestore";
+import { Timestamp } from "firebase/firestore/lite";
 
 function toMillis(date: Date | Timestamp): number {
   return date instanceof Timestamp ? date.toDate().getTime() : date.getTime();

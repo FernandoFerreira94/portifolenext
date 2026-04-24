@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node -e \"const ai = require\\(''./node_modules/ai/dist/index.js''\\); console.log\\(''convertToModelMessages:'', typeof ai.convertToModelMessages\\); console.log\\(''keys sample:'', Object.keys\\(ai\\).filter\\(k => k.toLowerCase\\(\\).includes\\(''convert''\\) || k.toLowerCase\\(\\).includes\\(''message''\\)\\).slice\\(0,20\\)\\)\")",
+      "Bash(npx tsc:*)",
+      "Bash(node -e \"const ai = require\\(''./node_modules/ai/dist/index.js''\\); const t = ai.tool; console.log\\(t.toString\\(\\).slice\\(0, 300\\)\\)\")"
+    ]
+  }
+}

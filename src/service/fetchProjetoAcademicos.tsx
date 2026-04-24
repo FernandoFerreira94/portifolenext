@@ -4,7 +4,7 @@ import {
   query,
   Timestamp,
   where,
-} from "firebase/firestore";
+} from "firebase/firestore/lite";
 import { db } from "@/service/fireBaseConective";
 import { ProjetoProps } from "@/app/utils/type";
 
