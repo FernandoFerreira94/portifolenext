@@ -6,7 +6,6 @@ import Link from "next/link";
 
 import imgProjeto from "../../../assets/360_F_308697506_9dsBYHXm9FwuW0qcEqimAEXUvzTwfzwe.jpg";
 import { fetchProjetosProfissionais } from "@/service/fetchProjetosProfissionais";
-import { fetchProjetoAcademicos } from "@/service/fetchProjetoAcademicos";
 import { ProjetoProps } from "@/app/utils/type";
 import ImgAyumi from "../../../assets/imgAyumiNails.png";
 import ImgFinaFlow from "../../../assets/imgFinaFlow.png";
@@ -21,6 +20,7 @@ import ImgGestaoColinas from "@/assets/imgGestaoColinas.png";
 import ImgFlume from "@/assets/imgFlume1.png";
 import ImgAxion from "@/assets/imgAxion.png";
 import ImgColinasAtivo from "@/assets/imgcolinasativo.png";
+import ImgGfc from "@/assets/imgGfc.png";
 import { FolderGit2 } from "lucide-react";
 import Title from "../title";
 import { AuroraText } from "@/components/ui/aurora-text";
@@ -66,6 +66,7 @@ function getProjectImage(nome: string) {
     case "Flume": return ImgFlume;
     case "Axion": return ImgAxion;
     case "Colinas Ativos": return ImgColinasAtivo;
+    case "GFC - Grama Futebol Clube": return ImgGfc;
     default: return imgProjeto;
   }
 }
